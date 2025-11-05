@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found</title>
+  <script>
+    // Single Page Applications for GitHub Pages
+    // MIT License
+    // https://github.com/rafgraph/spa-github-pages
+    
+    (function(l) {
+      if (l.pathname.startsWith('/namasivaayam-folio/')) {
+        // If the path starts with our base path, check if it's a valid route
+        // If not, redirect to the index page to let React Router handle it
+        if (l.pathname !== '/namasivaayam-folio/' && 
+            l.pathname !== '/namasivaayam-folio/index.html') {
+          // Redirect to the main index.html to let React Router handle the route
+          l.replace(
+            l.protocol + '//' + 
+            l.hostname + (l.port ? ':' + l.port : '') +
+            '/namasivaayam-folio/'
+          );
+        }
+      } else {
+        // If not in the correct base path, redirect to the correct base path
+        l.replace(
+          l.protocol + '//' + 
+          l.hostname + (l.port ? ':' + l.port : '') +
+          '/namasivaayam-folio/'
+        );
+      }
+    })(location);
+  </script>
+</head>
+<body>
+</body>
+</html>

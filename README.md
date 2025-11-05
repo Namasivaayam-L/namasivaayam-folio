@@ -30,3 +30,12 @@ npm run dev
 - Responsive design with Tailwind CSS
 - UI components from shadcn/ui
 - Vite for fast development
+- Deployed on GitHub Pages
+
+## Deployment
+
+This site is configured for deployment to GitHub Pages. When you push changes to the `main` branch, the site will automatically rebuild and deploy.
+
+For more detailed information about the deployment process, see [DEPLOYMENT.md](DEPLOYMENT.md).
+
+Your site will be available at: `https://namasivaayam-l.github.io/namasivaayam-folio/`
