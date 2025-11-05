@@ -1,0 +1,38 @@
+name: Scrape and Update Portfolio
+on:
+  repository_dispatch:
+    types: [update-portfolio]
+  workflow_dispatch:
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install scraper deps
+        run: |
+          npm i -D typescript ts-node @octokit/rest js-yaml
+      - name: Run scraper
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SCRAPE_GH_USERNAME: ${{ github.repository_owner }}
+          OUTPUT_PROJECTS_PATH: src/data/projects.json
+          OUTPUT_READMES_DIR: src/data/readmes
+        run: |
+          npx ts-node scripts/scrape_github.ts
+          npx prettier --write src/data/projects.json
+      - name: Show changes
+        run: |
+          git status --porcelain
+          git diff --stat || true
+      - name: Commit and push if changed
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update project metadata and readmes"
+          file_pattern: src/data/**
