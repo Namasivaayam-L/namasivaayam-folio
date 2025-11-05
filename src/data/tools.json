@@ -1,0 +1,32 @@
+[
+  {
+    "name": "VS Code",
+    "category": "IDE",
+    "icon": "Code2"
+  },
+  {
+    "name": "PyCharm",
+    "category": "IDE",
+    "icon": "Lightbulb"
+  },
+  {
+    "name": "Docker",
+    "category": "DevOps",
+    "icon": "Container"
+  },
+  {
+    "name": "Kubernetes",
+    "category": "DevOps",
+    "icon": "Network"
+  },
+  {
+    "name": "Notion",
+    "category": "Productivity",
+    "icon": "BookOpen"
+  },
+  {
+    "name": "GitHub",
+    "category": "Version Control",
+    "icon": "Github"
+  }
+]

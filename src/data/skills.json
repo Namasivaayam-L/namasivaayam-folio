@@ -1,0 +1,20 @@
+{
+  "categories": [
+    {
+      "name": "AI/ML",
+      "skills": ["Prompt Engineering", "RAG", "LangChain", "LlamaIndex", "PyTorch", "TensorFlow", "Google Vertex AI"]
+    },
+    {
+      "name": "Cloud",
+      "skills": ["GCP PCA", "AWS CPE", "Docker", "Kubernetes (GKE)", "Rancher"]
+    },
+    {
+      "name": "Backend & Databases",
+      "skills": ["FastAPI", "Spring Boot", "Node.js", "Express", "PostgreSQL", "MongoDB", "Redis"]
+    },
+    {
+      "name": "Frontend",
+      "skills": ["JavaScript", "React", "Next.js", "Redux"]
+    }
+  ]
+}

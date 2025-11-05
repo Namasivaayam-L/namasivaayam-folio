@@ -1,0 +1,26 @@
+[
+  {
+    "id": "mr-cooper-se1",
+    "company": "Mr. Cooper",
+    "role": "Software Engineer I",
+    "duration": "07/2024 – Present",
+    "location": "Chennai, TN, India",
+    "contributions": [
+      "Engineered and optimized sophisticated prompts for 15+ critical financial documents, utilizing Python, Vertex AI, and GCP to build production-level pipelines.",
+      "Initiated and led the full ML development, building it from the ground up to score and analyze production model outputs for quality. Architected a scalable backend using FastAPI, LangChain, and Docker on GKE via Azure Pipelines, integrating Gemini and OpenAI GPT models for comprehensive validation.",
+      "Contributed to a high-priority IBM Filenet replacement project, developing full-stack features with Next.js, Java Springboot, and Google's AlloyDB. Maintained critical Content Viewer, Core, and Stage components for interacting with files within the Pyro Vault."
+    ],
+    "tags": ["Python", "Vertex AI", "GCP", "FastAPI", "LangChain", "Docker", "GKE", "Azure Pipelines", "Gemini", "OpenAI GPT", "Next.js", "Java", "Spring Boot", "AlloyDB"]
+  },
+  {
+    "id": "mr-cooper-intern",
+    "company": "Mr. Cooper",
+    "role": "Software Engineer Intern",
+    "duration": "01/2024 – 06/2024",
+    "location": "Chennai, TN, India",
+    "contributions": [
+      "Spearheaded a proof-of-concept replacing traditional deep learning with an Image-based Gemini approach for structured data extraction, boosting paystub accuracy from 9% to an industry-leading 90%."
+    ],
+    "tags": ["Python", "Gemini", "Computer Vision", "GenAI", "Structured Data Extraction"]
+  }
+]
