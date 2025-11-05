@@ -5,20 +5,16 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => {
-  const isProduction = mode === "production";
-  
-  return {
-    base: isProduction ? "/namasivaayam-folio/" : "/",
-    server: {
-      host: "::",
-      port: 8080,
+export default defineConfig({
+  base: "/namasivaayam-folio/",
+  server: {
+    host: "::",
+    port: 8080,
+  },
+  plugins: [react()],
+  resolve: {
+    alias: {
+      "@": resolve(dirname(fileURLToPath(import.meta.url)), "src"),
     },
-    plugins: [react()],
-    resolve: {
-      alias: {
-        "@": resolve(dirname(fileURLToPath(import.meta.url)), "src"),
-      },
-    },
-  };
+  },
 });
