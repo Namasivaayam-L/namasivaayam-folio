@@ -22,11 +22,11 @@ export default function Home() {
         {/* Social CTA */}
         <div className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg">
           <div className="flex-1">
-            <p className="text-sm text-foreground">Connect with me on X for AI engineering insights & more</p>
+            <p className="text-sm text-foreground">Connect with me on Discord for discussion related to Agents, Finetuning, RAG,..</p>
           </div>
           <Button size="sm" variant="default" asChild>
-            <a href={personalData.links.twitter} target="_blank" rel="noopener noreferrer">
-              Follow
+            <a href={personalData.links.discord} target="_blank" rel="noopener noreferrer">
+              Ping
             </a>
           </Button>
         </div>

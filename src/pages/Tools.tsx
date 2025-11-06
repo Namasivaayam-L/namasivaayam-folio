@@ -1,7 +1,8 @@
+import * as React from "react";
 import { Code2, Lightbulb, Container, Network, BookOpen, Github } from "lucide-react";
 import toolsData from "@/data/tools.json";
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
   Code2,
   Lightbulb,
   Container,
