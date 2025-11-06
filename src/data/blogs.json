@@ -4,7 +4,7 @@
     "title": "From 9% to 90%: How Gemini Transformed Document Extraction",
     "date": "2024-08-15",
     "excerpt": "Spearheaded a proof-of-concept replacing traditional deep learning with an Image-based Gemini approach for structured data extraction, boosting paystub accuracy from 9% to an industry-leading 90%.",
-    "tags": ["GenAI", "Gemini", "Computer Vision", "Structured Data Extraction"],
+    "tags": ["Gemini", "Computer Vision", "Structured Data Extraction"],
     "category": "thought"
   },
   {
@@ -12,7 +12,7 @@
     "title": "Building a Production-Grade LLM Validation Framework",
     "date": "2024-09-20",
     "excerpt": "Initiated and led the full ML development of a framework to score and analyze production model outputs for quality, building a scalable backend using FastAPI, LangChain, and Docker on GKE via Azure Pipelines.",
-    "tags": ["LLM", "FastAPI", "LangChain", "Docker", "GKE", "Azure Pipelines"],
+    "tags": ["OpenAI", "Gemini", "FastAPI", "LangChain", "GKE", "Azure Pipelines"],
     "category": "tutorial"
   }
 ]

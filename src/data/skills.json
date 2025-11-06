@@ -2,7 +2,7 @@
   "categories": [
     {
       "name": "AI/ML",
-      "skills": ["Prompt Engineering", "RAG", "LangChain", "LlamaIndex", "PyTorch", "TensorFlow", "Google Vertex AI"]
+      "skills": ["Google ADK", "RAG", "LangChain", "LlamaIndex", "PyTorch", "TensorFlow", "Google Vertex AI", "Prompt Engineering"]
     },
     {
       "name": "Cloud",
@@ -14,7 +14,7 @@
     },
     {
       "name": "Frontend",
-      "skills": ["JavaScript", "React", "Next.js", "Redux"]
+      "skills": ["React", "Next.js", "Redux"]
     }
   ]
 }

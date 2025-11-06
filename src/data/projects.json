@@ -18,7 +18,7 @@
     "longDescription": "Developed the Backend and architected the core agentic logic into a scalable Dockerized solution till deployment. Tech Stack: FastAPI, LlamaIndex, MongoDB, Docker.",
     "tags": ["FastAPI", "LlamaIndex", "MongoDB", "Docker"],
     "status": "active",
-    "link": "https://quantum-tutor.dev",
+    "link": "https://https://quantumtutor.netlify.app/",
     "category": "AI"
   },
   {

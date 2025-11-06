@@ -44,7 +44,7 @@ export default function Home() {
             </a>
           </p>
           <p>
-            I have built multiple products in past 5 years.{" "}
+            I have built multiple projects in past 2 years.{" "}
             <span className="text-foreground font-medium">Led GenAI initiatives</span> that improved accuracy from 9% to 90%.
           </p>
         </div>
@@ -56,8 +56,8 @@ export default function Home() {
           </p>
           <p className="text-muted-foreground">
             Say Hi on{" "}
-            <a href={personalData.links.twitter} className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
-              X
+            <a href={personalData.links.linkedin} className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
+              LinkedIn
             </a>
           </p>
         </div>
