@@ -1,14 +1,16 @@
 import * as React from "react";
-import { Code2, Lightbulb, Container, Network, BookOpen, Github } from "lucide-react";
+import { BiCode } from "react-icons/bi";
+import { HiLightBulb } from "react-icons/hi";
+import { FaBox, FaNetworkWired, FaBook, FaGithub } from "react-icons/fa";
 import toolsData from "@/data/tools.json";
 
 const iconMap: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
-  Code2,
-  Lightbulb,
-  Container,
-  Network,
-  BookOpen,
-  Github,
+  Code2: BiCode,
+  Lightbulb: HiLightBulb,
+  Container: FaBox,
+  Network: FaNetworkWired,
+  BookOpen: FaBook,
+  Github: FaGithub,
 };
 
 export default function Tools() {
@@ -22,7 +24,7 @@ export default function Tools() {
       {/* Tools Grid */}
       <div className="grid gap-6 md:grid-cols-3 sm:grid-cols-2">
         {toolsData.map((tool, index) => {
-          const Icon = iconMap[tool.icon] || Code2;
+          const Icon = iconMap[tool.icon] || BiCode;
           return (
             <div
               key={tool.name}

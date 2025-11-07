@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { HiMail } from "react-icons/hi";
+import { FaDiscord, FaLinkedin, FaGithub, FaAward } from "react-icons/fa";
 import personalData from "@/data/personal.json";
 
 export default function Contact() {
@@ -9,29 +10,45 @@ export default function Contact() {
         <h1 className="text-4xl font-bold text-foreground">Contact</h1>
         
         <p className="text-muted-foreground">
-          If you're building in / excited about AI or just wanna chat, say hi on X!
+          If you're building in / excited about AI or just wanna chat — here are the ways to reach me.
         </p>
 
-        {/* Twitter CTA */}
-        <div className="flex items-center justify-center gap-4 p-6 bg-card border border-border rounded-lg">
-          <div className="flex-1 text-left">
-            <p className="text-sm text-foreground">Connect with me on X for AI engineering insights & more</p>
-          </div>
-          <Button asChild>
-            <a href={personalData.links.twitter} target="_blank" rel="noopener noreferrer">
-              Follow
-            </a>
-          </Button>
-        </div>
+  {/* Contact Options Grid */}
+  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full">
+            <Button className="w-full" asChild>
+              <a href={`mailto:${personalData.email}`} target="_blank" rel="noopener noreferrer">
+                <HiMail className="w-4 h-4 mr-2" />
+                Email
+              </a>
+            </Button>
 
-        {/* Book a Call */}
-        <div className="pt-4">
-          <Button variant="outline" size="lg" asChild>
-            <a href={`mailto:${personalData.email}`}>
-              <ExternalLink className="w-4 h-4 mr-2" />
-              Book a call
-            </a>
-          </Button>
+            <Button className="w-full" asChild>
+              <a href={personalData.links.discord} target="_blank" rel="noopener noreferrer">
+                <FaDiscord className="w-4 h-4 mr-2" />
+                Discord
+              </a>
+            </Button>
+
+            <Button className="w-full" asChild>
+              <a href={personalData.links.linkedin} target="_blank" rel="noopener noreferrer">
+                <FaLinkedin className="w-4 h-4 mr-2" />
+                LinkedIn
+              </a>
+            </Button>
+
+            <Button className="w-full" asChild>
+              <a href={personalData.links.github} target="_blank" rel="noopener noreferrer">
+                <FaGithub className="w-4 h-4 mr-2" />
+                GitHub
+              </a>
+            </Button>
+
+            <Button className="w-full" asChild>
+              <a href={personalData.links.credly} target="_blank" rel="noopener noreferrer">
+                <FaAward className="w-4 h-4 mr-2" />
+                Credly
+              </a>
+            </Button>
         </div>
 
         {/* Decorative Element */}

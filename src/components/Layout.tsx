@@ -1,23 +1,25 @@
 import { Link, useLocation } from "react-router-dom";
-import { Home, Briefcase, FolderGit2, FileText, User, Mail, Wrench, Github, Linkedin, Twitter, Award } from "lucide-react";
+import { HiHome, HiBriefcase, HiFolder, HiDocument, HiUser, HiMail } from "react-icons/hi";
+import { HiWrench } from "react-icons/hi2";
+import { FaGithub, FaLinkedin, FaDiscord, FaAward } from "react-icons/fa";
 import { cn } from "@/lib/utils";
 import personalData from "@/data/personal.json";
 
 const navigation = [
-  { name: "Home", href: "/", icon: Home },
-  { name: "Experience", href: "/experience", icon: Briefcase },
-  { name: "Projects", href: "/projects", icon: FolderGit2 },
-  { name: "Blogs", href: "/blogs", icon: FileText },
-  { name: "About", href: "/about", icon: User },
-  { name: "Contact", href: "/contact", icon: Mail },
-  { name: "Tools", href: "/tools", icon: Wrench },
+  { name: "Home", href: "/", icon: HiHome },
+  { name: "Experience", href: "/experience", icon: HiBriefcase },
+  { name: "Projects", href: "/projects", icon: HiFolder },
+  { name: "Blogs", href: "/blogs", icon: HiDocument },
+  { name: "About", href: "/about", icon: HiUser },
+  { name: "Contact", href: "/contact", icon: HiMail },
+  { name: "Tools", href: "/tools", icon: HiWrench },
 ];
 
 const socialLinks = [
-  { name: "Twitter", icon: Twitter, href: personalData.links.twitter },
-  { name: "LinkedIn", icon: Linkedin, href: personalData.links.linkedin },
-  { name: "GitHub", icon: Github, href: personalData.links.github },
-  { name: "Credly", icon: Award, href: personalData.links.credly },
+  { name: "Discord", icon: FaDiscord, href: personalData.links.discord },
+  { name: "LinkedIn", icon: FaLinkedin, href: personalData.links.linkedin },
+  { name: "GitHub", icon: FaGithub, href: personalData.links.github },
+  { name: "Credly", icon: FaAward, href: personalData.links.credly },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
