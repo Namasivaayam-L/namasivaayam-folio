@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Mail, ExternalLink } from "lucide-react";
+import { HiMail } from "react-icons/hi";
+import { FiExternalLink } from "react-icons/fi";
 import personalData from "@/data/personal.json";
 import projectsData from "@/data/projects.json";
 import { Badge } from "@/components/ui/badge";
@@ -22,11 +23,16 @@ export default function Home() {
         {/* Social CTA */}
         <div className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg">
           <div className="flex-1">
-            <p className="text-sm text-foreground">Connect with me on Discord for discussion related to Agents, Finetuning, RAG,..</p>
+            <p className="text-sm text-foreground">Connect with me on Discord, LinkedIn for discussion related to Agents, Finetuning, RAG,..</p>
           </div>
           <Button size="sm" variant="default" asChild>
             <a href={personalData.links.discord} target="_blank" rel="noopener noreferrer">
-              Ping
+              Discord
+            </a>
+          </Button>
+          <Button size="sm" variant="default" asChild>
+            <a href={personalData.links.linkedin} className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
+              LinkedIn
             </a>
           </Button>
         </div>
@@ -45,20 +51,7 @@ export default function Home() {
           </p>
           <p>
             I have built multiple projects in past 2 years.{" "}
-            <span className="text-foreground font-medium">Led GenAI initiatives</span> that improved accuracy from 9% to 90%.
-          </p>
-        </div>
-
-        <div className="pt-4">
-          <p className="text-foreground mb-2">
-            You can talk to me about <span className="font-medium">AI, new ideas, life,</span> or{" "}
-            <span className="font-medium">anything else.</span>
-          </p>
-          <p className="text-muted-foreground">
-            Say Hi on{" "}
-            <a href={personalData.links.linkedin} className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </a>
+            <span className="text-foreground font-medium">Developed and proved out a novel GenAI proof-of-concept</span>, directly contributing to a <span className="text-foreground font-medium">10x</span> improvement in model accuracy <span className="text-foreground font-medium">(9% to 90%)</span> or Financial docs like Paystubs.
           </p>
         </div>
 
@@ -69,7 +62,7 @@ export default function Home() {
           </Button>
           <Button variant="outline" asChild>
             <a href={`mailto:${personalData.email}`}>
-              <Mail className="w-4 h-4 mr-2" />
+              <HiMail className="w-4 h-4 mr-2" />
               E-Mail
             </a>
           </Button>
@@ -112,7 +105,7 @@ export default function Home() {
                     className="inline-flex items-center text-sm text-accent hover:underline"
                   >
                     View on GitHub
-                    <ExternalLink className="w-3 h-3 ml-1" />
+                    <FiExternalLink className="w-3 h-3 ml-1" />
                   </a>
                 )}
               </div>

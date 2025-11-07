@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
 import projectsData from "@/data/projects.json";
 
 export default function Projects() {
@@ -67,7 +68,7 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-sm text-accent hover:underline"
                 >
-                  <Github className="w-4 h-4 mr-1" />
+                  <FaGithub className="w-4 h-4 mr-1" />
                   GitHub
                 </a>
               )}
@@ -78,7 +79,7 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-sm text-accent hover:underline"
                 >
-                  <ExternalLink className="w-4 h-4 mr-1" />
+                  <FiExternalLink className="w-4 h-4 mr-1" />
                   Visit
                 </a>
               )}

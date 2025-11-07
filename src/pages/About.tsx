@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Mail } from "lucide-react";
+import { HiMail } from "react-icons/hi";
 import personalData from "@/data/personal.json";
 import skillsData from "@/data/skills.json";
 import awardsData from "@/data/awards.json";
@@ -123,13 +123,13 @@ export default function About() {
       {/* CTA */}
       <div className="flex gap-4 pt-4">
         <Button asChild>
-          <a href={personalData.links.twitter} target="_blank" rel="noopener noreferrer">
+          <a href={personalData.links.discord} target="_blank" rel="noopener noreferrer">
             Get in Touch
           </a>
         </Button>
         <Button variant="outline" asChild>
           <a href={`mailto:${personalData.email}`}>
-            <Mail className="w-4 h-4 mr-2" />
+            <HiMail className="w-4 h-4 mr-2" />
             E-Mail
           </a>
         </Button>
