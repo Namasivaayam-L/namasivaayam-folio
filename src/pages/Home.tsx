@@ -51,7 +51,7 @@ export default function Home() {
           </p>
           <p>
             I have built multiple projects in past 2 years.{" "}
-            <span className="text-foreground font-medium">Developed and proved out a novel GenAI proof-of-concept</span>, directly contributing to a <span className="text-foreground font-medium">10x</span> improvement in model accuracy <span className="text-foreground font-medium">(9% to 90%)</span> or Financial docs like Paystubs.
+            <span className="text-foreground font-medium">Developed and proved out a GenAI proof-of-concept</span>, directly contributing to a <span className="text-foreground font-medium">10x</span> improvement for model accuracy in extraction <span className="text-foreground font-medium">(9% to 90%)</span> or Financial docs like Paystubs.
           </p>
         </div>
 
