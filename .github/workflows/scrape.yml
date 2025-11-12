@@ -25,8 +25,7 @@ jobs:
           OUTPUT_PROJECTS_PATH: src/data/projects.json
           OUTPUT_READMES_DIR: src/data/readmes
         run: |
-          npx ts-node --loader ts-node/esm scripts/scrape_github.ts
-          npx prettier --write src/data/projects.json
+          npx tsx scripts/scrape_github.ts
       - name: Show changes
         run: |
           git status --porcelain
