@@ -23,8 +23,8 @@ interface GitHubRepo {
 interface YamlConfig {
   name?: string;
   slug?: string;
-  description?: string;
-  tech_stack?: string[];
+ description?: string;
+ tech_stack?: string[];
   tags?: string[];
   live_url?: string | null;
   repo_url?: string;
@@ -33,6 +33,7 @@ interface YamlConfig {
   created_at?: string | null;
   updated_at?: string | null;
   featured?: boolean;
+  is_active?: boolean;
 }
 
 type Project = YamlConfig & {
@@ -45,6 +46,7 @@ type Project = YamlConfig & {
   stars?: number;
   forks?: number;
   language?: string | null;
+  is_active?: boolean;
 }
 
 type PriorProjectsIndex = Record<string, Project>
@@ -112,12 +114,13 @@ const parseConfig = (text: string): Project => {
     readme_path: config.readme_path || "README.md",
     created_at: config.created_at || null,
     updated_at: config.updated_at || null,
-    featured: !!config.featured
+    featured: !!config.featured,
+    is_active: config.is_active !== undefined ? !!config.is_active : true
   }
 }
 
 const shouldInclude = (project: Project, repoMeta: GitHubRepo) => {
-  return !repoMeta.private && !repoMeta.fork && project.tags?.includes("portfolio")
+  return !repoMeta.private && !repoMeta.fork && project.tags?.includes("portfolio") && (project.is_active !== false)
 }
 
 const shouldUpdateReadme = (slug: string, project: Project, prior: PriorProjectsIndex) => {

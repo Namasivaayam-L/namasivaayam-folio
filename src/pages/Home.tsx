@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { HiMail } from "react-icons/hi";
-import { FiExternalLink } from "react-icons/fi";
+import { FiExternalLink, FiGitBranch } from "react-icons/fi";
+import { FaGithub, FaStar } from "react-icons/fa";
 import personalData from "@/data/personal.json";
 import projectsData from "@/data/projects.json";
 import { Badge } from "@/components/ui/badge";
+import { Project } from "@/types/projects";
 
 export default function Home() {
-  const featuredProjects = projectsData.slice(0, 3);
+  const typedProjectsData: Project[] = projectsData;
+  const activeProjects = typedProjectsData.filter(project => project.is_active !== false);
+  const featuredProjects = activeProjects.slice(0, 3);
 
   return (
     <div className="space-y-16 animate-fade-in">
@@ -80,34 +84,58 @@ export default function Home() {
         <div className="grid gap-6 md:grid-cols-2">
           {featuredProjects.map((project) => (
             <div
-              key={project.id}
+              key={project.slug}
               className="group p-6 bg-card border border-border rounded-lg hover:shadow-md transition-all"
             >
               <div className="space-y-4">
                 <div>
                   <h3 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
-                    {project.title}
+                    {project.name}
                   </h3>
                   <p className="text-sm text-muted-foreground mt-2">{project.description}</p>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.slice(0, 3).map((tag) => (
-                    <Badge key={tag} variant="secondary" className="text-xs">
-                      {tag}
+                  {project.tech_stack.slice(0, 3).map((tech) => (
+                    <Badge key={tech} variant="secondary" className="text-xs">
+                      {tech}
                     </Badge>
                   ))}
                 </div>
-                {project.github && (
+                <div className="flex items-center justify-between pt-2">
                   <a
-                    href={project.github}
+                    href={project.repo_url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-sm text-accent hover:underline"
                   >
-                    View on GitHub
-                    <FiExternalLink className="w-3 h-3 ml-1" />
+                    <FaGithub className="w-4 h-4" />
                   </a>
-                )}
+                  
+                  <div className="flex items-center gap-3">
+                    {project.stars !== undefined && (
+                      <div className="inline-flex items-center text-sm text-muted-foreground">
+                        <FaStar className="w-3 h-3 mr-1 text-yellow-500" />
+                        {project.stars}
+                      </div>
+                    )}
+                    
+                    {project.forks !== undefined && (
+                      <div className="inline-flex items-center text-sm text-muted-foreground">
+                        <FiGitBranch className="w-3 h-3 mr-1" />
+                        {project.forks}
+                      </div>
+                    )}
+                  </div>
+                  
+                  <a
+                    href={project.live_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-sm text-accent hover:underline"
+                  >
+                    <FiExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
               </div>
             </div>
           ))}
