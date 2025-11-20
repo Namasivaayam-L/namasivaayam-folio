@@ -46,7 +46,7 @@ jobs:
       - name: Install dependencies and deploy if changes detected
         if: steps.scraper.outputs.changes_detected == 'true'
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "${{ secrets.GIT_USER_NAME }}"
+          git config user.email "${{ secrets.GIT_USER_EMAIL }}"
           npm ci
           npm run deploy
