@@ -120,7 +120,7 @@ const parseConfig = (text: string): Project => {
 }
 
 const shouldInclude = (project: Project, repoMeta: GitHubRepo) => {
-  return !repoMeta.private && !repoMeta.fork && project.tags?.includes("portfolio") && (project.is_active !== false)
+  return !repoMeta.private && !repoMeta.fork && (project.is_active !== false)
 }
 
 const shouldUpdateReadme = (slug: string, project: Project, prior: PriorProjectsIndex) => {
