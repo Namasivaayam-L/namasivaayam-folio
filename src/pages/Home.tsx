@@ -10,8 +10,7 @@ import { Project } from "@/types/projects";
 
 export default function Home() {
   const typedProjectsData: Project[] = projectsData;
-  const activeProjects = typedProjectsData.filter(project => project.is_active !== false);
-  const featuredProjects = activeProjects.slice(0, 3);
+  const featuredProjects = typedProjectsData.filter(project => project.featured !== false);
 
   return (
     <div className="space-y-16 animate-fade-in">
