@@ -1,5 +1,76 @@
 [
   {
+    "name": "LoGar - Log Analysis and QA System",
+    "slug": "logar",
+    "description": "An open-source application for analyzing log files and performing question-answering (QA) tasks on them. Leverages cutting-edge vector search, embeddings, and retrieval-augmented generation (RAG) techniques  to extract insights from log files effectively using CodeBERT, SentenceTransformer, FAISS, and MongoDB.\n",
+    "tech_stack": [
+      "Python",
+      "MongoDB",
+      "CodeBERT",
+      "SentenceTransformer",
+      "FAISS",
+      "HNSW",
+      "LlamaIndex",
+      "Transformers",
+      "PyMongo",
+      "CUDA",
+      "RAG"
+    ],
+    "tags": [
+      "AI/ML",
+      "Log Analysis",
+      "RAG",
+      "Vector Search",
+      "NLP"
+    ],
+    "live_url": null,
+    "repo_url": "https://github.com/Namasivaayam-L/loGar",
+    "thumbnail": "https://raw.githubusercontent.com/Namasivaayam-L/loGar/main/.portfolio/cover.png",
+    "readme_path": "Readme.md",
+    "created_at": "2025-11-27T00:00:00.000Z",
+    "updated_at": "2025-11-27T00:00:00.000Z",
+    "featured": true,
+    "is_active": true,
+    "stars": 0,
+    "forks": 0,
+    "language": "Python"
+  },
+  {
+    "name": "ATSC Transformer DQN with PettingZoo",
+    "slug": "atsc-transformer-dqn-petting-zoo-pytorch",
+    "description": "Reinforcement Learning environments and learning code for traffic signal control in SUMO. Implements Transformer-based DQN algorithms for adaptive traffic signal control using PettingZoo multi-agent environments.\n",
+    "tech_stack": [
+      "PyTorch",
+      "PettingZoo",
+      "SUMO",
+      "Reinforcement Learning",
+      "DQN",
+      "Transformer",
+      "Python",
+      "NumPy",
+      "Pandas",
+      "Gymnasium"
+    ],
+    "tags": [
+      "AI/ML",
+      "Reinforcement Learning",
+      "Traffic Control",
+      "Multi-Agent Systems",
+      "Simulation"
+    ],
+    "live_url": null,
+    "repo_url": "https://github.com/Namasivaayam-L/ATSC_Transformer_DQN_Petting_Zoo_PyTorch",
+    "thumbnail": "https://raw.githubusercontent.com/Namasivaayam-L/ATSC_Transformer_DQN_Petting_Zoo_PyTorch/main/.portfolio/cover.png",
+    "readme_path": "README.md",
+    "created_at": "2025-11-27T00:00:00.000Z",
+    "updated_at": "2025-11-27T00:00:00.000Z",
+    "featured": true,
+    "is_active": true,
+    "stars": 0,
+    "forks": 0,
+    "language": "Python"
+  },
+  {
     "name": "HITL-Enhanced LLM Agent",
     "slug": "agent-llama-index",
     "description": "An enterprise-ready, multi-tool LLM agent framework built using FastAPI, llama-index, and Redis. Supports human-in-the-loop (HITL) workflows, function calling, and session persistence.\n",
@@ -108,42 +179,6 @@
     "language": "JavaScript"
   },
   {
-    "name": "LoGar - Log Analysis and QA System",
-    "slug": "logar",
-    "description": "An open-source application for analyzing log files and performing question-answering (QA) tasks on them. Leverages cutting-edge vector search, embeddings, and retrieval-augmented generation (RAG) techniques  to extract insights from log files effectively using CodeBERT, SentenceTransformer, FAISS, and MongoDB.\n",
-    "tech_stack": [
-      "Python",
-      "MongoDB",
-      "CodeBERT",
-      "SentenceTransformer",
-      "FAISS",
-      "HNSW",
-      "LlamaIndex",
-      "Transformers",
-      "PyMongo",
-      "CUDA",
-      "RAG"
-    ],
-    "tags": [
-      "AI/ML",
-      "Log Analysis",
-      "RAG",
-      "Vector Search",
-      "NLP"
-    ],
-    "live_url": null,
-    "repo_url": "https://github.com/Namasivaayam-L/loGar",
-    "thumbnail": "https://raw.githubusercontent.com/Namasivaayam-L/loGar/main/.portfolio/cover.png",
-    "readme_path": "Readme.md",
-    "created_at": "2025-11-27T00:00:00.000Z",
-    "updated_at": "2025-11-27T00:00:00.000Z",
-    "featured": false,
-    "is_active": true,
-    "stars": 0,
-    "forks": 0,
-    "language": "Python"
-  },
-  {
     "name": "GitHub Profile - Namasivaayam L.",
     "slug": "namasivaayam-l",
     "description": "Personal GitHub profile repository featuring tech stack showcase,  GitHub statistics, and social links. Highlights expertise in LLMs,  RAG systems, and AI development with comprehensive tech stack overview.\n",
@@ -169,41 +204,6 @@
     "stars": 0,
     "forks": 0,
     "language": null
-  },
-  {
-    "name": "ATSC Transformer DQN with PettingZoo",
-    "slug": "atsc-transformer-dqn-petting-zoo-pytorch",
-    "description": "Reinforcement Learning environments and learning code for traffic signal control in SUMO. Implements Transformer-based DQN algorithms for adaptive traffic signal control using PettingZoo multi-agent environments.\n",
-    "tech_stack": [
-      "PyTorch",
-      "PettingZoo",
-      "SUMO",
-      "Reinforcement Learning",
-      "DQN",
-      "Transformer",
-      "Python",
-      "NumPy",
-      "Pandas",
-      "Gymnasium"
-    ],
-    "tags": [
-      "AI/ML",
-      "Reinforcement Learning",
-      "Traffic Control",
-      "Multi-Agent Systems",
-      "Simulation"
-    ],
-    "live_url": null,
-    "repo_url": "https://github.com/Namasivaayam-L/ATSC_Transformer_DQN_Petting_Zoo_PyTorch",
-    "thumbnail": "https://raw.githubusercontent.com/Namasivaayam-L/ATSC_Transformer_DQN_Petting_Zoo_PyTorch/main/.portfolio/cover.png",
-    "readme_path": "README.md",
-    "created_at": "2025-11-27T00:00:00.000Z",
-    "updated_at": "2025-11-27T00:00:00.000Z",
-    "featured": false,
-    "is_active": true,
-    "stars": 0,
-    "forks": 0,
-    "language": "Python"
   },
   {
     "name": "MSCS CRCs Competition Platform",
