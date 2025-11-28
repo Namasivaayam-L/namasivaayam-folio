@@ -1,5 +1,43 @@
 [
   {
+    "name": "Stack Overflow Clone",
+    "slug": "stack-overflow-clone",
+    "description": "A full-stack MERN application that clones Stack Overflow with additional features including  AI chatbot, subscription plans with Stripe payment gateway, and social media community.  Built during an internship at NullClass with user authentication, question posting,  and advanced features like OTP verification and content sharing.\n",
+    "tech_stack": [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Redux",
+      "Material UI",
+      "Stripe",
+      "Nodemailer",
+      "JWT",
+      "Bcrypt",
+      "TensorFlow.js",
+      "Ant Design",
+      "Mongoose"
+    ],
+    "tags": [
+      "Full-Stack",
+      "Web Application",
+      "MERN",
+      "Chatbot",
+      "E-commerce"
+    ],
+    "live_url": null,
+    "repo_url": "https://github.com/Namasivaayam-L/stack-overflow-clone",
+    "thumbnail": "https://raw.githubusercontent.com/Namasivaayam-L/stack-overflow-clone/main/.portfolio/cover.png",
+    "readme_path": "README.md",
+    "created_at": "2025-11-27T00:00:00.000Z",
+    "updated_at": "2025-11-27T00:00:00.000Z",
+    "featured": false,
+    "is_active": true,
+    "stars": 0,
+    "forks": 0,
+    "language": "JavaScript"
+  },
+  {
     "name": "MSCS CRCs Competition Platform",
     "slug": "mscs-crcs-competition",
     "description": "A full-stack web application for the MSCS CRCs competition, featuring data visualization, society registration, forms management, and interactive maps. Built with React/TypeScript frontend and Node.js/Express backend with MongoDB database.\n",
@@ -175,44 +213,6 @@
     "stars": 0,
     "forks": 0,
     "language": "Python"
-  },
-  {
-    "name": "Stack Overflow Clone",
-    "slug": "stack-overflow-clone",
-    "description": "A full-stack MERN application that clones Stack Overflow with additional features including  AI chatbot, subscription plans with Stripe payment gateway, and social media community.  Built during an internship at NullClass with user authentication, question posting,  and advanced features like OTP verification and content sharing.\n",
-    "tech_stack": [
-      "React",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Redux",
-      "Material UI",
-      "Stripe",
-      "Nodemailer",
-      "JWT",
-      "Bcrypt",
-      "TensorFlow.js",
-      "Ant Design",
-      "Mongoose"
-    ],
-    "tags": [
-      "Full-Stack",
-      "Web Application",
-      "MERN",
-      "Chatbot",
-      "E-commerce"
-    ],
-    "live_url": null,
-    "repo_url": "https://github.com/Namasivaayam-L/stack-overflow-clone",
-    "thumbnail": "https://raw.githubusercontent.com/Namasivaayam-L/stack-overflow-clone/main/.portfolio/cover.png",
-    "readme_path": "README.md",
-    "created_at": "2025-11-27T00:00:00.000Z",
-    "updated_at": "2025-11-27T00:00:00.000Z",
-    "featured": false,
-    "is_active": true,
-    "stars": 0,
-    "forks": 0,
-    "language": "JavaScript"
   },
   {
     "name": "GitHub Profile - Namasivaayam L.",
