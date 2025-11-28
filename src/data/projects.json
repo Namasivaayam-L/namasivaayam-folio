@@ -1,5 +1,41 @@
 [
   {
+    "name": "MSCS CRCs Competition Platform",
+    "slug": "mscs-crcs-competition",
+    "description": "A full-stack web application for the MSCS CRCs competition, featuring data visualization, society registration, forms management, and interactive maps. Built with React/TypeScript frontend and Node.js/Express backend with MongoDB database.\n",
+    "tech_stack": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Material UI",
+      "Chart.js",
+      "Google Maps API",
+      "PDF.js",
+      "JWT",
+      "Bcrypt"
+    ],
+    "tags": [
+      "Full-Stack",
+      "Web Application",
+      "Data Visualization",
+      "Competition Platform",
+      "MERN"
+    ],
+    "live_url": null,
+    "repo_url": "https://github.com/Namasivaayam-L/mscs-crcs-competition",
+    "thumbnail": "https://raw.githubusercontent.com/Namasivaayam-L/mscs-crcs-competition/main/.portfolio/cover.png",
+    "readme_path": "README.md",
+    "created_at": "2025-11-27T00:00:00.000Z",
+    "updated_at": "2025-11-27T00:00:00.000Z",
+    "featured": false,
+    "is_active": true,
+    "stars": 0,
+    "forks": 0,
+    "language": "TypeScript"
+  },
+  {
     "name": "LoGar - Log Analysis and QA System",
     "slug": "logar",
     "description": "An open-source application for analyzing log files and performing question-answering (QA) tasks on them. Leverages cutting-edge vector search, embeddings, and retrieval-augmented generation (RAG) techniques  to extract insights from log files effectively using CodeBERT, SentenceTransformer, FAISS, and MongoDB.\n",
@@ -204,42 +240,6 @@
     "stars": 0,
     "forks": 0,
     "language": null
-  },
-  {
-    "name": "MSCS CRCs Competition Platform",
-    "slug": "mscs-crcs-competition",
-    "description": "A full-stack web application for the MSCS CRCs competition, featuring data visualization, society registration, forms management, and interactive maps. Built with React/TypeScript frontend and Node.js/Express backend with MongoDB database.\n",
-    "tech_stack": [
-      "React",
-      "TypeScript",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Material UI",
-      "Chart.js",
-      "Google Maps API",
-      "PDF.js",
-      "JWT",
-      "Bcrypt"
-    ],
-    "tags": [
-      "Full-Stack",
-      "Web Application",
-      "Data Visualization",
-      "Competition Platform",
-      "MERN"
-    ],
-    "live_url": null,
-    "repo_url": "https://github.com/Namasivaayam-L/mscs-crcs-competition",
-    "thumbnail": "https://raw.githubusercontent.com/Namasivaayam-L/mscs-crcs-competition/main/.portfolio/cover.png",
-    "readme_path": "README.md",
-    "created_at": "2025-11-27T00:00:00.000Z",
-    "updated_at": "2025-11-27T00:00:00.000Z",
-    "featured": false,
-    "is_active": true,
-    "stars": 0,
-    "forks": 0,
-    "language": "TypeScript"
   },
   {
     "name": "Shelf Scanner",
