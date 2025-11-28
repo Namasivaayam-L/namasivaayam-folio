@@ -6,7 +6,9 @@ import { Project } from "@/types/projects";
 
 export default function Projects() {
   const typedProjectsData: Project[] = projectsData;
-  const activeProjects = typedProjectsData.filter(project => project.is_active !== false);
+  const activeProjects = typedProjectsData
+    .filter(project => project.is_active !== false)
+    .sort((a: Project, b: Project) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime());
   return (
     <div className="space-y-8 animate-fade-in">
       <div className="space-y-4">
