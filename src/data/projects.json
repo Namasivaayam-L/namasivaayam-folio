@@ -1,5 +1,39 @@
 [
   {
+    "name": "HITL-Enhanced LLM Agent",
+    "slug": "agent-llama-index",
+    "description": "An enterprise-ready, multi-tool LLM agent framework built using FastAPI, llama-index, and Redis. Supports human-in-the-loop (HITL) workflows, function calling, and session persistence.\n",
+    "tech_stack": [
+      "FastAPI",
+      "LlamaIndex",
+      "Redis",
+      "WebSockets",
+      "Python",
+      "Pydantic",
+      "OpenAI",
+      "Docker",
+      "Phoenix",
+      "OTEL"
+    ],
+    "tags": [
+      "AI/ML",
+      "Full-Stack",
+      "Human-in-the-Loop",
+      "Enterprise"
+    ],
+    "live_url": null,
+    "repo_url": "https://github.com/Namasivaayam-L/agent-llama-index",
+    "thumbnail": "https://raw.githubusercontent.com/Namasivaayam-L/agent-llama-index/main/.portfolio/cover.png",
+    "readme_path": "README.md",
+    "created_at": "2025-11-27T00:00:00.000Z",
+    "updated_at": "2025-11-27T00:00:00.000Z",
+    "featured": true,
+    "is_active": true,
+    "stars": 0,
+    "forks": 0,
+    "language": "Python"
+  },
+  {
     "name": "LoGar - Log Analysis and QA System",
     "slug": "logar",
     "description": "An open-source application for analyzing log files and performing question-answering (QA) tasks on them. Leverages cutting-edge vector search, embeddings, and retrieval-augmented generation (RAG) techniques  to extract insights from log files effectively using CodeBERT, SentenceTransformer, FAISS, and MongoDB.\n",
@@ -65,40 +99,6 @@
     "created_at": "2025-11-27T00:00:00.000Z",
     "updated_at": "2025-11-27T00:00:00.000Z",
     "featured": true,
-    "is_active": true,
-    "stars": 0,
-    "forks": 0,
-    "language": "Python"
-  },
-  {
-    "name": "HITL-Enhanced LLM Agent",
-    "slug": "agent-llama-index",
-    "description": "An enterprise-ready, multi-tool LLM agent framework built using FastAPI, llama-index, and Redis. Supports human-in-the-loop (HITL) workflows, function calling, and session persistence.\n",
-    "tech_stack": [
-      "FastAPI",
-      "LlamaIndex",
-      "Redis",
-      "WebSockets",
-      "Python",
-      "Pydantic",
-      "OpenAI",
-      "Docker",
-      "Phoenix",
-      "OTEL"
-    ],
-    "tags": [
-      "AI/ML",
-      "Full-Stack",
-      "Human-in-the-Loop",
-      "Enterprise"
-    ],
-    "live_url": null,
-    "repo_url": "https://github.com/Namasivaayam-L/agent-llama-index",
-    "thumbnail": "https://raw.githubusercontent.com/Namasivaayam-L/agent-llama-index/main/.portfolio/cover.png",
-    "readme_path": "README.md",
-    "created_at": "2025-11-27T00:00:00.000Z",
-    "updated_at": "2025-11-27T00:00:00.000Z",
-    "featured": false,
     "is_active": true,
     "stars": 0,
     "forks": 0,
