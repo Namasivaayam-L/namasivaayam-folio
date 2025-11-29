@@ -1,113 +1,139 @@
-## This Repository is my Internship- MERN Stack project done at [NullClass](https://nullclass.com/).
+# Stack Overflow Clone 💬
 
-[Click here](https://stack-overflow-clone-namasivaayam-l.netlify.app/), this will take you to my live website.
+A **MERN stack** web application developed during my internship at [NullClass](https://nullclass.com/), replicating key functionalities of Stack Overflow, with added features like a **chatbot**, **subscription plans**, and a **social media community**.
 
-My first task in my internship was to clone the stackoverflow website, within **15 days**.
+---
 
-I **started** my Internship on **December 10 of 2022**.
+## 🚀 Live Demo
 
-I **completed** cloning the required website on **December 23 of 2022**.
+[🔗 Click here to visit the live website!](https://stack-overflow-clone-namasivaayam-l.netlify.app/)
 
-Once I did that, I got **3 additional tasks** to complete within the next **15 days**.
+---
 
-### Tasks Assigned
+## ✨ Features
 
-1. Integrate a chatbot feature where users can ask their questions directly to the chatbot.It should answer all programing related questions.Authenticate with OTP before asking questions.
-2. Create subscriptions using a payment gateway (like stripe, razorpay) to post questions in stackoverflow.**Testcase**: Free Plan can post only 1 question a day, silver plan will be ₹100/month which can post 5 questions a day and gold plan can post unlimited questions and priced at ₹1000/month.
-3. Create a social media community where people can share images, and videos and get likes and shares and also be able to add friends and remove friends.**Testcase:** Users can share their programming experience here using text, photos, and videos which can be viewed by others. Users can search, like, unlike, remove, add their friends.
+### Core Stack Overflow Functionality
 
-### Tasks Completed
+-   ✅ **Question & Answer**: View, ask, answer, and delete questions.
+-   ✅ **Voting**: Upvote or downvote questions and answers.
+-   ✅ **Sharing**: Share questions with others.
+-   🔒 **Authentication**: Token-based authentication, with tokens expiring every 24 hours for security.
 
-1. I have implemented email authentication using nodemailer module in node.js.
-2. The user must enter his registered email id and enter the OTP received in his email inorder to use the chatbot.
-3. I added a chatbot that fetches the top answers for your question from https://api.stackexchange.com/
-4. I have used react-simple-chatbot module to implement the chatbot in this website.
-5. In this website there are 3 plans to opt for.
-   1. Free Plan - Price: 0 rupees - 1 Question/Day.
-   2. Silver Plan - Price: 100 rupees/Month - 5 Questions/Day.
-   3. Gold Plan -Price: 1000 rupees/Year - Unlimited Questions/Day.
-6. I have used stripe payment gateway to complete all the transactions regarding the subscription plans.
-7. In Social Media page, Users can
-   1. Post.
-   2. Follow.
-   3. UnFollow.
-   4. Hide.
-   5. Post (Video, Photo , Text).
-   6. Like.
-   7. Remove Like.
-   8. Comment.
-   9. Delete Post/Comment
+### Internship Enhancements
 
-![Screenshot_20230729_095657](image/README/Screenshot_20230729_095657.png)
+-   🤖 **AI Chatbot Integration**:
+    -   Ask programming-related questions directly to the chatbot.
+    -   **OTP Authentication** required via registered email for chatbot access.
+    -   Fetches top answers from `https://api.stackexchange.com/`.
+-   💰 **Subscription Plans & Payment Gateway**:
+    -   Integrates **Stripe** for secure payment processing.
+    -   **Free Plan**: 1 question/day.
+    -   **Silver Plan (₹100/month)**: 5 questions/day.
+    -   **Gold Plan (₹1000/year)**: Unlimited questions/day.
+-   🤝 **Social Media Community**:
+    -   Share programming experiences via text, photos, and videos.
+    -   Users can follow/unfollow, like/unlike, comment, and delete posts/comments.
+    -   Search for and manage friends.
 
+---
 
-### Features of this Website
+## 🧰 Tech Stack
 
-1. Once the user sign's in or log's in to the website they will be provided with token and it will expire in the next 24 hours, after that the user will be logged out automatically. They need to log back in to continue using the site.
-2. Users are able to:
-   1. View a question
-   2. Ask a question.
-   3. Answer a question.
-   4. Delete a question.
-   5. Up/Down vote.
-   6. Share.
-3. Users can opt for any of the two premium subscription plans offered. Free plan is applied by default for every user.
-4. Users can share their coding videos, code snippets, pics of code in the social media tab.
-5. And they can make use of the chatbot to clear doubts regarding programming.
+| Component           | Tech                                    |
+|---------------------|-----------------------------------------|
+| Frontend            | React.js, Redux, React-Router-Dom-V6    |
+| UI Library          | Material UI Icons, React Simple Chatbot |
+| Backend             | Node.js, Express.js                     |
+| Database            | MongoDB Atlas / MongoDB Compass, Mongoose |
+| Authentication      | JWT, Nodemailer (for OTP)               |
+| Payment Gateway     | Stripe                                  |
+| API Integration     | StackExchange API                       |
+| Language            | JavaScript                              |
 
-### Technology Used
+---
 
-1. React.js
-2. Node.js
-3. Express.js
-4. MongoDB Atlas/Compass
-5. Redux
-6. React-Router-Dom-V6
-7. Material UI Icons.
-8. React Simple Chatbot
-9. Nodemailer
-10. Mongoose
+## 🛠️ Setup Instructions
 
-### Hosting Details
+To run this project locally, follow these steps:
 
-##### Frontend
+### 1. Clone the Repository
 
-1. I created an optimized build using npm run build command. And Pushed it to github repo.
-2. I used [netlify](app.netlify.com) site to deploy my frontend.
-3. I  connected my github account to netlify and used the optimized build for deployment.
+```bash
+git clone https://github.com/Namasivaayam-L/stack-overflow-clone.git # Replace with actual repo URL if different
+cd stack-overflow-clone
+```
 
-##### Backend
+### 2. Install Dependencies
 
-1. I deployed the backend in [onrender](onrender.com).
-2. I have used **MongoDB** **Atlas** for Database.
+Navigate to both `client` and `server` directories to install their respective dependencies:
 
-### Images
+```bash
+# For the frontend
+cd client
+npm install --force # Use --force if peer dependency issues arise
+cd ..
 
-![1674342484144](image/README/1674342484144.png)
+# For the backend
+cd server
+npm install
+cd ..
+```
 
-![1674342644090](image/README/1674342644090.png)
+### ⚙️ Configuration
 
-![1674342495090](image/README/1674342495090.png)
+-   Ensure **MongoDB** is running or connect to **MongoDB Atlas**. Update connection strings in `server` as needed.
+-   Configure **Nodemailer** for email OTPs and **Stripe** API keys in your backend environment variables (e.g., `.env` file in `server` directory).
 
-![1674342075579](image/README/1674342075579.png)          ![1674342181884](image/README/1674342181884.png)
+---
 
-![1674343695563](image/README/1674343695563.png)          ![1674343757188](image/README/1674343757188.png)
+## 🧑‍💻 Run the Application
 
-![1674342681740](image/README/1674342681740.png)
+To start both the client and server:
 
-![1674342691282](image/README/1674342691282.png)
+```bash
+# In one terminal, start the backend server
+cd server
+npm start
 
-### Installation Procedure
+# In a separate terminal, start the frontend development server
+cd client
+npm start
+```
 
-`cd client && npm i --force`
+-   **Frontend**: `http://localhost:3000` (default for React apps)
+-   **Backend API**: `http://localhost:5000` (or as configured in `server/index.js`)
 
-`cd server && npm i`
+---
 
-`cd client && npm start`
+## 📂 Project Structure
 
-`cd server && npm start`
+```
+.
+├── client/                     # Frontend React.js application
+│   ├── public/                 # Static assets
+│   ├── src/                    # React components, Redux store, pages, etc.
+│   ├── package.json            # Client-side dependencies and scripts
+│   └── ...
+├── server/                     # Backend Node.js/Express.js application
+│   ├── models/                 # Mongoose schemas for data models
+│   ├── routes/                 # API endpoints
+│   ├── controllers/            # Logic for handling API requests
+│   ├── index.js                # Main server entry point
+│   ├── package.json            # Server-side dependencies and scripts
+│   └── ...
+├── image/                      # Project screenshots and images
+│   └── README/                 # Images specifically for README
+├── README.md                   # Project overview and documentation
+└── .gitignore                  # Git ignore rules
+```
 
-### Future Plans
+---
 
-1. Planned to Integrate Chat GPT in the existing chatbot.
-2. Perform OTP Verification via mobile number.
+## 🔮 Future Plans
+
+-   📈 **Integrate ChatGPT**: Enhance the existing chatbot with more advanced AI capabilities.
+-   📱 **Mobile OTP Verification**: Implement OTP verification via mobile numbers for increased security.
+
+---
+
+Built by **Namasivaayam L.**
