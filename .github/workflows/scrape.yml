@@ -12,6 +12,13 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Configure git
+        run: |
+          git config user.name "${{ secrets.GIT_USER_NAME || 'github-actions[bot]' }}"
+          git config user.email "${{ secrets.GIT_USER_EMAIL || 'github-actions[bot]@users.noreply.github.com' }}"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+      - name: Pull latest changes
+        run: git pull origin main --rebase
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -46,8 +53,5 @@ jobs:
       - name: Install dependencies and deploy if changes detected
         if: steps.scraper.outputs.changes_detected == 'true'
         run: |
-          git config user.name "${{ secrets.GIT_USER_NAME || 'github-actions[bot]' }}"
-          git config user.email "${{ secrets.GIT_USER_EMAIL || 'github-actions[bot]@users.noreply.github.com' }}"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           npm ci
           npm run deploy

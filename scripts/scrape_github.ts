@@ -3,6 +3,10 @@ import { Octokit } from "@octokit/rest"
 import * as fs from "fs/promises"
 import * as path from "path"
 import yaml from "js-yaml"
+import { exec } from "child_process"
+import { promisify } from "util"
+
+const execAsync = promisify(exec)
 
 interface GitHubRepo {
   private: boolean;
@@ -143,8 +147,37 @@ const writeFileIfChanged = async (filePath: string, content: string) => {
   return true
 }
 
+const fileExists = async (p: string) => {
+  try {
+    await fs.access(p)
+    return true
+  } catch {
+    // If file doesn't exist or can't be accessed, return false
+    return false
+  }
+}
+
+const normalizeLineEndings = (s: string) => s.replace(/\r\n/g, "\n")
+
+const gitPull = async () => {
+  try {
+    console.log("Pulling latest changes from remote repository...")
+    const { stdout, stderr } = await execAsync("git pull origin main --rebase")
+    if (stdout) console.log(stdout)
+    if (stderr) console.error(stderr)
+    console.log("Successfully pulled latest changes")
+  } catch (error) {
+    console.error("Error pulling from remote:", error)
+    // Continue execution even if pull fails, as it might be the first run
+  }
+}
+
 const main = async () => {
   console.log(`Starting scrape for user: ${USERNAME}`)
+  
+  // Pull latest changes before starting the scrape
+  await gitPull()
+  
   await ensureDir(path.dirname(OUTPUT_PROJECTS_PATH))
   await ensureDir(OUTPUT_READMES_DIR)
   const prior = await loadPriorProjects()
@@ -190,7 +223,7 @@ const main = async () => {
     }
     out.push(project)
   }
-  out.sort((a, b) => {
+ out.sort((a, b) => {
     const da = a.updated_at ? Date.parse(a.updated_at) : 0
     const db = b.updated_at ? Date.parse(b.updated_at) : 0
     return db - da
@@ -200,18 +233,6 @@ const main = async () => {
   console.log(`projects.json ${changedProjects ? "updated" : "unchanged"}`)
   console.log(`readmes updated: ${updatedReadmeCount}`)
 }
-
-const fileExists = async (p: string) => {
-  try {
-    await fs.access(p)
-    return true
-  } catch {
-    // If file doesn't exist or can't be accessed, return false
-    return false
-  }
-}
-
-const normalizeLineEndings = (s: string) => s.replace(/\r\n/g, "\n")
 
 main().catch((e) => {
   console.error(e)
