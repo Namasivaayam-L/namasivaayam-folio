@@ -1,8 +1,8 @@
 export interface Project {
   name: string;
   slug: string;
- description: string;
- tech_stack: string[];
+  description: string;
+  tech_stack: string[];
   tags: string[];
   repo_url?: string;
   live_url?: string;
@@ -12,5 +12,6 @@ export interface Project {
   featured?: boolean;
   stars?: number;
   forks?: number;
+  language?: string | null;
   is_active?: boolean;
 }

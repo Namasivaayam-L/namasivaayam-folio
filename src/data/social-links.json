@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Discord",
+        "icon": "FaDiscord",
+        "key": "discord"
+    },
+    {
+        "name": "LinkedIn",
+        "icon": "FaLinkedin",
+        "key": "linkedin"
+    },
+    {
+        "name": "GitHub",
+        "icon": "FaGithub",
+        "key": "github"
+    },
+    {
+        "name": "Credly",
+        "icon": "FaAward",
+        "key": "credly"
+    }
+]

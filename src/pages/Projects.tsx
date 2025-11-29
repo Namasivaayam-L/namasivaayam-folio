@@ -1,12 +1,37 @@
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { FaGithub, FaStar } from "react-icons/fa";
 import { FiExternalLink, FiGitBranch } from "react-icons/fi";
 import projectsData from "@/data/projects.json";
 import { Project } from "@/types/projects";
+import ProjectDetailModal from "@/components/ProjectDetailModal";
 
 export default function Projects() {
   const typedProjectsData: Project[] = projectsData;
-  const activeProjects = typedProjectsData.filter(project => project.is_active !== false);
+  const activeProjects = typedProjectsData
+    .filter(project => project.is_active !== false)
+    .sort((a: Project, b: Project) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime());
+  
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+
+ const openModal = (project: Project, index: number) => {
+    setSelectedProject(project);
+    setCurrentProjectIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
+
+  const navigateProject = (index: number) => {
+    setCurrentProjectIndex(index);
+    setSelectedProject(activeProjects[index]);
+  };
+
   return (
     <div className="space-y-8 animate-fade-in">
       <div className="space-y-4">
@@ -21,8 +46,9 @@ export default function Projects() {
         {activeProjects.map((project, index) => (
           <div
             key={project.slug}
-            className="group bg-card border border-border rounded-lg p-6 space-y-4 hover:shadow-lg transition-all animate-slide-in"
+            className="group bg-card border border-border rounded-lg p-6 space-y-4 hover:shadow-lg transition-all animate-slide-in cursor-pointer"
             style={{ animationDelay: `${index * 100}ms` }}
+            onClick={() => openModal(project, index)}
           >
             <div className="space-y-2">
               <div className="flex items-start justify-between">
@@ -58,6 +84,7 @@ export default function Projects() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-sm text-accent hover:underline"
+                onClick={(e) => e.stopPropagation()}
               >
                 <FaGithub className="w-4 h-4" />
               </a>
@@ -83,6 +110,7 @@ export default function Projects() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-sm text-accent hover:underline"
+                onClick={(e) => e.stopPropagation()}
               >
                 <FiExternalLink className="w-4 h-4" />
               </a>
@@ -90,6 +118,18 @@ export default function Projects() {
           </div>
         ))}
       </div>
+
+      {/* Project Detail Modal */}
+      {selectedProject && (
+        <ProjectDetailModal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          project={selectedProject}
+          allProjects={activeProjects}
+          currentIndex={currentProjectIndex}
+          onNavigate={navigateProject}
+        />
+      )}
     </div>
   );
 }

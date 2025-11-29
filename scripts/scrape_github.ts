@@ -64,7 +64,7 @@ if (!USERNAME) {
 }
 
 const OUTPUT_PROJECTS_PATH = process.env.OUTPUT_PROJECTS_PATH || "src/data/projects.json"
-const OUTPUT_READMES_DIR = process.env.OUTPUT_READMES_DIR || "src/data/readmes"
+const OUTPUT_READMES_DIR = process.env.OUTPUT_READMES_DIR || "public/data/readmes"
 
 const octokit = new Octokit({ auth: GH_TOKEN })
 

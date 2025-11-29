@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Home",
+    "href": "/",
+    "icon": "HiHome"
+  },
+  {
+    "name": "Experience",
+    "href": "/experience",
+    "icon": "HiBriefcase"
+  },
+  {
+    "name": "Projects",
+    "href": "/projects",
+    "icon": "HiFolder"
+  },
+  {
+    "name": "Blogs",
+    "href": "/blogs",
+    "icon": "HiDocument"
+  },
+  {
+    "name": "About",
+    "href": "/about",
+    "icon": "HiUser"
+  },
+  {
+    "name": "Contact",
+    "href": "/contact",
+    "icon": "HiMail"
+  },
+  {
+    "name": "Tools",
+    "href": "/tools",
+    "icon": "HiWrench"
+  }
+]
