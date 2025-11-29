@@ -31,7 +31,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SCRAPE_GH_USERNAME: ${{ github.repository_owner }}
           OUTPUT_PROJECTS_PATH: src/data/projects.json
-          OUTPUT_READMES_DIR: src/data/readmes
+          OUTPUT_READMES_DIR: public/data/readmes
         run: |
           output=$(npx tsx scripts/scrape_github.ts 2>&1)
           echo "$output"
@@ -49,7 +49,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: update project metadata and readmes"
-          file_pattern: src/data/**
+          file_pattern: src/data/**,public/data/readmes/**
       - name: Install dependencies and deploy if changes detected
         if: steps.scraper.outputs.changes_detected == 'true'
         run: |
