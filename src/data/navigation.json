@@ -20,6 +20,11 @@
     "icon": "HiDocument"
   },
   {
+    "name": "Certifications",
+    "href": "/certifications",
+    "icon": "FaAward"
+  },
+  {
     "name": "About",
     "href": "/about",
     "icon": "HiUser"

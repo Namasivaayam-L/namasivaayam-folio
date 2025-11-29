@@ -10,7 +10,8 @@ import { Project } from "@/types/projects";
 
 export default function Home() {
   const typedProjectsData: Project[] = projectsData;
-  const featuredProjects = typedProjectsData.filter(project => project.featured !== false);
+  const featuredProjects = typedProjectsData.filter(project => project.featured !== false)
+    .sort((a, b) => (new Date(b.updated_at || "").getTime() || 0) - (new Date(a.updated_at || "").getTime() || 0));
 
   return (
     <div className="space-y-16 animate-fade-in">
@@ -22,7 +23,7 @@ export default function Home() {
           </h1>
           <p className="text-2xl text-muted-foreground">{personalData.title}</p>
         </div>
-
+        
         {/* Social CTA */}
         <div className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg">
           <div className="flex-1">
