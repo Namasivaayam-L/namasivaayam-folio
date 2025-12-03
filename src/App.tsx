@@ -12,6 +12,8 @@ import Certifications from "./pages/Certifications";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Tools from "./pages/Tools";
+import AcademicAwards from "./pages/AcademicAwards";
+import Publications from "./pages/Publications";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +33,8 @@ const App = () => (
           <Route path="/about" element={<Layout><About /></Layout>} />
           <Route path="/contact" element={<Layout><Contact /></Layout>} />
           <Route path="/tools" element={<Layout><Tools /></Layout>} />
+          <Route path="/academic-awards" element={<Layout><AcademicAwards /></Layout>} />
+          <Route path="/publications" element={<Layout><Publications /></Layout>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

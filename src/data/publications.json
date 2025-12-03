@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Pressure, Queue, and Average Speed - Based Multi-Agent DQN for Optimizing Traffic Signal Control",
+    "date": "23/05/2024",
+    "description": "This project utilized DQN and SUMO simulator. It demonstrated that optimizing for average speed and minimizing queue lengths are key to efficient traffic management.",
+    "link": "https://ieeexplore.ieee.org/document/10533624",
+    "conference": "IEEE Conference",
+    "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:share:7205039702830170112?collapsed=1"
+  }
+]

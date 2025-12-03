@@ -15,19 +15,29 @@
     "icon": "HiFolder"
   },
   {
-    "name": "Blogs",
-    "href": "/blogs",
+    "name": "Certifications",
+    "href": "/certifications",
+    "icon": "FaAward"
+  },
+  {
+    "name": "Publications",
+    "href": "/publications",
     "icon": "HiDocument"
   },
   {
-    "name": "Certifications",
-    "href": "/certifications",
+    "name": "Academic & Awards",
+    "href": "/academic-awards",
     "icon": "FaAward"
   },
   {
     "name": "About",
     "href": "/about",
     "icon": "HiUser"
+  },
+  {
+    "name": "Blogs",
+    "href": "/blogs",
+    "icon": "HiDocument"
   },
   {
     "name": "Contact",
