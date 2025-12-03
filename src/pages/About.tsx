@@ -70,41 +70,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Awards & Recognition */}
-      <section className="space-y-4">
-        <h2 className="text-2xl font-bold text-foreground">Awards & Recognition</h2>
-        <div className="space-y-4">
-          {awards.map((award) => (
-            <div key={award.title} className="bg-card border border-border rounded-lg p-6 space-y-2">
-              <div className="flex justify-between items-start">
-                <h3 className="font-semibold text-foreground">{award.title}</h3>
-                <span className="text-sm text-muted-foreground">{award.date}</span>
-              </div>
-              <p className="text-sm text-muted-foreground">{award.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Education */}
-      <section className="space-y-4">
-        <h2 className="text-2xl font-bold text-foreground">Education</h2>
-        <div className="bg-card border border-border rounded-lg p-6 space-y-2">
-          <h3 className="font-semibold text-foreground">{education.degree}</h3>
-          <p className="text-sm text-muted-foreground">{education.institution}</p>
-          <div className="flex gap-4 text-sm text-muted-foreground">
-            <span>Graduated: {education.graduation}</span>
-            <span>CGPA: {education.cgpa}</span>
-          </div>
-          <div className="text-sm text-muted-foreground">
-            <span>Period: {education.period}</span>
-          </div>
-          <div className="text-sm text-muted-foreground">
-            <span>Activities: {education.activities}</span>
-          </div>
-        </div>
-      </section>
-
       {/* Vision */}
       <section className="space-y-4">
         <h2 className="text-2xl font-bold text-foreground">Vision</h2>
@@ -117,7 +82,7 @@ export default function About() {
       {/* Beyond Code */}
       <section className="space-y-4">
         <h2 className="text-2xl font-bold text-foreground">Beyond Code</h2>
-        <p className="text-muted-foreground">Love techno & house music, follow F1 (Max) and play chess.</p>
+        <p className="text-muted-foreground">Tech Enthusiast Smartphones, Laptops, PCs</p>
       </section>
 
       {/* CTA */}
