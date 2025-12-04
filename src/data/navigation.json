@@ -30,6 +30,11 @@
     "icon": "FaAward"
   },
   {
+    "name": "Skills",
+    "href": "/skills",
+    "icon": "HiCode"
+  },
+ {
     "name": "About",
     "href": "/about",
     "icon": "HiUser"

@@ -2,7 +2,7 @@
   "categories": [
     {
       "name": "AI/ML",
-      "skills": ["Google ADK", "RAG", "LangChain", "LlamaIndex", "PyTorch", "TensorFlow", "Google Vertex AI", "Prompt Engineering"]
+      "skills": ["Google ADK", "RAG", "LangChain", "LlamaIndex", "PyTorch", "TensorFlow", "Google Vertex AI", "Prompt Engineering", "LangSmith", "LangGraph", "OpenAI", "Qwen"]
     },
     {
       "name": "Cloud",

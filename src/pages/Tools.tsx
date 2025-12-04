@@ -1,19 +1,32 @@
 import * as React from "react";
-import { BiCode } from "react-icons/bi";
-import { HiLightBulb } from "react-icons/hi";
-import { FaBox, FaNetworkWired, FaBook, FaGithub } from "react-icons/fa";
 import toolsData from "@/data/tools.json";
 
-const iconMap: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
-  Code2: BiCode,
-  Lightbulb: HiLightBulb,
-  Container: FaBox,
-  Network: FaNetworkWired,
-  BookOpen: FaBook,
-  Github: FaGithub,
+// Create a mapping of tool icon names to their SVG icon paths
+const toolIconMap: Record<string, string> = {
+  vscode: "/namasivaayam-folio/icons/vscode.svg",
+ docker: "/namasivaayam-folio/icons/docker.svg",
+  kubernetes: "/namasivaayam-folio/icons/kubernetes.svg",
+  github: "/namasivaayam-folio/icons/github.svg",
+  "github-copilot": "/namasivaayam-folio/icons/github-copilot.svg",
+  cline: "/namasivaayam-folio/icons/cline.svg",
+  huggingface: "/namasivaayam-folio/icons/huggingface.svg",
+  linux: "/namasivaayam-folio/icons/linux.svg",
+  bash: "/namasivaayam-folio/icons/bash.svg",
+};
+
+// Fisher-Yates shuffle algorithm to randomize array order
+const shuffleArray = <T,>(array: T[]): T[] => {
+ const newArray = [...array];
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+ return newArray;
 };
 
 export default function Tools() {
+  const shuffledTools = shuffleArray(toolsData);
+  
   return (
     <div className="space-y-8 animate-fade-in">
       <div className="space-y-4">
@@ -23,20 +36,27 @@ export default function Tools() {
 
       {/* Tools Grid */}
       <div className="grid gap-6 md:grid-cols-3 sm:grid-cols-2">
-        {toolsData.map((tool, index) => {
-          const Icon = iconMap[tool.icon] || BiCode;
+        {shuffledTools.map((tool, index) => {
+          const iconPath = toolIconMap[tool.icon] || "/namasivaayam-folio/icons/js.svg"; // Default icon
           return (
             <div
               key={tool.name}
-              className="group bg-card border border-border rounded-lg p-6 text-center space-y-4 hover:shadow-lg transition-all animate-slide-in"
+              className="group bg-card border border-border rounded-lg p-6 text-center hover:shadow-lg transition-all animate-slide-in relative"
               style={{ animationDelay: `${index * 50}ms` }}
             >
-              <div className="w-12 h-12 mx-auto bg-gradient-to-br from-accent/20 to-primary/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Icon className="w-6 h-6 text-foreground" />
+              <div className="w-12 h-12 mx-auto bg-gradient-to-br from-accent/20 to-primary/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform mb-4">
+                <img 
+                  src={iconPath} 
+                  alt={tool.name}
+                  className="w-6 h-6 object-contain"
+                />
               </div>
-              <div>
+              <div className="mb-4">
                 <h3 className="font-semibold text-foreground">{tool.name}</h3>
-                <p className="text-sm text-muted-foreground">{tool.category}</p>
+              </div>
+              {/* Category tooltip on hover */}
+              <div className="absolute inset-0 bg-black/80 text-white text-xs rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 p-6">
+                <span className="text-center">{tool.category}</span>
               </div>
             </div>
           );
