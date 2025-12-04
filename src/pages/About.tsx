@@ -51,24 +51,6 @@ export default function About() {
         </p>
       </section>
 
-      {/* Skills */}
-      <section className="space-y-4">
-        <h2 className="text-2xl font-bold text-foreground">Skills</h2>
-        <div className="space-y-4">
-          {skillsData.categories.map((category) => (
-            <div key={category.name} className="space-y-2">
-              <h3 className="text-sm font-semibold text-foreground">{category.name}</h3>
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
-                  <Badge key={skill} variant="outline">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Vision */}
       <section className="space-y-4">

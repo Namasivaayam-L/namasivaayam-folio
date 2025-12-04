@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { HiHome, HiBriefcase, HiFolder, HiDocument, HiUser, HiMail } from "react-icons/hi";
+import { HiHome, HiBriefcase, HiFolder, HiDocument, HiUser, HiMail, HiCode } from "react-icons/hi";
 import { HiWrench } from "react-icons/hi2";
 import { FaGithub, FaLinkedin, FaDiscord, FaAward } from "react-icons/fa";
 import { cn } from "@/lib/utils";
@@ -15,6 +15,7 @@ const iconMap = {
   HiDocument,
   HiUser,
   HiMail,
+  HiCode,
   HiWrench,
   FaDiscord,
   FaLinkedin,

@@ -15,6 +15,7 @@ import Tools from "./pages/Tools";
 import AcademicAwards from "./pages/AcademicAwards";
 import Publications from "./pages/Publications";
 import NotFound from "./pages/NotFound";
+import Skills from "./pages/Skills";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/tools" element={<Layout><Tools /></Layout>} />
           <Route path="/academic-awards" element={<Layout><AcademicAwards /></Layout>} />
           <Route path="/publications" element={<Layout><Publications /></Layout>} />
+          <Route path="/skills" element={<Layout><Skills /></Layout>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

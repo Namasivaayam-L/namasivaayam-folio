@@ -2,31 +2,46 @@
   {
     "name": "VS Code",
     "category": "IDE",
-    "icon": "Code2"
-  },
-  {
-    "name": "PyCharm",
-    "category": "IDE",
-    "icon": "Lightbulb"
+    "icon": "vscode"
   },
   {
     "name": "Docker",
     "category": "DevOps",
-    "icon": "Container"
+    "icon": "docker"
   },
   {
     "name": "Kubernetes",
     "category": "DevOps",
-    "icon": "Network"
-  },
-  {
-    "name": "Notion",
-    "category": "Productivity",
-    "icon": "BookOpen"
+    "icon": "kubernetes"
   },
   {
     "name": "GitHub",
     "category": "Version Control",
-    "icon": "Github"
+    "icon": "github"
+  },
+  {
+    "name": "GitHub Copilot",
+    "category": "AI Assistant",
+    "icon": "github-copilot"
+  },
+  {
+    "name": "Cline",
+    "category": "AI Assistant",
+    "icon": "cline"
+  },
+  {
+    "name": "Hugging Face",
+    "category": "AI Platform",
+    "icon": "huggingface"
+  },
+  {
+    "name": "Linux",
+    "category": "Operating System",
+    "icon": "linux"
+  },
+  {
+    "name": "Bash",
+    "category": "Shell",
+    "icon": "bash"
   }
 ]
