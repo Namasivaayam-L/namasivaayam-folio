@@ -39,14 +39,10 @@ const skillIconMap: Record<string, string> = {
  "Redux": "/namasivaayam-folio/icons/Redux.svg"
 };
 
-// Fisher-Yates shuffle algorithm to randomize array order
-const shuffleArray = <T,>(array: T[]): T[] => {
+// Function to sort array alphabetically
+const sortAlphabetically = <T,>(array: T[], keyFn: (item: T) => string): T[] => {
   const newArray = [...array];
-  for (let i = newArray.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-  }
-  return newArray;
+  return newArray.sort((a, b) => keyFn(a).localeCompare(keyFn(b)));
 };
 
 const Skills = () => {
@@ -61,18 +57,18 @@ const Skills = () => {
       {/* Skills by Category */}
       <div className="space-y-8">
         {skillsData.categories.map((category, categoryIndex) => {
-          const shuffledSkills = shuffleArray(category.skills);
+          const sortedSkills = sortAlphabetically(category.skills, (skill) => skill);
           return (
             <section key={category.name} className="space-y-4">
               <h2 className="text-2xl font-bold text-foreground">{category.name}</h2>
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                {shuffledSkills.map((skill, skillIndex) => {
+                {sortedSkills.map((skill, skillIndex) => {
                   const iconPath = skillIconMap[skill] || "/namasivaayam-folio/icons/js.svg"; // Default icon
                   return (
                     <div 
                       key={skill}
                       className="flex items-center gap-3 p-4 bg-card border border-border rounded-lg hover:shadow-md transition-all"
-                      style={{ animationDelay: `${(categoryIndex * shuffledSkills.length + skillIndex) * 50}ms` }}
+                      style={{ animationDelay: `${(categoryIndex * sortedSkills.length + skillIndex) * 50}ms` }}
                     >
                       <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
                         <img 

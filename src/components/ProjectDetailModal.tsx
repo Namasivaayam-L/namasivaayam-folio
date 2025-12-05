@@ -36,7 +36,7 @@ export default function ProjectDetailModal({
       setIsLoading(true);
       setError(null);
       
-      fetch(`data/readmes/${project.slug}.md`)
+      fetch(`${import.meta.env.BASE_URL}data/readmes/${project.slug}.md`)
         .then(response => {
           if (!response.ok) {
             throw new Error('README not found');
@@ -104,39 +104,24 @@ export default function ProjectDetailModal({
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[999999] bg-black/50 backdrop-blur-sm flex items-center justify-center"
+      className="fixed inset-0 z-[999999] bg-black/50 backdrop-blur-sm flex items-center justify-center gap-1"
       onClick={handleBackdropClick}
     >
+      {/* Left Arrow Navigation */}
+      {canNavigateLeft && (
+        <button
+          onClick={() => {
+            const newIndex = (currentIndex - 1 + allProjects.length) % allProjects.length;
+            onNavigate(newIndex);
+          }}
+          // move closer to the central panels (use percentage offsets so buttons sit nearer the main/meta split)
+          className="top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-background border border-border rounded-full p-2 shadow-lg transition-all pointer-events-auto"
+          aria-label="Previous project"
+        >
+          <IoIosArrowBack className="w-6 h-6 text-foreground" />
+        </button>
+      )}
       <div className="w-11/12 max-w-7xl bg-card border border-border rounded-lg shadow-2xl h-[80vh] flex">
-        {/* Left Arrow Navigation */}
-        {canNavigateLeft && (
-          <button
-
-            onClick={() => {
-              const newIndex = (currentIndex - 1 + allProjects.length) % allProjects.length;
-              onNavigate(newIndex);
-            }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-background border border-border rounded-full p-2 shadow-lg transition-all"
-            aria-label="Previous project"
-          >
-            <IoIosArrowBack className="w-6 h-6 text-foreground" />
-          </button>
-        )}
-
-        {/* Right Arrow Navigation */}
-        {canNavigateRight && (
-          <button
-            onClick={() => {
-              const newIndex = (currentIndex + 1) % allProjects.length;
-              onNavigate(newIndex);
-            }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-background border border-border rounded-full p-2 shadow-lg transition-all"
-            aria-label="Next project"
-          >
-            <IoIosArrowForward className="w-6 h-6 text-foreground" />
-          </button>
-        )}
-
         {/* Main Content - 80% */}
         <div className="w-4/5 h-full border-r border-border flex flex-col">
           {/* <div className="p-6 border-b border-border flex-shrink-0">
@@ -329,7 +314,22 @@ export default function ProjectDetailModal({
             </div>
           </div>
         </div>
+
       </div>
+      {/* Right Arrow Navigation */}
+      {canNavigateRight && (
+        <button
+          onClick={() => {
+            const newIndex = (currentIndex + 1) % allProjects.length;
+            onNavigate(newIndex);
+          }}
+          // mirror the left button so it sits closer to the metadata panel
+          className="top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-background border border-border rounded-full p-2 shadow-lg transition-all pointer-events-auto"
+          aria-label="Next project"
+        >
+          <IoIosArrowForward className="w-6 h-6 text-foreground" />
+        </button>
+      )}
     </div>,
     document.body
   );

@@ -39,8 +39,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               className="w-24 h-24 rounded-full object-cover"
             />
             <div className="flex flex-col items-center">
-              <h2 className="font-semibold text-sm text-foreground">{personalData.name.split(" ")[0]}</h2>
-              <p className="text-xs text-muted-foreground">{personalData.title.split("|")[0].trim()}</p>
+              <h2 className="font-semibold text-lg text-foreground">{personalData.name.split(" ")[0]}</h2>
+              <p className="text-sm text-muted-foreground">{personalData.title.split("|")[0].trim()}</p>
             </div>
           </div>
         </div>
