@@ -46,7 +46,7 @@ export default function Projects() {
         {activeProjects.map((project, index) => (
           <div
             key={project.slug}
-            className="group bg-card border border-border rounded-lg p-6 space-y-4 hover:shadow-lg transition-all animate-slide-in cursor-pointer"
+            className="group bg-card border border-border rounded-lg p-6 flex flex-col justify-between gap-2 hover:shadow-lg transition-all animate-slide-in cursor-pointer"
             style={{ animationDelay: `${index * 100}ms` }}
             onClick={() => openModal(project, index)}
           >
@@ -69,7 +69,7 @@ export default function Projects() {
             </div>
 
             {/* Category Tags */}
-            <div className="flex flex-wrap gap-2 pt-2">
+            <div className="flex flex-wrap gap-2">
               {project.tags.map((tag) => (
                 <Badge key={tag} variant="outline" className="text-xs">
                   {tag}
@@ -78,7 +78,7 @@ export default function Projects() {
             </div>
 
             {/* Links with Stats */}
-            <div className="flex items-center justify-between pt-2">
+            <div className="flex items-center justify-between">
               <a
                 href={project.repo_url}
                 target="_blank"
@@ -105,15 +105,18 @@ export default function Projects() {
                 )}
               </div>
               
-              <a
-                href={project.live_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-sm text-accent hover:underline"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <FiExternalLink className="w-4 h-4" />
-              </a>
+              {
+                project.live_url &&
+                  <a
+                    href={project.live_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-sm text-accent hover:underline"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <FiExternalLink className="w-4 h-4" />
+                  </a>
+              }
             </div>
           </div>
         ))}

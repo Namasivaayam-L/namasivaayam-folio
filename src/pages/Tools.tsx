@@ -14,18 +14,14 @@ const toolIconMap: Record<string, string> = {
   bash: "/namasivaayam-folio/icons/bash.svg",
 };
 
-// Fisher-Yates shuffle algorithm to randomize array order
-const shuffleArray = <T,>(array: T[]): T[] => {
- const newArray = [...array];
-  for (let i = newArray.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-  }
- return newArray;
+// Function to sort array alphabetically
+const sortAlphabetically = <T,>(array: T[], keyFn: (item: T) => string): T[] => {
+  const newArray = [...array];
+  return newArray.sort((a, b) => keyFn(a).localeCompare(keyFn(b)));
 };
 
 export default function Tools() {
-  const shuffledTools = shuffleArray(toolsData);
+  const sortedTools = sortAlphabetically(toolsData, (tool) => tool.name);
   
   return (
     <div className="space-y-8 animate-fade-in">
@@ -36,7 +32,7 @@ export default function Tools() {
 
       {/* Tools Grid */}
       <div className="grid gap-6 md:grid-cols-3 sm:grid-cols-2">
-        {shuffledTools.map((tool, index) => {
+        {sortedTools.map((tool, index) => {
           const iconPath = toolIconMap[tool.icon] || "/namasivaayam-folio/icons/js.svg"; // Default icon
           return (
             <div

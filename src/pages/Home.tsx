@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { HiMail } from "react-icons/hi";
 import { FiExternalLink, FiGitBranch } from "react-icons/fi";
@@ -7,11 +8,32 @@ import personalData from "@/data/personal.json";
 import projectsData from "@/data/projects.json";
 import { Badge } from "@/components/ui/badge";
 import { Project } from "@/types/projects";
+import ProjectDetailModal from "@/components/ProjectDetailModal";
 
 export default function Home() {
   const typedProjectsData: Project[] = projectsData;
   const featuredProjects = typedProjectsData.filter(project => project.featured !== false)
     .sort((a, b) => (new Date(b.updated_at || "").getTime() || 0) - (new Date(a.updated_at || "").getTime() || 0));
+
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+
+  const openModal = (project: Project, index: number) => {
+    setSelectedProject(project);
+    setCurrentProjectIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
+
+  const navigateProject = (index: number) => {
+    setCurrentProjectIndex(index);
+    setSelectedProject(featuredProjects[index]);
+  };
 
   return (
     <div className="space-y-16 animate-fade-in">
@@ -55,7 +77,7 @@ export default function Home() {
           </p>
           <p>
             I have built multiple projects in past 2 years.{" "}
-            <span className="text-foreground font-medium">Developed and proved out a GenAI proof-of-concept</span>, directly contributing to a <span className="text-foreground font-medium">10x</span> improvement for model accuracy in extraction <span className="text-foreground font-medium">(9% to 90%)</span> or Financial docs like Paystubs.
+            <span className="text-foreground font-medium">Developed and proved out a GenAI proof-of-concept</span>, directly contributing to a <span className="text-foreground font-medium">10x</span> improvement for model accuracy in extraction <span className="text-foreground font-medium">(9% to 90%)</span> for Financial docs like Paystubs.
           </p>
         </div>
 
@@ -82,10 +104,11 @@ export default function Home() {
           </Link>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
-          {featuredProjects.map((project) => (
+          {featuredProjects.map((project, index) => (
             <div
               key={project.slug}
-              className="group p-6 bg-card border border-border rounded-lg hover:shadow-md transition-all"
+              className="group bg-card border border-border rounded-lg p-6 flex flex-col justify-between gap-2 hover:shadow-lg transition-all animate-slide-in cursor-pointer"
+              onClick={() => openModal(project, index)}
             >
               <div className="space-y-4">
                 <div>
@@ -107,6 +130,7 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-sm text-accent hover:underline"
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <FaGithub className="w-4 h-4" />
                   </a>
@@ -127,20 +151,35 @@ export default function Home() {
                     )}
                   </div>
                   
-                  <a
-                    href={project.live_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm text-accent hover:underline"
-                  >
-                    <FiExternalLink className="w-4 h-4" />
-                  </a>
+                  {project.live_url &&
+                    <a
+                      href={project.live_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm text-accent hover:underline"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <FiExternalLink className="w-4 h-4" />
+                    </a>
+                  }
                 </div>
               </div>
             </div>
           ))}
         </div>
       </section>
+
+      {/* Project Detail Modal */}
+      {selectedProject && (
+        <ProjectDetailModal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          project={selectedProject}
+          allProjects={featuredProjects}
+          currentIndex={currentProjectIndex}
+          onNavigate={navigateProject}
+        />
+      )}
     </div>
   );
 }
