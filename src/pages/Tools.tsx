@@ -5,7 +5,7 @@ import toolsData from "@/data/tools.json";
 const toolIconMap: Record<string, string> = {
   vscode: "/namasivaayam-folio/icons/vscode.svg",
  docker: "/namasivaayam-folio/icons/docker.svg",
-  kubernetes: "/namasivaayam-folio/icons/kubernetes.svg",
+  datagrip: "/namasivaayam-folio/icons/datagrip.svg",
   github: "/namasivaayam-folio/icons/github.svg",
   "github-copilot": "/namasivaayam-folio/icons/github-copilot.svg",
   cline: "/namasivaayam-folio/icons/cline.svg",

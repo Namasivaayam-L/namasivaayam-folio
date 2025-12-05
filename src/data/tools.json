@@ -10,9 +10,9 @@
     "icon": "docker"
   },
   {
-    "name": "Kubernetes",
+    "name": "DataGrip",
     "category": "DevOps",
-    "icon": "kubernetes"
+    "icon": "datagrip"
   },
   {
     "name": "GitHub",
