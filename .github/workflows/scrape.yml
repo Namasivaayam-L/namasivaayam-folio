@@ -28,7 +28,7 @@ jobs:
       - name: Run scraper and capture output
         id: scraper
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
           SCRAPE_GH_USERNAME: ${{ github.repository_owner }}
           OUTPUT_PROJECTS_PATH: src/data/projects.json
           OUTPUT_READMES_DIR: public/data/readmes

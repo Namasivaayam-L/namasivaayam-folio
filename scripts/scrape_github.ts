@@ -50,7 +50,7 @@ type PriorProjectsIndex = Record<string, Project>
 
 const GH_PAT = process.env.GH_PAT
 if (!GH_PAT) {
-  console.error("GITHUB_TOKEN missing")
+  console.error("GH_PAT missing")
   process.exit(1)
 }
 
