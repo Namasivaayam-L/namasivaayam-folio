@@ -134,8 +134,7 @@ const fileExists = async (p: string) => {
 const normalize = (s: string) => s.replace(/\r\n/g, "\n")
 
 const main = async () => {
-  const authUser = await octokit.rest.users.getAuthenticated()
-  const USERNAME = authUser.data.login
+  const USERNAME = process.env.SCRAPE_GH_USERNAME || process.env.GH_USERNAME
 
   console.log(`Starting scrape for user: ${USERNAME}`)
 
