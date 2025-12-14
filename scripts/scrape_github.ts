@@ -181,7 +181,28 @@ const main = async () => {
   await ensureDir(path.dirname(OUTPUT_PROJECTS_PATH))
   await ensureDir(OUTPUT_READMES_DIR)
   const prior = await loadPriorProjects()
-  const repos = await octokit.paginate(octokit.repos.listForUser, { username: USERNAME, per_page: 100, type: "owner", sort: "updated" })
+  const userRepos = await octokit.paginate(
+    octokit.repos.listForUser,
+    { username: USERNAME, per_page: 100 }
+  )
+
+  const orgs = await octokit.paginate(
+    octokit.orgs.listForUser,
+    { per_page: 100 }
+  )
+
+  const orgRepos = (
+    await Promise.all(
+      orgs.map(org =>
+        octokit.paginate(octokit.repos.listForOrg, {
+          org: org.login,
+          per_page: 100
+        })
+      )
+    )
+  ).flat()
+
+  const repos = [...userRepos, ...orgRepos]
   console.log(`Fetched ${repos.length} repos`)
   const out: Project[] = []
   let updatedReadmeCount = 0
