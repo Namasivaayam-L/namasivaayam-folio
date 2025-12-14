@@ -29,18 +29,23 @@ jobs:
         id: scraper
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SCRAPE_GH_USERNAME: ${{ github.repository_owner }}
           OUTPUT_PROJECTS_PATH: src/data/projects.json
           OUTPUT_READMES_DIR: public/data/readmes
         run: |
-          output=$(npx tsx scripts/scrape_github.ts 2>&1)
-          echo "$output"
-          # Check if projects.json was updated or if any readmes were updated
-          if echo "$output" | grep -q "projects.json updated\|readmes updated: [1-9]"; then
+          set -o pipefail
+
+          npx tsx scripts/scrape_github.ts 2>&1 | tee scraper.log
+
+          if grep -q "projects.json updated\|readmes updated: [1-9]" scraper.log; then
             echo "changes_detected=true" >> $GITHUB_OUTPUT
           else
             echo "changes_detected=false" >> $GITHUB_OUTPUT
           fi
+      - name: Dump scraper log on failure
+        if: failure()
+        run: |
+          echo "===== scraper.log ====="
+          cat scraper.log
       - name: Show changes
         run: |
           git status --porcelain
