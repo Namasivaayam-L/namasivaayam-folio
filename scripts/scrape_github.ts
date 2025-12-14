@@ -2,8 +2,6 @@ import { Octokit } from "@octokit/rest"
 import * as fs from "fs/promises"
 import * as path from "path"
 import yaml from "js-yaml"
-import dotenv from "dotenv"
-dotenv.config()
 
 interface GitHubRepo {
   private: boolean
