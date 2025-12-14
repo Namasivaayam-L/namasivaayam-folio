@@ -48,8 +48,8 @@ type Project = YamlConfig & {
 
 type PriorProjectsIndex = Record<string, Project>
 
-const GH_TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN
-if (!GH_TOKEN) {
+const GH_PAT = process.env.GH_PAT
+if (!GH_PAT) {
   console.error("GITHUB_TOKEN missing")
   process.exit(1)
 }
@@ -57,7 +57,7 @@ if (!GH_TOKEN) {
 const OUTPUT_PROJECTS_PATH = process.env.OUTPUT_PROJECTS_PATH || "src/data/projects.json"
 const OUTPUT_READMES_DIR = process.env.OUTPUT_READMES_DIR || "public/data/readmes"
 
-const octokit = new Octokit({ auth: GH_TOKEN })
+const octokit = new Octokit({ auth: GH_PAT })
 
 const ensureDir = async (dir: string) => {
   await fs.mkdir(dir, { recursive: true })
