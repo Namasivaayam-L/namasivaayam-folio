@@ -29,6 +29,7 @@ jobs:
         id: scraper
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SCRAPE_GH_USERNAME: ${{ github.repository_owner }}
           OUTPUT_PROJECTS_PATH: src/data/projects.json
           OUTPUT_READMES_DIR: public/data/readmes
         run: |
@@ -46,6 +47,7 @@ jobs:
         run: |
           echo "===== scraper.log ====="
           cat scraper.log
+          
       - name: Show changes
         run: |
           git status --porcelain
