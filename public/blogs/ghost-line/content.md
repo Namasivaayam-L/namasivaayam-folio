@@ -218,3 +218,24 @@ If global undo ever gets smarter, great.
 Until then, Ghost Line exists for those moments when precision matters.
 
 ---
+
+## **Thanks & Links**
+
+Thanks for reading 🙌
+Ghost Line started as a small experiment to fix a daily annoyance and slowly turned into a serious take on intent-aware undo in editors.
+
+If this resonated with you, or if you’ve ever lost your flow to a rogue `Ctrl + Z`, I’d love your feedback.
+
+* **GitHub Repository:**
+  [https://github.com/Namasivaayam-L/ghost-line](https://github.com/Namasivaayam-L/ghost-line)
+
+* **Issues / Feature Requests:**
+  Feel free to open issues for bugs, edge cases, or ideas. Real-world usage helps shape what this becomes next.
+
+* **Contributions:**
+  PRs are welcome. The scope is intentionally tight, so improvements around correctness, performance, or UX are especially appreciated.
+
+Its an open-source project.
+If you try it out and it saves you even one unnecessary undo — mission accomplished 👻
+
+---
