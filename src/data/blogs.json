@@ -1,3 +1,12 @@
 [
-
+  {
+    "id": "vscode-line-level-undo-redo",
+    "title": "Why Global Undo Sucks: Building Line-Level Undo/Redo for VS Code",
+    "excerpt": "A deep dive into building a VS Code extension that implements line-level undo/redo functionality, addressing the limitations of global undo systems and providing more granular control for developers.",
+    "date": "2024-12-15",
+    "category": "Technical",
+    "tags": ["VS Code", "Extension", "TypeScript", "Undo/Redo", "Productivity", "Developer Tools"],
+    "imageUrl": "https://github.com/Namasivaayam-L/headless-blogs/blob/main/blogs/ghost-line/assets/images/ghost-line-cover-image-lite.webp?raw=true",
+    "url": "https://namasivaayaml.hashnode.dev/why-global-undo-sucks-building-line-level-undoredo-for-vs-code"
+  }
 ]

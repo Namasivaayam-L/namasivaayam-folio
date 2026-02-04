@@ -5,12 +5,13 @@
     "role": "Software Engineer I",
     "duration": "07/2024 – Present",
     "location": "Chennai, TN, India",
-    "contributions": [
-      "Engineered and optimized sophisticated prompts for 15+ critical financial documents, utilizing Python, Vertex AI, and GCP to build production-level pipelines.",
-      "Initiated and led the full ML development, building it from the ground up to score and analyze production model outputs for quality. Architected a scalable backend using FastAPI, LangChain, and Docker on GKE via Azure Pipelines, integrating Gemini and OpenAI GPT models for comprehensive validation.",
-      "Contributed to a high-priority IBM Filenet replacement project, developing full-stack features with Next.js, Java Springboot, and Google's AlloyDB. Maintained critical Content Viewer, Core, and Stage components for interacting with files within the Pyro Vault."
+      "contributions": [
+      "Idea-Code (Autonomous PDLC): Architected a LangGraph Deepagent pipeline using Azure/GitHub MCP servers to automate the PDLC from concept to GitHub PRs. Orchestrated the autonomous generation of BRDs, architectures, and ADO tasks, streamlining the transition from requirements to production code.",
+      "In A Box (Multi-Agent System): Automated intricate multi-document verification across 50+ checkpoints by implementing a scalable agent system with Google ADK, achieving a 67% reduction in manual processing time.",
+      "PyroAI Docs (GenAI Extraction): Elevated data extraction accuracy to 90% (from 9%), enabling straight-through processing for over 15 financial document types by engineering robust production prompt pipelines.",
+      "AI Guardian (LLM Validation): Spearheaded the design and deployment of an ML validation framework to benchmark production LLM models against market competitors, architecting a scalable backend with FastAPI and containerization (Docker/GKE)."
     ],
-    "tags": ["Python", "Vertex AI", "GCP", "FastAPI", "LangChain", "Docker", "GKE", "Azure Pipelines", "Gemini", "OpenAI GPT", "Next.js", "Java", "Spring Boot", "AlloyDB"]
+    "tags": ["Python", "LangGraph", "Azure", "GitHub", "MCP Servers", "FastAPI", "Docker", "GKE", "Google ADK", "Vertex AI", "GCP", "LangChain", "Azure Pipelines", "Gemini", "OpenAI GPT", "Next.js", "Java", "Spring Boot", "AlloyDB"]
   },
   {
     "id": "mr-cooper-intern",

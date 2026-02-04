@@ -28,18 +28,30 @@ export default function Blogs() {
             className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all animate-slide-in"
             style={{ animationDelay: `${index * 100}ms` }}
           >
-            {/* Placeholder Image */}
-            <div className="h-48 bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
-              <div className="text-center p-6">
-                <h3 className="text-2xl font-bold text-foreground">{blog.title.split(":")[0]}</h3>
-              </div>
-            </div>
+            {/* Blog Image or Placeholder */}
+            <a href={blog.url} target="_blank" rel="noopener noreferrer" className="block">
+              {blog.imageUrl ? (
+                <img 
+                  src={blog.imageUrl} 
+                  alt={blog.title}
+                  className="w-full h-48 object-cover"
+                />
+              ) : (
+                <div className="h-48 bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
+                  <div className="text-center p-6">
+                    <h3 className="text-2xl font-bold text-foreground">{blog.title.split(":")[0]}</h3>
+                  </div>
+                </div>
+              )}
+            </a>
 
             {/* Content */}
             <div className="p-6 space-y-4">
               <div>
                 <h3 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors line-clamp-2">
-                  {blog.title}
+                  <a href={blog.url} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    {blog.title}
+                  </a>
                 </h3>
                 <p className="text-sm text-muted-foreground mt-2 line-clamp-3">{blog.excerpt}</p>
               </div>

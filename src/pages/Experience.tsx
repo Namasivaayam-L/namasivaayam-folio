@@ -38,12 +38,20 @@ export default function Experience() {
 
               {/* Contributions */}
               <ul className="space-y-2">
-                {exp.contributions.map((contribution, idx) => (
-                  <li key={idx} className="text-sm text-muted-foreground flex gap-2">
-                    <span className="text-accent">•</span>
-                    <span>{contribution}</span>
-                  </li>
-                ))}
+                {exp.contributions.map((contribution, idx) => {
+                  const parts = contribution.split(':');
+                  const firstPart = parts[0];
+                  const restParts = parts.slice(1).join(':');
+                  return (
+                    <li key={idx} className="text-sm text-muted-foreground flex gap-2">
+                      <span className="text-accent">•</span>
+                      <span>
+                        {firstPart && <strong className="text-foreground">{firstPart.trim()}</strong>}
+                        {restParts && <span>{':' + restParts}</span>}
+                      </span>
+                    </li>
+                  );
+                })}
               </ul>
 
               {/* Tags */}
