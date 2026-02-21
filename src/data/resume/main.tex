@@ -1,0 +1,162 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{parskip}
+\usepackage{hologo}
+\usepackage{fontspec}
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9, top=.4in, bottom=.4in]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.42\textwidth}
+
+%custom \section
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by:
+%http://stefano.italians.nl/archives/26
+% --- FIX IS HERE ---
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{2pt}{2pt}
+% --- END FIX ---
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\color[HTML]{110223}%{1C033C}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+% For underline
+\usepackage[normalem]{ulem}
+\usepackage{hyperref}
+\hypersetup{
+    hidelinks, % Removes all color and box/border formatting
+}
+\setmainfont{Arial}  % Set it to whatever you like
+
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\color[HTML]{1C033C} \Huge{Namasivaayam L} \\[25pt]
+% \Large{Machine Learning Engineer} \\[6pt]
+
+\textcolor[HTML]{371e77}{\href{mailto:namasivaayaml@gmail.com}{{{\faEnvelope} namasivaayaml@gmail.com}} $|$}
+\textcolor[HTML]{371e77}{{\faPhone} {\href{tel:+916383512055}{+91 63835 12055}} $|$}
+\textcolor[HTML]{371e77}{{{{\faMapMarker} Madurai, Tamil Nadu}}}
+\\[2pt]
+\textcolor[HTML]{371e77}{\href{https://namasivaayam-l.github.io/namasivaayam-folio}{\underline{{\raisebox{-0.05\height}{\faGlobe} Portfolio}}}} \
+\textcolor[HTML]{371e77}{\href{https://github.com/Namasivaayam-L}{\underline{{\raisebox{-0.05\height}{\faGithub} GitHub}}}} \
+\textcolor[HTML]{371e77}{\href{https://www.linkedin.com/in/namasivaayam-l-42bb601b1/}{\underline{{\raisebox{-0.05\height}{\faLinkedin} Linkedin}}}}
+
+\end{tabularx}
+
+% PROFESSIONAL SUMMARY
+\vspace{6pt}
+\section{Professional Summary}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\begin{minipage}[t]{\linewidth}
+    Generative AI and Machine Learning Engineer specializing in multi-modal and RAG systems. Orchestrated complex \textbf{doc-verification} workflows using an \textbf{autonomous agent} framework, \textbf{cutting} processing time by \textbf{67\%}. Pioneered a Gemini-based solution that boosted doc extraction accuracy from \textbf{9\% to 90\%}. Recipient of "\textbf{The Rookie}" Excellence Award (2025).
+\end{minipage}
+\end{tabularx}
+\\[1pt]
+
+% Skills
+\section{Technical Skills}
+\vspace{3pt}
+\color[HTML]{1C033C}\textbf{AI/ML:} Deep Agents, LangChain, LangGraph, LlamaIndex, RAG,  MCP, PyTorch, TensorFlow, Google ADK \\[3pt]
+\color[HTML]{1C033C}\textbf{Cloud \& Tools:} GCP PCA, Google Vertex AI, AWS CPE, Docker, Kubernetes (GKE), Azure Pipelines, GitHub, Rancher \\[3pt]
+\color[HTML]{1C033C}\textbf{Web \& Databases:} FastAPI, Next.js, React, MySQL, PostgreSQL, MongoDB, Redis \\[3pt]
+\color[HTML]{1C033C}\textbf{Languages:} Python, JavaScript, C++
+
+\vspace{6pt}
+% Experience
+\section{Experience}
+% Role 1: Mr. Cooper (Full Time)
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\href{https://www.linkedin.com/company/mrcoopermortgage}
+{\underline{\textbf{Rocket, India (formally, Mr. Cooper)}}} \hfill \color[HTML]{371e77} Jul 2024 - Present \\[4pt]
+\color[HTML]{371e77}\textbf{\textit{Software Engineer I}}\ \hfill \color[HTML]{4B28A4} \\[3pt]
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=2pt]
+        \item \textbf{Idea-Code (Autonomous PDLC):} Architected a LangGraph Deepagent pipeline using Azure/GitHub MCP servers to automate the PDLC from concept to GitHub PRs. Orchestrated the autonomous generation of BRDs, architectures, and ADO tasks, streamlining the transition from requirements to production code.
+        \item \textbf{In A Box (Multi-Agent System):} Automated intricate multi-document verification across \textbf{50+ checkpoints} by implementing a scalable agent system with Google ADK, achieving a \textbf{67\% reduction} in manual processing time.
+        \item \textbf{PyroAI Docs (GenAI Extraction):} Elevated data extraction accuracy to \textbf{90\%} (from 9\%), enabling straight-through processing for over \textbf{15} financial document types by engineering robust production prompt pipelines.
+        \item \textbf{AI Guardian (LLM Validation):} Spearheaded the design and deployment of an ML \textbf{validation framework} to \textbf{benchmark production} LLM models against market competitors, architecting a scalable backend with FastAPI and containerization (Docker/GKE).
+    \end{itemize}
+\end{minipage}
+\end{tabularx}
+
+% Role 2: Mr. Cooper (Intern)
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\color[HTML]{1C033C} \href{https://www.linkedin.com/company/mrcoopermortgage}{\underline{\textbf{Rocket, India (formally, Mr. Cooper)}}} \hfill \color[HTML]{371e77} Jan 2024 - Jun 2024 \\[4pt]
+\color[HTML]{371e77}\textbf{\textit{Software Engineer Intern}}\ \hfill \color[HTML]{4B28A4} \\[2pt]
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=2pt]
+        \item Secured the full-time implementation roadmap by demonstrating a \textbf{10x} accuracy improvement \textbf{(9\% to 90\%)} via an image-based Gemini extraction Proof of Concept (POC), superseding traditional Deep Learning (DL) methods.
+    \end{itemize}
+\end{minipage}
+\end{tabularx}
+
+\vspace{6pt}
+% Education
+\section{Education}
+\vspace{3pt}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\color[HTML]{1C033C} \href{https://www.mepcoeng.ac.in/}{\underline{\textbf{MEPCO Schlenk Engineering College}}} & \hfill \color[HTML]{371e77} 2020 - 2024 
+\\[3pt]
+\color[HTML]{371e77} B.Tech in \textbf{Artificial Intelligence and Data Science} & \hfill \color[HTML]{4B28A4} \textit{\textbf{CGPA: 8.49/10}} \\
+\multicolumn{2}{@{}X@{}}{Relevant Coursework: Machine Learning, Deep Learning, Data Science, IoT,  Data Analytics, Data Visz., Cloud Computing}
+\end{tabularx}
+
+\vspace{6pt}
+% Projects
+\section{Project Work}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=2pt]
+        \item \underline{\href{https://github.com/Namasivaayam-L/agent-llama-index}{\textbf{Agent Nexus (HITL System):}}} Engineered a safety-aligned Customer Support Agent orchestrating \textbf{7 autonomous \\[2pt] tools} achieving 450 tokens/s and 300ms TTFT by integrating Groq LPUs with a mandatory \textbf{Human-in-the-Loop} approval workflow for critical actions.
+        \item \underline{\href{https://github.com/Quantum-Tutors/quantum-tutor}{\textbf{Quantum Tutor (Google GenAI Hackathon):}}} Delivered a containerized Socratic Agent backend in under \textbf{1 week} \\[2pt] successfully steering LLM behavior toward guided questioning by implementing \textbf{Few-Shot prompting} workflows within a scalable FastAPI and MongoDB architecture.
+    \end{itemize}
+    \end{minipage}
+\end{tabularx}
+
+\vspace{6pt}
+% AWARDS
+\section{Awards and Recognition}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=2pt]
+        \item \underline{\href{https://www.linkedin.com/posts/namasivaayam-l-42bb601b1_grateful-to-have-received-the-rookie-award-ugcPost-7352908539742334977-V1qR?utm_source=share&utm_medium=member_desktop&rcm=ACoAADF4fGMBXJGQpy5bTndFTVLu-v3xtfng2iI}{\textbf{The Rookie (Mr. Cooper, 2025):}}} Recognized as the top-performing new hire (\textbf{Top 1\%}) in the PyroAI team for \\[2pt] exceptional contributions during 2024-25.
+        \item \underline{\href{https://ieeexplore.ieee.org/document/10533624}{\textbf{IEEE Conference Publication (2024):}}} Published "\textbf{Pressure, Queue, and Average Speed}-Based \textbf{Multi-Agent DQN}" \\[2pt] demonstrating superior traffic flow and reduced congestion compared to fixed-time schedules by benchmarking a novel \textbf{3-tier reward function} (PQAS) in multi-agent environments.
+        \item \underline{\href{https://www.linkedin.com/posts/namasivaayam-l-42bb601b1_bestoutstandingstudent-collegeday-mepcoschlenkengineeringcollege-activity-7206211057726484480-iQZ6?utm_source=share&utm_medium=member_desktop&rcm=ACoAADF4fGMBXJGQpy5bTndFTVLu-v3xtfng2iI}{\textbf{Best Outstanding Student (2024):}}} Selected as the \textbf{sole} recipient out of \textbf{50} peers (\textbf{Top 2\%}) for maintaining an \textbf{8.49 CGPA} while \textbf{directing} events and operations for the Microsoft Campus Club and Consumer Club.
+    \end{itemize}
+\end{minipage}
+\end{tabularx}  
+
+\end{document}
