@@ -8,7 +8,7 @@ import { fileURLToPath } from "url";
 export default defineConfig({
   base: "/namasivaayam-folio/",
   server: {
-    host: "::",
+    host: "0.0.0.0",
     port: 8080,
   },
   plugins: [react()],
