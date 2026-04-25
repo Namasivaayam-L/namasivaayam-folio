@@ -34,8 +34,8 @@ export default function About() {
         <h2 className="text-2xl font-bold text-foreground">What I Do</h2>
         <p className="text-muted-foreground">
           Currently a <span className="text-foreground font-medium">Software Engineer I</span> at{" "}
-          <a href="https://mrcooper.com" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
-            Mr. Cooper
+          <a href="https://rocket.com/" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
+            Rocket, India
           </a>
           , building GenAI solutions for financial document processing.
         </p>

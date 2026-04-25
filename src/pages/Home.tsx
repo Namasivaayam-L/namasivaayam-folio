@@ -71,8 +71,8 @@ export default function Home() {
           </p>
           <p>
             Currently working as a <span className="text-foreground font-medium">Software Engineer</span> at{" "}
-            <a href="https://mrcooper.com" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
-              Mr. Cooper
+            <a href="https://rocket.com/" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
+              Rocket, India
             </a>
           </p>
           <p>
