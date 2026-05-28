@@ -118,7 +118,7 @@ The portfolio comprehensively covers:
 
 ## 🔗 Links & Social
 
-- **🌐 Live Portfolio**: [namasivaayam-l.github.io/namasivaayam-folio](https://namasivaayam-l.github.io/namasivaayam-folio/)
+- **🌐 Live Portfolio**: [namasivaayam-l.github.io/namasivaayam-folio](https://namasivaayam-l.github.io/)
 - **💻 GitHub**: [github.com/Namasivaayam-L](https://github.com/Namasivaayam-L)
 - **💼 LinkedIn**: [linkedin.com/in/namasivaayam-l](https://www.linkedin.com/in/namasivaayam-l-42bb601b1/)
 - **🏆 Credly**: [credly.com/users/namasivaayam-l/badges](https://credly.com/users/namasivaayam-l/badges)
@@ -130,8 +130,8 @@ The portfolio comprehensively covers:
 ## 📈 Project Stats
 
 [![GitHub followers](https://img.shields.io/github/followers/Namasivaayam-L?style=flat-square&color=178,60,45)](https://github.com/Namasivaayam-L)
-[![Portfolio Views](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FNamasivaayam-L%2Fnamasivaayam-folio&query=%24.network_count&logo=github&style=flat-square&label=Network%20Clones&color=blue)](https://github.com/Namasivaayam-L/namasivaayam-folio/network)
-[![GitHub stars](https://img.shields.io/github/stars/Namasivaayam-L/namasivaayam-folio?style=flat-square&color=yellow)](https://github.com/Namasivaayam-L/namasivaayam-folio/stargazers)
+[![Portfolio Views](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FNamasivaayam-L%2Fnamasivaayam-folio&query=%24.network_count&logo=github&style=flat-square&label=Network%20Clones&color=blue)](https://github.com/Namasivaayam-L/network)
+[![GitHub stars](https://img.shields.io/github/stars/Namasivaayam-L/namasivaayam-folio?style=flat-square&color=yellow)](https://github.com/Namasivaayam-L/stargazers)
 
 ---
 

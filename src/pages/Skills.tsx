@@ -4,39 +4,39 @@ import skillsData from "@/data/skills.json";
 // Create a mapping of skill names to their SVG icon paths
 const skillIconMap: Record<string, string> = {
   // AI/ML
-  "Google ADK": "/namasivaayam-folio/icons/Google_ADK.svg",
-  "RAG": "/namasivaayam-folio/icons/RAG.svg",
-  "LangChain": "/namasivaayam-folio/icons/langchain.svg",
-  "LlamaIndex": "/namasivaayam-folio/icons/llama-index.svg",
-  "PyTorch": "/namasivaayam-folio/icons/torch.svg",
-  "TensorFlow": "/namasivaayam-folio/icons/TensorFlow.svg",
-  "Google Vertex AI": "/namasivaayam-folio/icons/vertexai.svg",
-  "Prompt Engineering": "/namasivaayam-folio/icons/aistudio.svg",
-  "LangSmith": "/namasivaayam-folio/icons/langsmith.svg",
-  "LangGraph": "/namasivaayam-folio/icons/langgraph.svg",
-  "OpenAI": "/namasivaayam-folio/icons/openai.svg",
-  "Qwen": "/namasivaayam-folio/icons/qwen.svg",
+  "Google ADK": "/icons/Google_ADK.svg",
+  "RAG": "/icons/RAG.svg",
+  "LangChain": "/icons/langchain.svg",
+  "LlamaIndex": "/icons/llama-index.svg",
+  "PyTorch": "/icons/torch.svg",
+  "TensorFlow": "/icons/TensorFlow.svg",
+  "Google Vertex AI": "/icons/vertexai.svg",
+  "Prompt Engineering": "/icons/aistudio.svg",
+  "LangSmith": "/icons/langsmith.svg",
+  "LangGraph": "/icons/langgraph.svg",
+  "OpenAI": "/icons/openai.svg",
+  "Qwen": "/icons/qwen.svg",
   
   // Cloud
-  "GCP PCA": "/namasivaayam-folio/icons/gcloud.svg",
-  "AWS CPE": "/namasivaayam-folio/icons/aws.svg", // Default icon for now
- "Docker": "/namasivaayam-folio/icons/docker.svg",
-  "Kubernetes (GKE)": "/namasivaayam-folio/icons/kubernetes.svg",
-  "Rancher": "/namasivaayam-folio/icons/Rancher.svg",
+  "GCP PCA": "/icons/gcloud.svg",
+  "AWS CPE": "/icons/aws.svg", // Default icon for now
+ "Docker": "/icons/docker.svg",
+  "Kubernetes (GKE)": "/icons/kubernetes.svg",
+  "Rancher": "/icons/Rancher.svg",
   
  // Backend & Databases
- "FastAPI": "/namasivaayam-folio/icons/FastAPI.svg",
-  "Spring Boot": "/namasivaayam-folio/icons/Spring_Boot.svg",
-  "Node.js": "/namasivaayam-folio/icons/node.js.svg",
-  "Express": "/namasivaayam-folio/icons/Express.svg",
-  "PostgreSQL": "/namasivaayam-folio/icons/postgresql.svg",
-  "MongoDB": "/namasivaayam-folio/icons/mongodb.svg",
-  "Redis": "/namasivaayam-folio/icons/redis.svg",
+ "FastAPI": "/icons/FastAPI.svg",
+  "Spring Boot": "/icons/Spring_Boot.svg",
+  "Node.js": "/icons/node.js.svg",
+  "Express": "/icons/Express.svg",
+  "PostgreSQL": "/icons/postgresql.svg",
+  "MongoDB": "/icons/mongodb.svg",
+  "Redis": "/icons/redis.svg",
   
   // Frontend
-  "React": "/namasivaayam-folio/icons/js.svg",
-  "Next.js": "/namasivaayam-folio/icons/next.js.svg",
- "Redux": "/namasivaayam-folio/icons/Redux.svg"
+  "React": "/icons/js.svg",
+  "Next.js": "/icons/next.js.svg",
+ "Redux": "/icons/Redux.svg"
 };
 
 // Function to sort array alphabetically
@@ -63,7 +63,7 @@ const Skills = () => {
               <h2 className="text-2xl font-bold text-foreground">{category.name}</h2>
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {sortedSkills.map((skill, skillIndex) => {
-                  const iconPath = skillIconMap[skill] || "/namasivaayam-folio/icons/js.svg"; // Default icon
+                  const iconPath = skillIconMap[skill] || "/icons/js.svg"; // Default icon
                   return (
                     <div 
                       key={skill}
