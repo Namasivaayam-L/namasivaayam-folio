@@ -7,16 +7,17 @@ export default function Blogs() {
       <div className="space-y-4">
         <h1 className="text-4xl font-bold text-foreground">Pensieve</h1>
         <p className="text-muted-foreground">
-          A collection of thoughts, ideas, and musings. You can check more of my writings on my{" "}
+          Writing on the systems behind the models — and occasionally on the models themselves.
+          Longer pieces live on my{" "}
           <a
-            href="https://medium.com/@namasivaayam"
+            href="https://namasivaayaml.hashnode.dev/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-accent hover:underline"
           >
-            Medium
+            Hashnode
           </a>{" "}
-          profile.
+          blog.
         </p>
       </div>
 
