@@ -18,6 +18,24 @@
     <meta name="twitter:description" content="Machine Learning Engineer specializing in production GenAI systems, multi-agent orchestration, and LLM evaluation." />
     <meta name="twitter:image" content="https://namasivaayam-l.github.io/namasivaayam-folio/og-image.png" />
 
+    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+
+    <script>
+      // Apply the saved theme before React boots to avoid a light-mode flash.
+      // Mirrors next-themes' "class" strategy and localStorage key.
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var theme = stored || (prefersDark ? "dark" : "light");
+          if (theme === "dark") document.documentElement.classList.add("dark");
+        } catch (e) {
+          /* localStorage unavailable — fall back to light. */
+        }
+      })();
+    </script>
+
     <script>
       // SPA redirect handling for GitHub Pages (spa-github-pages).
       // 404.html encodes the requested path into a query parameter like ?/experience;
