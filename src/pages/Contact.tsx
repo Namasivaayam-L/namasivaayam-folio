@@ -3,84 +3,103 @@ import { HiMail } from "react-icons/hi";
 import { FaDiscord, FaLinkedin, FaGithub, FaAward } from "react-icons/fa";
 import personalData from "@/data/personal.json";
 
+interface Channel {
+  name: string;
+  description: string;
+  href: string;
+  icon: React.ReactNode;
+}
+
+const channels: Channel[] = [
+  {
+    name: "Email",
+    description: "Best for anything substantive — roles, collaborations, questions.",
+    href: `mailto:${personalData.email}`,
+    icon: <HiMail className="w-5 h-5" aria-hidden="true" />,
+  },
+  {
+    name: "LinkedIn",
+    description: "For professional updates and messaging.",
+    href: personalData.links.linkedin,
+    icon: <FaLinkedin className="w-5 h-5" aria-hidden="true" />,
+  },
+  {
+    name: "GitHub",
+    description: "Where the code lives — issues and discussions welcome.",
+    href: personalData.links.github,
+    icon: <FaGithub className="w-5 h-5" aria-hidden="true" />,
+  },
+  {
+    name: "Credly",
+    description: "Verified certifications and credentials.",
+    href: personalData.links.credly,
+    icon: <FaAward className="w-5 h-5" aria-hidden="true" />,
+  },
+  {
+    name: "Discord",
+    description: "Quickest for a casual hello.",
+    href: personalData.links.discord,
+    icon: <FaDiscord className="w-5 h-5" aria-hidden="true" />,
+  },
+];
+
 export default function Contact() {
   return (
-    <div className="space-y-12 animate-fade-in flex flex-col items-center justify-center min-h-[60vh]">
-      <div className="text-center space-y-6 max-w-2xl">
+    <div className="space-y-10 animate-fade-in">
+      <div className="space-y-4">
         <h1 className="text-4xl font-bold text-foreground">Contact</h1>
-        
-        <p className="text-muted-foreground">
-          If you're building in / excited about AI or just wanna chat — here are the ways to reach me.
+        <p className="text-muted-foreground max-w-2xl">
+          If you're building in or excited about AI — or just want to compare notes on production
+          LLM systems — I'd like to hear from you. Email gets the fastest reply.
         </p>
-
-        {/* Contact Section */}
-        <div className="space-y-4">
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full">
-            <Button className="w-full" asChild>
-              <a href={`mailto:${personalData.email}`} target="_blank" rel="noopener noreferrer">
-                <HiMail className="w-4 h-4 mr-2" />
-                Email
-              </a>
-            </Button>
-
-            <Button className="w-full" asChild>
-              <a href={personalData.links.linkedin} target="_blank" rel="noopener noreferrer">
-                <FaLinkedin className="w-4 h-4 mr-2" />
-                LinkedIn
-              </a>
-            </Button>
-
-            <Button className="w-full" asChild>
-              <a href={personalData.links.discord} target="_blank" rel="noopener noreferrer">
-                <FaDiscord className="w-4 h-4 mr-2" />
-                Discord
-              </a>
-            </Button>
-
-          </div>
-        </div>
-
-        {/* Decorative Element */}
-        <div className="pt-12 pb-12 opacity-50">
-          <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="mx-auto">
-            <circle cx="50" cy="50" r="40" fill="url(#gradient)" />
-            <defs>
-              <linearGradient id="gradient" x1="0" y1="0" x2="100" y2="100">
-                <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity="0.3" />
-                <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.3" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-
-        {/* Showcase Section */}
-        <div className="space-y-4">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full mx-auto">
-            <Button className="w-full" asChild>
-              <a href={personalData.links.github} target="_blank" rel="noopener noreferrer">
-                <FaGithub className="w-4 h-4 mr-2" />
-                GitHub
-              </a>
-            </Button>
-
-            <Button className="w-full" asChild>
-              <a href={personalData.links.credly} target="_blank" rel="noopener noreferrer">
-                <FaAward className="w-4 h-4 mr-2" />
-                Credly
-              </a>
-            </Button>
-
-            <Button className="w-full" asChild>
-              <a href={personalData.links.linkedin+'recent-activity/all/'} target="_blank" rel="noopener noreferrer">
-                <FaLinkedin className="w-4 h-4 mr-2" />
-                LinkedIn
-              </a>
-            </Button>
-          </div>
-          <h2 className="text-2xl font-semibold text-foreground">Showcase</h2>
-        </div>
-
       </div>
+
+      {/* Primary CTA */}
+      <div className="bg-card border border-border rounded-lg p-6 space-y-4">
+        <div className="space-y-1">
+          <p className="text-sm text-muted-foreground">Reach me directly at</p>
+          <a
+            href={`mailto:${personalData.email}`}
+            className="text-xl font-semibold text-foreground hover:text-accent transition-colors break-all"
+          >
+            {personalData.email}
+          </a>
+        </div>
+        <Button asChild>
+          <a href={`mailto:${personalData.email}`}>
+            <HiMail className="w-4 h-4 mr-2" />
+            Send an email
+          </a>
+        </Button>
+        <p className="text-xs text-muted-foreground">Based in {personalData.location}</p>
+      </div>
+
+      {/* All channels */}
+      <section className="space-y-4">
+        <h2 className="text-2xl font-bold text-foreground">Other channels</h2>
+        <ul className="grid gap-3 sm:grid-cols-2">
+          {channels.map((channel) => (
+            <li key={channel.name}>
+              <a
+                href={channel.href}
+                target={channel.href.startsWith("mailto:") ? undefined : "_blank"}
+                rel="noopener noreferrer"
+                className="group flex items-start gap-3 bg-card border border-border rounded-lg p-4 hover:shadow-md hover:border-accent/40 transition-all"
+              >
+                <span className="text-accent mt-0.5 shrink-0">{channel.icon}</span>
+                <span className="min-w-0">
+                  <span className="block text-sm font-medium text-foreground group-hover:text-accent transition-colors">
+                    {channel.name}
+                  </span>
+                  <span className="block text-xs text-muted-foreground mt-0.5">
+                    {channel.description}
+                  </span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 }
