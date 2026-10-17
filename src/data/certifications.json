@@ -1,53 +1,156 @@
 [
-    {
-        "badgeId": "f5a458e1-77e7-4ed7-89e9-adbf7bf0b058"
-    },
-    {
-        "badgeId": "618bd404-336f-4dbe-be70-c9e87a5110c3"
-    },
-    {
-        "badgeId": "5db92c01-0db4-41fe-9302-869b2659e441"
-    },
-    {
-        "badgeId": "2a45768b-e26e-4fab-95f2-b164a1ee81ce"
-    },
-    {
-        "badgeId": "e90781dc-8bee-45ba-afdd-dece22125900"
-    },
-    {
-        "badgeId": "aa728746-0f08-4e0d-9439-d67e7b5d5d4b"
-    },
-    {
-        "badgeId": "7dcf73e3-0729-489c-bfd2-cc52fc730459"
-    },
-    {
-        "badgeId": "ab05ad18-3142-4b4e-b01e-1939e5b2ea93"
-    },
-    {
-        "badgeId": "6f5f4710-b26d-46fb-9780-05fd09ca3efc"
-    },
-    {
-        "badgeId": "8de63028-91df-4e86-b320-9e6071e9de7c"
-    },
-    {
-        "badgeId": "4f548c89-8686-43f9-be7f-493d58ab0e3f"
-    },
-    {
-        "badgeId": "dc2c9a69-85f8-4b13-b3c3-588d390e7688"
-    },
-    {
-        "badgeId": "e626fdf0-c7c5-4908-9107-36dfc4a69e27"
-    },
-    {
-        "badgeId": "4fc162e7-f8fa-4060-8647-52219dab3481"
-    },
-    {
-        "badgeId": "7756f8e3-a913-4915-a845-fe190e56ca94"
-    },
-    {
-        "badgeId": "41f506b3-9b53-4adf-a32f-9c170ecaa26d"
-    },
-    {
-        "badgeId": "aacac7af-2bce-4333-b470-77a6ce4dd78b"
-    }
+  {
+    "badgeId": "f5a458e1-77e7-4ed7-89e9-adbf7bf0b058",
+    "name": "AWS Certified Generative AI Developer - Professional",
+    "issuer": "Amazon Web Services",
+    "earned": "2026-03-29",
+    "expires": "2029-03-29",
+    "featured": true,
+    "note": "Professional-level certification covering build-and-deploy of generative AI solutions on AWS."
+  },
+  {
+    "badgeId": "5db92c01-0db4-41fe-9302-869b2659e441",
+    "name": "Google Cloud Professional Cloud Architect",
+    "issuer": "Google Cloud",
+    "earned": "2024-07-08",
+    "expires": "2026-09-01",
+    "expired": true,
+    "featured": true,
+    "note": "Professional-level architecture certification for designing and managing Google Cloud solutions."
+  },
+  {
+    "badgeId": "618bd404-336f-4dbe-be70-c9e87a5110c3",
+    "name": "AWS Certified Generative AI Developer - Professional (Early Adopter)",
+    "issuer": "Amazon Web Services",
+    "earned": "2026-03-29",
+    "expires": null,
+    "featured": false,
+    "note": "Early adopter recognition for the Generative AI Developer Professional certification."
+  },
+  {
+    "badgeId": "2a45768b-e26e-4fab-95f2-b164a1ee81ce",
+    "name": "Explore Generative AI with the Vertex AI Gemini API",
+    "issuer": "Google Cloud",
+    "earned": "2024-06-21",
+    "expires": null,
+    "featured": false,
+    "note": "Skill badge covering the Vertex AI Gemini API for generative AI workloads."
+  },
+  {
+    "badgeId": "e90781dc-8bee-45ba-afdd-dece22125900",
+    "name": "Prompt Design in Vertex AI",
+    "issuer": "Google Cloud",
+    "earned": "2024-06-21",
+    "expires": null,
+    "featured": false,
+    "note": "Skill badge on prompt design techniques for Vertex AI models."
+  },
+  {
+    "badgeId": "aa728746-0f08-4e0d-9439-d67e7b5d5d4b",
+    "name": "Develop GenAI Apps with Gemini and Streamlit",
+    "issuer": "Google Cloud",
+    "earned": "2024-06-16",
+    "expires": null,
+    "featured": false,
+    "note": "Skill badge on building generative AI applications with Gemini and Streamlit."
+  },
+  {
+    "badgeId": "7dcf73e3-0729-489c-bfd2-cc52fc730459",
+    "name": "Automate Data Capture at Scale with Document AI",
+    "issuer": "Google Cloud",
+    "earned": "2024-06-15",
+    "expires": null,
+    "featured": false,
+    "note": "Skill badge on Document AI for automated data capture at scale."
+  },
+  {
+    "badgeId": "ab05ad18-3142-4b4e-b01e-1939e5b2ea93",
+    "name": "Set Up an App Dev Environment on Google Cloud",
+    "issuer": "Google Cloud",
+    "earned": "2024-06-14",
+    "expires": null,
+    "featured": false,
+    "note": "Skill badge on setting up application development environments on Google Cloud."
+  },
+  {
+    "badgeId": "6f5f4710-b26d-46fb-9780-05fd09ca3efc",
+    "name": "Deploy Kubernetes Applications on Google Cloud",
+    "issuer": "Google Cloud",
+    "earned": "2024-06-14",
+    "expires": null,
+    "featured": false,
+    "note": "Skill badge on deploying Kubernetes applications on Google Cloud."
+  },
+  {
+    "badgeId": "8de63028-91df-4e86-b320-9e6071e9de7c",
+    "name": "Manage Kubernetes in Google Cloud",
+    "issuer": "Google Cloud",
+    "earned": "2024-06-14",
+    "expires": null,
+    "featured": false,
+    "note": "Skill badge on managing Kubernetes clusters in Google Cloud."
+  },
+  {
+    "badgeId": "4f548c89-8686-43f9-be7f-493d58ab0e3f",
+    "name": "Develop Your Google Cloud Network",
+    "issuer": "Google Cloud",
+    "earned": "2024-05-22",
+    "expires": null,
+    "featured": false,
+    "note": "Skill badge on Google Cloud networking fundamentals."
+  },
+  {
+    "badgeId": "dc2c9a69-85f8-4b13-b3c3-588d390e7688",
+    "name": "Implement Load Balancing on Compute Engine",
+    "issuer": "Google Cloud",
+    "earned": "2024-05-22",
+    "expires": null,
+    "featured": false,
+    "note": "Skill badge on load balancing configurations for Compute Engine."
+  },
+  {
+    "badgeId": "e626fdf0-c7c5-4908-9107-36dfc4a69e27",
+    "name": "Optimize Costs for Google Kubernetes Engine",
+    "issuer": "Google Cloud",
+    "earned": "2024-05-22",
+    "expires": null,
+    "featured": false,
+    "note": "Skill badge on cost optimization for Google Kubernetes Engine."
+  },
+  {
+    "badgeId": "4fc162e7-f8fa-4060-8647-52219dab3481",
+    "name": "Build Infrastructure with Terraform on Google Cloud",
+    "issuer": "Google Cloud",
+    "earned": "2024-05-20",
+    "expires": null,
+    "featured": false,
+    "note": "Skill badge on infrastructure-as-code with Terraform on Google Cloud."
+  },
+  {
+    "badgeId": "7756f8e3-a913-4915-a845-fe190e56ca94",
+    "name": "AWS Certified Cloud Practitioner",
+    "issuer": "Amazon Web Services",
+    "earned": "2023-07-28",
+    "expires": "2029-03-29",
+    "featured": false,
+    "note": "Foundational AWS certification covering cloud concepts, services, security, and billing."
+  },
+  {
+    "badgeId": "41f506b3-9b53-4adf-a32f-9c170ecaa26d",
+    "name": "AWS Academy Graduate - Cloud Foundations",
+    "issuer": "Amazon Web Services",
+    "earned": "2022-12-17",
+    "expires": null,
+    "featured": false,
+    "note": "AWS Academy graduate badge for the Cloud Foundations curriculum."
+  },
+  {
+    "badgeId": "aacac7af-2bce-4333-b470-77a6ce4dd78b",
+    "name": "AWS Educate Machine Learning - DeepRacer",
+    "issuer": "Amazon Web Services",
+    "earned": "2022-07-29",
+    "expires": null,
+    "featured": false,
+    "note": "AWS Educate machine learning badge earned through DeepRacer reinforcement learning."
+  }
 ]
