@@ -4,17 +4,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Namasivaayam L | ML Engineer & AI Product Builder</title>
-    <meta name="description" content="Results-driven ML Engineer specializing in GenAI, Multi-Modal Systems, and Full-Stack Development. Building innovative AI solutions at Mr. Cooper." />
+    <meta name="description" content="Machine Learning Engineer specializing in production GenAI systems, multi-agent orchestration, and LLM evaluation. Document extraction accuracy improved from 9% to 90%." />
     <meta name="author" content="Namasivaayam L" />
 
     <meta property="og:title" content="Namasivaayam L | ML Engineer & AI Product Builder" />
-    <meta property="og:description" content="Results-driven ML Engineer specializing in GenAI, Multi-Modal Systems, and Full-Stack Development." />
+    <meta property="og:description" content="Machine Learning Engineer specializing in production GenAI systems, multi-agent orchestration, and LLM evaluation." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://namasivaayam-l.github.io/namasivaayam-folio/" />
+    <meta property="og:image" content="https://namasivaayam-l.github.io/namasivaayam-folio/og-image.png" />
 
-    <meta property="og:image" content="/og-image.png" />
-    <script type="module" crossorigin src="/namasivaayam-folio/assets/index-CIAC-DlG.js"></script>
-    <link rel="stylesheet" crossorigin href="/namasivaayam-folio/assets/index-B0n4vRnO.css">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Namasivaayam L | ML Engineer & AI Product Builder" />
+    <meta name="twitter:description" content="Machine Learning Engineer specializing in production GenAI systems, multi-agent orchestration, and LLM evaluation." />
+    <meta name="twitter:image" content="https://namasivaayam-l.github.io/namasivaayam-folio/og-image.png" />
+
+    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+
+    <script>
+      // Apply the saved theme before React boots to avoid a light-mode flash.
+      // Mirrors next-themes' "class" strategy and localStorage key.
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var theme = stored || (prefersDark ? "dark" : "light");
+          if (theme === "dark") document.documentElement.classList.add("dark");
+        } catch (e) {
+          /* localStorage unavailable — fall back to light. */
+        }
+      })();
+    </script>
+
+    <script>
+      // SPA redirect handling for GitHub Pages (spa-github-pages).
+      // 404.html encodes the requested path into a query parameter like ?/experience;
+      // this decodes it back before React boots so BrowserRouter sees the real route.
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function (s) {
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      }(window.location));
+    </script>
+    <script type="module" crossorigin src="/namasivaayam-folio/assets/index-DXhdVZwv.js"></script>
+    <link rel="stylesheet" crossorigin href="/namasivaayam-folio/assets/index-MzxfuKAq.css">
   </head>
 
   <body>
