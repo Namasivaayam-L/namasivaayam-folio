@@ -1,27 +1,102 @@
 [
   {
-    "id": "rocket-india-se1",
+    "id": "rocket-india",
     "company": "Rocket, India",
-    "role": "Software Engineer I",
-    "duration": "07/2024 – Present",
-    "location": "Chennai, TN, India",
-      "contributions": [
-      "In A Box (Multi-Agent System): Built and deployed a scalable multi-agent workflow to automate complex multi-document verification across 50+ checkpoints, achieving a 67% reduction in manual processing effort. Built a large-scale orchestration graph using LangGraph for Loan Modification workflows, integrated multiple enterprise systems (FileNet, LSAMS, CMOD), implemented cross-verification pipelines across 5+ document types, and enabled real-time state tracking and persistence via MCP tools interacting with backend services (.NET).",
-      "PyroAI Docs (GenAI Extraction): Built a production-grade LLM-based document extraction system, improving accuracy from 9% to 90% and enabling straight-through processing across 15+ financial document types while handling 2000+ pages/day. Migrated legacy deep learning pipelines to LLM-driven architectures, engineered optimized prompt pipelines for diverse document formats and edge cases, and reduced monthly cloud infrastructure costs from $30K+ to < $10K while decreasing dependency on human-in-the-loop operations.",
-      "AI Guardian (LLM Validation): Led the development of a scalable LLM evaluation and validation framework to benchmark production models against external competitors. Built backend services using FastAPI, Docker, and GKE, and enabled systematic performance tracking and comparison across multiple dimensions using LLM-as-judge, Cosine Similarity, and Levenshtein Distance metrics.",
-      "Idea-Code (Autonomous PDLC): Architected a LangGraph Deepagent pipeline using Azure/GitHub MCP servers to automate the product development lifecycle from concept to GitHub PRs. Orchestrated autonomous generation of BRDs, architectures, and ADO tasks, streamlining the transition from requirements to production code."
-    ],
-    "tags": ["Python", "LangGraph", "Azure", "GitHub", "MCP Servers", "FastAPI", "Docker", "GKE", "Google ADK", "Vertex AI", "GCP", "LangChain", "Azure Pipelines", "Gemini", "OpenAI GPT", "Next.js", "Java", "Spring Boot", "AlloyDB"]
-  },
-  {
-    "id": "rocket-india-intern",
-    "company": "Rocket, India",
-    "role": "Software Engineer Intern",
-    "duration": "01/2024 – 06/2024",
-    "location": "Chennai, TN, India",
-    "contributions": [
-      "Delivered a Gemini-based document extraction proof-of-concept, achieving a 10x accuracy improvement and establishing the foundation for production adoption."
-    ],
-    "tags": ["Python", "Gemini", "Computer Vision", "GenAI", "Structured Data Extraction"]
+    "companyUrl": "https://rocket.com/",
+    "companyNote": "formerly Mr. Cooper",
+    "roles": [
+      {
+        "id": "software-engineer-1",
+        "title": "Software Engineer I",
+        "period": "Jul 2024 – Present",
+        "location": "Chennai, TN, India",
+        "summary": "Building production GenAI systems for financial document processing — multi-agent orchestration, LLM extraction, and model evaluation.",
+        "workstreams": [
+          {
+            "id": "in-a-box",
+            "name": "In A Box",
+            "subtitle": "Multi-Agent Document Verification",
+            "problem": "Loan-modification verification required staff to manually cross-check more than 50 checkpoints spread across multiple documents and enterprise systems — a slow, error-prone bottleneck.",
+            "outcome": "A deployed multi-agent workflow that cut manual processing effort by 67% and made every verification step traceable.",
+            "approach": [
+              "Built a large-scale orchestration graph using LangGraph for Loan Modification workflows.",
+              "Integrated multiple enterprise document-management and backend systems to enable reliable data aggregation.",
+              "Implemented cross-verification pipelines across 5+ document types, combining classification, extraction, and validation within a unified graph.",
+              "Enabled real-time state tracking and persistence via MCP tools interacting with .NET backend services, ensuring traceability of intermediate and final outputs."
+            ],
+            "metrics": [
+              { "value": "67%", "label": "Less manual processing" },
+              { "value": "50+", "label": "Checkpoints automated" },
+              { "value": "5+", "label": "Document types cross-verified" }
+            ],
+            "stack": ["LangGraph", "MCP", "Python", ".NET integration"]
+          },
+          {
+            "id": "pyroai-docs",
+            "name": "PyroAI Docs",
+            "subtitle": "GenAI Document Extraction",
+            "problem": "Legacy deep-learning extraction pipelines managed only 9% accuracy on financial documents, leaving almost everything to manual keying.",
+            "outcome": "A production-grade LLM extraction system reaching 90% accuracy, enabling straight-through processing while cutting monthly infrastructure costs from $30K+ to under $10K.",
+            "approach": [
+              "Migrated legacy deep-learning pipelines to LLM-driven architectures.",
+              "Engineered optimized prompt pipelines for diverse document formats and edge cases, significantly improving robustness and maintainability.",
+              "Reduced monthly cloud infrastructure costs from $30K+ to under $10K while decreasing dependency on human-in-the-loop (HITL) operations."
+            ],
+            "metrics": [
+              { "value": "9% → 90%", "label": "Extraction accuracy" },
+              { "value": "15+", "label": "Financial document types" },
+              { "value": "2,000+", "label": "Pages processed per day" },
+              { "value": "$30K → <$10K", "label": "Monthly infrastructure cost" }
+            ],
+            "stack": ["Python", "LLM Prompt Pipelines", "Vertex AI", "Gemini"]
+          },
+          {
+            "id": "ai-guardian",
+            "name": "AI Guardian",
+            "subtitle": "LLM Evaluation Framework",
+            "problem": "Production model choices were driven by anecdote — there was no systematic way to benchmark in-house models against external competitors.",
+            "outcome": "A scalable evaluation and validation framework that made model selection and regression tracking evidence-based.",
+            "approach": [
+              "Led development of a scalable LLM evaluation and validation framework to benchmark production models against external competitors.",
+              "Built backend services using FastAPI, Docker, and GKE.",
+              "Enabled systematic performance tracking and model comparison across multiple dimensions using LLM-as-judge, cosine similarity, and Levenshtein distance metrics."
+            ],
+            "metrics": [
+              { "value": "3", "label": "Evaluation methodologies combined" },
+              { "value": "GKE", "label": "Containerized evaluation infra" }
+            ],
+            "stack": ["FastAPI", "Docker", "GKE", "LLM-as-judge"]
+          },
+          {
+            "id": "idea-code",
+            "name": "Idea-Code",
+            "subtitle": "Autonomous Product Development Lifecycle",
+            "problem": "Turning a requirement into working software meant weeks of manual handoffs between documentation, architecture, task planning, and coding.",
+            "outcome": "An autonomous pipeline that carries a concept all the way to GitHub pull requests, generating its own planning artifacts along the way.",
+            "approach": [
+              "Architected a LangGraph Deep-agent pipeline using Azure and GitHub MCP servers to automate the product development lifecycle from concept to GitHub PRs.",
+              "Orchestrated autonomous generation of BRDs, architectures, and ADO tasks.",
+              "Streamlined the transition from requirements to production code."
+            ],
+            "metrics": [
+              { "value": "Concept → PR", "label": "Automated end to end" }
+            ],
+            "stack": ["LangGraph", "Deep Agents", "MCP", "Azure DevOps", "GitHub"]
+          }
+        ],
+        "stack": ["Python", "LangGraph", "MCP", "FastAPI", "Vertex AI", "GCP", "Docker", "GKE"]
+      },
+      {
+        "id": "software-engineer-intern",
+        "title": "Software Engineer Intern",
+        "period": "Jan 2024 – Jun 2024",
+        "location": "Chennai, TN, India",
+        "summary": "Delivered the Gemini-based document extraction proof of concept that established the foundation for production adoption.",
+        "highlights": [
+          "Achieved a 10x accuracy improvement over the existing baseline — the experiment that later grew into the PyroAI Docs production system."
+        ],
+        "stack": ["Python", "Gemini", "Computer Vision", "Structured Data Extraction"]
+      }
+    ]
   }
 ]
