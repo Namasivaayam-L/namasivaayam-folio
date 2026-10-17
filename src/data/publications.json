@@ -1,10 +1,21 @@
 [
   {
     "title": "Pressure, Queue, and Average Speed - Based Multi-Agent DQN for Optimizing Traffic Signal Control",
-    "date": "23/05/2024",
-    "description": "This project utilized DQN and SUMO simulator. It demonstrated that optimizing for average speed and minimizing queue lengths are key to efficient traffic management.",
+    "authors": [
+      "J. Angela Jennifa Sujana",
+      "L. Namasivaayam"
+    ],
+    "authorNote": "Second author · with J. Angela Jennifa Sujana (HOD, AI & DS)",
+    "conference": "2024 International Conference on Advances in Data Engineering and Intelligent Computing Systems (ADICS)",
+    "venue": "Chennai, India · 18–19 April 2024 · IEEE · pp. 1–6",
+    "year": "2024",
+    "doi": "10.1109/ADICS58448.2024.10533624",
+    "publisher": "IEEE",
+    "abstract": "Traffic congestion poses a significant challenge in urban areas, and deep reinforcement learning (DRL) offers an encouraging method for traffic signal control. We evaluate the DQN algorithm, with PQAS (Pressure, Queue, Average Speed) using the SUMO traffic simulator. Our results demonstrate that DQN improves traffic flow and reduces congestion compared to traditional methods. Our findings highlight the potential of DRL in developing more effective traffic signal control systems, with DQN, combined with PQAS. PQAS represents three reward functions pressure-based, queue-based, and average speed-based reward functions, emerging as a promising candidate indicating that optimizing for average speed and minimizing queue lengths are key factors in achieving efficient traffic signal control.",
+    "summary": "Multi-agent DQN for traffic signal control in the SUMO simulator, comparing three reward functions — pressure, queue length, and average speed. Found that optimizing average speed while minimizing queue length yields the most efficient control.",
     "link": "https://ieeexplore.ieee.org/document/10533624",
-    "conference": "IEEE Conference",
-    "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:share:7205039702830170112?collapsed=1"
+    "doiUrl": "https://doi.org/10.1109/ADICS58448.2024.10533624",
+    "bibtex": "@inproceedings{sujana2024pressure,\n  author    = {Sujana, J. Angela Jennifa and Namasivaayam, L.},\n  title     = {Pressure, Queue, and Average Speed - Based Multi-Agent {DQN} for Optimizing Traffic Signal Control},\n  booktitle = {2024 International Conference on Advances in Data Engineering and Intelligent Computing Systems (ADICS)},\n  year      = {2024},\n  pages     = {1--6},\n  publisher = {IEEE},\n  address   = {Chennai, India},\n  doi       = {10.1109/ADICS58448.2024.10533624},\n  url       = {https://ieeexplore.ieee.org/document/10533624}\n}",
+    "relatedSlug": "atsc-transformer-dqn-petting-zoo-pytorch"
   }
 ]
