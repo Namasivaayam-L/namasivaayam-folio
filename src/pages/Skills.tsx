@@ -51,7 +51,10 @@ const Skills = () => {
       {/* Header */}
       <div className="space-y-4">
         <h1 className="text-4xl font-bold text-foreground">Skills</h1>
-        <p className="text-lg text-muted-foreground">My technical expertise and capabilities</p>
+        <p className="text-lg text-muted-foreground max-w-2xl">
+          Grouped by what I build with them, not by category label — agentic systems, the ML
+          underneath, the services around them, and where they run.
+        </p>
       </div>
 
       {/* Skills by Category */}
@@ -60,7 +63,12 @@ const Skills = () => {
           const sortedSkills = sortAlphabetically(category.skills, (skill) => skill);
           return (
             <section key={category.name} className="space-y-4">
-              <h2 className="text-2xl font-bold text-foreground">{category.name}</h2>
+              <div className="space-y-1">
+                <h2 className="text-2xl font-bold text-foreground">{category.name}</h2>
+                {category.blurb && (
+                  <p className="text-sm text-muted-foreground">{category.blurb}</p>
+                )}
+              </div>
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {sortedSkills.map((skill, skillIndex) => {
                   const iconPath = skillIconMap[skill] || "/namasivaayam-folio/icons/js.svg"; // Default icon
