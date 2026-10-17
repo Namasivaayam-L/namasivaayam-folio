@@ -1,19 +1,47 @@
 {
   "categories": [
     {
-      "name": "AI/ML",
-      "skills": ["Google ADK", "RAG", "LangChain", "LlamaIndex", "PyTorch", "TensorFlow", "Google Vertex AI", "Prompt Engineering", "LangSmith", "LangGraph", "OpenAI", "Qwen"]
+      "name": "GenAI & Agentic Systems",
+      "blurb": "The core of my day job: production LLM systems, agent orchestration, and retrieval.",
+      "skills": [
+        "LangGraph",
+        "LangChain",
+               "LlamaIndex",
+        "Google ADK",
+        "RAG",
+        "Prompt Engineering",
+        "LangSmith",
+        "OpenAI",
+        "Qwen",
+        "Google Vertex AI"
+      ]
     },
     {
-      "name": "Cloud",
+      "name": "ML Engineering",
+      "blurb": "Classical and deep learning foundations — models built to be measured.",
+      "skills": ["PyTorch", "TensorFlow"]
+    },
+    {
+      "name": "Backend & Data",
+      "blurb": "Services and storage that carry the ML systems into production.",
+      "skills": [
+        "FastAPI",
+        "Spring Boot",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis"
+      ]
+    },
+    {
+      "name": "Cloud & Infrastructure",
+      "blurb": "Where the systems run — containerized, orchestrated, observable.",
       "skills": ["GCP PCA", "AWS CPE", "Docker", "Kubernetes (GKE)", "Rancher"]
     },
     {
-      "name": "Backend & Databases",
-      "skills": ["FastAPI", "Spring Boot", "Node.js", "Express", "PostgreSQL", "MongoDB", "Redis"]
-    },
-    {
       "name": "Frontend",
+      "blurb": "Interfaces for the tools and products around the models.",
       "skills": ["React", "Next.js", "Redux"]
     }
   ]
