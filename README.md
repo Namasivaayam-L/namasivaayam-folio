@@ -118,7 +118,7 @@ The portfolio comprehensively covers:
 
 ## 🔗 Links & Social
 
-- **🌐 Live Portfolio**: [namasivaayam-l.github.io/namasivaayam-folio](https://namasivaayam-l.github.io/)
+- **🌐 Live Portfolio**: [namasivaayam-l.github.io/namasivaayam-folio](https://namasivaayam-l.github.io/namasivaayam-folio/)
 - **💻 GitHub**: [github.com/Namasivaayam-L](https://github.com/Namasivaayam-L)
 - **💼 LinkedIn**: [linkedin.com/in/namasivaayam-l](https://www.linkedin.com/in/namasivaayam-l-42bb601b1/)
 - **🏆 Credly**: [credly.com/users/namasivaayam-l/badges](https://credly.com/users/namasivaayam-l/badges)

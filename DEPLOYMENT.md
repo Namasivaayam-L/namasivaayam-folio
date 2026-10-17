@@ -6,7 +6,7 @@ This project is configured for deployment to GitHub Pages. Here's what you need 
 
 The project has been configured with:
 
-1. **Base Path**: The `vite.config.ts` file includes `base: "/"` to match the GitHub Pages repository URL structure.
+1. **Base Path**: The `vite.config.ts` file includes `base: "/namasivaayam-folio/"` to match the GitHub Pages repository URL structure.
 
 2. **Client-Side Routing**: The `public/404.html` file handles client-side routing by redirecting unknown routes back to the main application, allowing React Router to handle the routing.
 
@@ -27,7 +27,7 @@ The project has been configured with:
    - Build the project
    - Deploy the built files to the `gh-pages` branch
 
-3. Your site will be available at: `https://namasivaayam-l.github.io/`
+3. Your site will be available at: `https://namasivaayam-l.github.io/namasivaayam-folio/`
 
 ### Manual Deployment
 If you prefer to deploy manually, you can run:

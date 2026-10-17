@@ -3,15 +3,15 @@ import toolsData from "@/data/tools.json";
 
 // Create a mapping of tool icon names to their SVG icon paths
 const toolIconMap: Record<string, string> = {
-  vscode: "/icons/vscode.svg",
- docker: "/icons/docker.svg",
-  datagrip: "/icons/datagrip.svg",
-  github: "/icons/github.svg",
-  "github-copilot": "/icons/github-copilot.svg",
-  cline: "/icons/cline.svg",
-  huggingface: "/icons/huggingface.svg",
-  linux: "/icons/linux.svg",
-  bash: "/icons/bash.svg",
+  vscode: "/namasivaayam-folio/icons/vscode.svg",
+ docker: "/namasivaayam-folio/icons/docker.svg",
+  datagrip: "/namasivaayam-folio/icons/datagrip.svg",
+  github: "/namasivaayam-folio/icons/github.svg",
+  "github-copilot": "/namasivaayam-folio/icons/github-copilot.svg",
+  cline: "/namasivaayam-folio/icons/cline.svg",
+  huggingface: "/namasivaayam-folio/icons/huggingface.svg",
+  linux: "/namasivaayam-folio/icons/linux.svg",
+  bash: "/namasivaayam-folio/icons/bash.svg",
 };
 
 // Function to sort array alphabetically
@@ -33,7 +33,7 @@ export default function Tools() {
       {/* Tools Grid */}
       <div className="grid gap-6 md:grid-cols-3 sm:grid-cols-2">
         {sortedTools.map((tool, index) => {
-          const iconPath = toolIconMap[tool.icon] || "/icons/js.svg"; // Default icon
+          const iconPath = toolIconMap[tool.icon] || "/namasivaayam-folio/icons/js.svg"; // Default icon
           return (
             <div
               key={tool.name}
