@@ -1,12 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
 import { HiHome, HiBriefcase, HiFolder, HiDocument, HiUser, HiMail, HiCode, HiMenu } from "react-icons/hi";
-import { HiWrench } from "react-icons/hi2";
 import { FaGithub, FaLinkedin, FaDiscord, FaAward } from "react-icons/fa";
 import { cn } from "@/lib/utils";
 import personalData from "@/data/personal.json";
 import navigationData from "@/data/navigation.json";
 import socialLinksData from "@/data/social-links.json";
 import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { RESUME_URL, RESUME_FILENAME } from "@/lib/links";
+import ThemeToggle from "@/components/ThemeToggle";
 
 // Icon mapping for dynamic icon rendering
 const iconMap = {
@@ -17,12 +18,55 @@ const iconMap = {
   HiUser,
   HiMail,
   HiCode,
-  HiWrench,
   FaDiscord,
   FaLinkedin,
   FaGithub,
   FaAward,
 };
+
+type NavItem =
+  | { type: "link"; name: string; href: string; icon: string }
+  | { type: "group"; name: string; items: { name: string; href: string; icon: string }[] };
+
+const typedNavigation: NavItem[] = navigationData;
+
+/** Secondary destinations surfaced in the footer instead of the primary nav. */
+const footerLinks = [
+  { name: "Certifications", href: "/certifications" },
+  { name: "Education & Recognition", href: "/academic-awards" },
+];
+
+function NavLink({
+  to,
+  name,
+  icon,
+  isActive,
+  closeOnClick,
+}: {
+  to: string;
+  name: string;
+  icon: string;
+  isActive: boolean;
+  closeOnClick: boolean;
+}) {
+  const IconComponent = iconMap[icon as keyof typeof iconMap];
+  const navLink = (
+    <Link
+      to={to}
+      className={cn(
+        "flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-all border border-transparent",
+        isActive
+          ? "bg-primary text-primary-foreground shadow-sm"
+          : "text-sidebar-foreground hover:bg-sidebar-accent/50"
+      )}
+    >
+      {IconComponent && <IconComponent className="w-4 h-4" />}
+      <span>{name}</span>
+    </Link>
+  );
+
+  return closeOnClick ? <SheetClose asChild>{navLink}</SheetClose> : navLink;
+}
 
 function SidebarContent({
   location,
@@ -47,55 +91,93 @@ function SidebarContent({
         </div>
       </div>
 
-      <nav className="flex-1 px-3 py-4 space-y-1">
-        {navigationData.map((item) => {
-          const IconComponent = iconMap[item.icon as keyof typeof iconMap];
-          const isActive = location.pathname === item.href;
-          const navLink = (
-            <Link
-              key={item.name}
-              to={item.href}
-              className={cn(
-                "flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-all border border-transparent",
-                isActive
-                  ? "bg-black text-white hover:bg-transparent hover:text-black hover:border-black shadow-sm"
-                  : "text-sidebar-foreground hover:bg-sidebar-accent/50"
-              )}
-            >
-              {IconComponent && <IconComponent className="w-4 h-4" />}
-              <span>{item.name}</span>
-            </Link>
-          );
+      <nav className="flex-1 px-3 py-4 space-y-1" aria-label="Primary">
+        {typedNavigation.map((item) => {
+          if (item.type === "group") {
+            return (
+              <div key={item.name} className="pt-3 space-y-1">
+                <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  {item.name}
+                </p>
+                {item.items.map((subItem) => (
+                  <div key={subItem.href} className="pl-3">
+                    <NavLink
+                      to={subItem.href}
+                      name={subItem.name}
+                      icon={subItem.icon}
+                      isActive={location.pathname === subItem.href}
+                      closeOnClick={closeOnClick}
+                    />
+                  </div>
+                ))}
+              </div>
+            );
+          }
 
-          return closeOnClick ? (
-            <SheetClose asChild key={item.name}>
-              {navLink}
-            </SheetClose>
-          ) : (
-            navLink
+          return (
+            <NavLink
+              key={item.href}
+              to={item.href}
+              name={item.name}
+              icon={item.icon}
+              isActive={location.pathname === item.href}
+              closeOnClick={closeOnClick}
+            />
           );
         })}
       </nav>
 
-      <div className="p-4 border-t border-border">
-        <p className="text-xs font-medium text-muted-foreground mb-3">Connect</p>
-        <div className="flex gap-2">
-          {socialLinksData.map((link) => {
-            const IconComponent = iconMap[link.icon as keyof typeof iconMap];
-            const href = personalData.links[link.key as keyof typeof personalData.links];
-            return (
-              <a
-                key={link.name}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label={link.name}
+      <div className="p-4 border-t border-border space-y-4">
+        <div>
+          <div className="flex items-center justify-between mb-2">
+            <p className="text-xs font-medium text-muted-foreground">More</p>
+            <ThemeToggle />
+          </div>
+          <div className="flex flex-col gap-1">
+            {footerLinks.map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={cn(
+                  "text-sm rounded-md px-2 py-1 transition-colors",
+                  location.pathname === link.href
+                    ? "text-foreground font-medium"
+                    : "text-muted-foreground hover:text-foreground"
+                )}
               >
-                {IconComponent && <IconComponent className="w-5 h-5" />}
-              </a>
-            );
-          })}
+                {link.name}
+              </Link>
+            ))}
+            <a
+              href={RESUME_URL}
+              download={RESUME_FILENAME}
+              className="text-sm rounded-md px-2 py-1 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Download Résumé
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <p className="text-xs font-medium text-muted-foreground mb-3">Connect</p>
+          <div className="flex gap-2">
+            {socialLinksData.map((link) => {
+              const IconComponent = iconMap[link.icon as keyof typeof iconMap];
+              const href = personalData.links[link.key as keyof typeof personalData.links];
+              return (
+                <a
+                  key={link.name}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label={link.name}
+                >
+                  {IconComponent && <IconComponent className="w-5 h-5" />}
+                </a>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
@@ -133,9 +215,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
 
         <footer className="border-t border-border py-6 px-4 sm:px-6 md:px-8">
-          <div className="max-w-4xl mx-auto flex flex-col gap-2 sm:flex-row sm:justify-between sm:items-center text-sm text-muted-foreground">
-            <p>Made by {personalData.name.split(" ")[0]} | © 2025</p>
-            <button className="hover:text-foreground transition-colors">Reach out →</button>
+          <div className="max-w-4xl mx-auto flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center text-sm text-muted-foreground">
+            <p>
+              Made by {personalData.name.split(" ")[0]} | © {new Date().getFullYear()}
+            </p>
+            <div className="flex items-center gap-4">
+              {footerLinks.map((link) => (
+                <Link key={link.href} to={link.href} className="hover:text-foreground transition-colors">
+                  {link.name}
+                </Link>
+              ))}
+              <Link to="/contact" className="text-accent hover:underline">
+                Reach out →
+              </Link>
+            </div>
           </div>
         </footer>
       </main>

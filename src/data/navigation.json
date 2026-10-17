@@ -1,57 +1,54 @@
 [
   {
+    "type": "link",
     "name": "Home",
     "href": "/",
     "icon": "HiHome"
   },
   {
+    "type": "link",
     "name": "Experience",
     "href": "/experience",
     "icon": "HiBriefcase"
   },
   {
-    "name": "Projects",
+    "type": "link",
+    "name": "Independent Work",
     "href": "/projects",
     "icon": "HiFolder"
   },
   {
-    "name": "Certifications",
-    "href": "/certifications",
-    "icon": "FaAward"
-  },
-  {
-    "name": "Publications",
-    "href": "/publications",
-    "icon": "HiDocument"
-  },
-  {
-    "name": "Academic & Awards",
-    "href": "/academic-awards",
-    "icon": "FaAward"
-  },
-  {
+    "type": "link",
     "name": "Skills",
     "href": "/skills",
     "icon": "HiCode"
   },
- {
+  {
+    "type": "group",
+    "name": "Publications & Writing",
+    "items": [
+      {
+        "name": "Publications",
+        "href": "/publications",
+        "icon": "HiDocument"
+      },
+      {
+        "name": "Writing",
+        "href": "/blogs",
+        "icon": "HiDocument"
+      }
+    ]
+  },
+  {
+    "type": "link",
     "name": "About",
     "href": "/about",
     "icon": "HiUser"
   },
   {
-    "name": "Blogs",
-    "href": "/blogs",
-    "icon": "HiDocument"
-  },
-  {
+    "type": "link",
     "name": "Contact",
     "href": "/contact",
     "icon": "HiMail"
-  },
-  {
-    "name": "Tools",
-    "href": "/tools",
-    "icon": "HiWrench"
   }
 ]
