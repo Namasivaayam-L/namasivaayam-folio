@@ -164,7 +164,7 @@ export default function ProjectDetailModal({
                   li: ({ node, ...props }) => (
                     <li className="text-foreground" {...props} />
                   ),
-                  code: ({ node, inline, className, children, ...props }: any) => {
+                  code: ({ node, inline, className, children, ...props }: React.ComponentProps<"code"> & { inline?: boolean; node?: unknown }) => {
                     const childrenText = React.Children.toArray(children).map(child => 
                       typeof child === 'string' ? child : ''
                     ).join('');

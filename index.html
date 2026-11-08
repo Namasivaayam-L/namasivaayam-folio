@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="palette-1">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,20 +18,29 @@
     <meta name="twitter:description" content="Machine Learning Engineer specializing in production GenAI systems, multi-agent orchestration, and LLM evaluation." />
     <meta name="twitter:image" content="https://namasivaayam-l.github.io/namasivaayam-folio/og-image.png" />
 
-    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f5f2" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
     <script>
-      // Apply the saved theme before React boots to avoid a light-mode flash.
-      // Mirrors next-themes' "class" strategy and localStorage key.
+      // Apply the saved color palette before React boots to avoid a flash.
+      // Palettes are CSS variable sets on <html> (.palette-1 … .palette-5);
+      // .palette-1 (the default, marked up in the HTML) is the reference design.
       (function () {
         try {
-          var stored = localStorage.getItem("theme");
-          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-          var theme = stored || (prefersDark ? "dark" : "light");
-          if (theme === "dark") document.documentElement.classList.add("dark");
+          var stored = localStorage.getItem("palette");
+          if (stored === "1" || stored === "2" || stored === "3" || stored === "4" || stored === "5") {
+            var root = document.documentElement;
+            for (var i = 1; i <= 5; i++) root.classList.remove("palette-" + i);
+            root.classList.add("palette-" + stored);
+          }
         } catch (e) {
-          /* localStorage unavailable — fall back to light. */
+          /* localStorage unavailable — fall back to the marked-up default. */
         }
       })();
     </script>

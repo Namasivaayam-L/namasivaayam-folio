@@ -14,12 +14,20 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Space Grotesk", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "ui-monospace", "monospace"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        surface: "hsl(var(--surface))",
+        band: "hsl(var(--band))",
+        dot: "hsl(var(--dot))",
+        glow: "hsl(var(--glow))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -59,10 +67,28 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      borderWidth: {
+        DEFAULT: "1px",
+        2: "2px",
+        3: "3px",
+        4: "4px",
+        6: "6px",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      boxShadow: {
+        "brutal-xs": "2px 2px 0 0 hsl(var(--foreground))",
+        "brutal-sm": "3px 3px 0 0 hsl(var(--foreground))",
+        "brutal-md": "4px 4px 0 0 hsl(var(--foreground))",
+        brutal: "6px 6px 0 0 hsl(var(--foreground))",
+        "brutal-8": "8px 8px 0 0 hsl(var(--foreground))",
+        "brutal-lg": "10px 10px 0 0 hsl(var(--foreground))",
+        "brutal-primary": "6px 6px 0 0 hsl(var(--primary))",
+        "brutal-secondary": "6px 6px 0 0 hsl(var(--secondary))",
+        "brutal-light": "6px 6px 0 0 hsl(var(--background))",
       },
       keyframes: {
         "accordion-down": {

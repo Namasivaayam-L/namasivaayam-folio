@@ -2,98 +2,226 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Design system: five switchable color palettes applied as classes on <html>
+   (.palette-1 … .palette-5). Palette 1 is the exact reference design.
+   All colors are HSL so shadcn's hsl(var(--token)) mapping keeps working.
+   The active palette is set pre-boot by the script in index.html. */
 
-@layer base {
-  :root {
-    --background: 0 0% 98%;
-    --foreground: 222 47% 11%;
+/* Palettes are intentionally OUTSIDE @layer: Tailwind tree-shakes unused
+   class selectors written inside @layer blocks, and .palette-2 … .palette-5
+   only ever appear as template strings in src/lib/palettes.ts — inside a
+   layer they get purged from the build. Top-level CSS is never purged. */
+:root,
+.palette-1 {
+    /* Acid Lime — reference palette (ayushranjane.in) */
+    --background: 60 13% 95%; /* #F5F5F2 */
+    --surface: 50 25% 95%; /* #F6F5F0 */
+    --foreground: 0 0% 5%; /* #0D0D0D */
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 0 0% 5%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 0 0% 5%;
 
-    --primary: 222 47% 11%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 77 94% 52%; /* #B5F80F */
+    --primary-foreground: 0 0% 5%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 338 100% 62%; /* #FF3E85 */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 13% 91%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 60 8% 90%; /* #E8E8E4 */
+    --muted-foreground: 0 0% 30%; /* #4D4D4D */
 
-    --accent: 178 60% 45%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 77 94% 52%;
+    --accent-foreground: 0 0% 5%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 355 100% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 178 60% 45%;
+    --border: 0 0% 5%;
+    --input: 0 0% 5%;
+    --ring: 0 0% 5%;
 
-    --radius: 0.5rem;
+    --band: 86 100% 68%; /* #B8FF5A — section band */
+    --dot: 0 0% 82%; /* #D1D1D1 — grid dots */
+    --glow: 312 100% 78%; /* #FF90E8 — hero circle */
 
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 222 47% 11%;
-    --sidebar-primary: 222 47% 11%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 40% 96%;
-    --sidebar-accent-foreground: 222 47% 11%;
-    --sidebar-border: 214 32% 91%;
-    --sidebar-ring: 178 60% 45%;
-
-    /* Custom tokens */
-    --text-primary: 222 47% 11%;
-    --text-secondary: 215 16% 47%;
-    --text-muted: 220 9% 65%;
-    --bg-hover: 210 40% 96%;
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --radius: 0.75rem;
   }
 
-  .dark {
-    --background: 222 47% 11%;
-    --foreground: 0 0% 98%;
-    --card: 217 33% 17%;
-    --card-foreground: 0 0% 98%;
-    --popover: 217 33% 17%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 222 47% 11%;
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 178 60% 45%;
+  .palette-2 {
+    /* Cobalt Punch */
+    --background: 223 47% 97%;
+    --surface: 223 47% 97%;
+    --foreground: 222 39% 6%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 39% 6%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 39% 6%;
+
+    --primary: 222 100% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 25 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 12% 90%;
+    --muted-foreground: 0 0% 30%;
+
+    --accent: 222 100% 55%;
     --accent-foreground: 0 0% 100%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 178 60% 45%;
-    --sidebar-background: 222 47% 11%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 0 0% 98%;
-    --sidebar-primary-foreground: 222 47% 11%;
-    --sidebar-accent: 217 33% 17%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 217 33% 17%;
-    --sidebar-ring: 178 60% 45%;
+
+    --destructive: 355 100% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 39% 6%;
+    --input: 222 39% 6%;
+    --ring: 222 39% 6%;
+
+    --band: 223 100% 71%;
+    --dot: 225 8% 81%;
+    --glow: 25 100% 73%;
+
+    --radius: 0.75rem;
   }
-}
+
+  .palette-3 {
+    /* Sunset Coral */
+    --background: 35 60% 96%;
+    --surface: 35 60% 96%;
+    --foreground: 27 47% 7%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 27 47% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 27 47% 7%;
+
+    --primary: 9 100% 62%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 43 100% 50%;
+    --secondary-foreground: 0 0% 5%;
+
+    --muted: 38 20% 89%;
+    --muted-foreground: 0 0% 30%;
+
+    --accent: 9 100% 62%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 355 100% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 27 47% 7%;
+    --input: 27 47% 7%;
+    --ring: 27 47% 7%;
+
+    --band: 9 100% 75%;
+    --dot: 32 13% 80%;
+    --glow: 43 100% 73%;
+
+    --radius: 0.75rem;
+  }
+
+  .palette-4 {
+    /* Violet Pop */
+    --background: 257 54% 97%;
+    --surface: 257 54% 97%;
+    --foreground: 270 55% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 270 55% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 55% 8%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 331 100% 65%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 260 12% 91%;
+    --muted-foreground: 0 0% 30%;
+
+    --accent: 262 83% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 355 100% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 55% 8%;
+    --input: 270 55% 8%;
+    --ring: 270 55% 8%;
+
+    --band: 262 83% 73%;
+    --dot: 260 9% 81%;
+    --glow: 332 100% 81%;
+
+    --radius: 0.75rem;
+  }
+
+  .palette-5 {
+    /* Teal Mint */
+    --background: 170 27% 96%;
+    --surface: 170 27% 96%;
+    --foreground: 174 58% 6%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 174 58% 6%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 174 58% 6%;
+
+    --primary: 172 83% 46%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 12 100% 67%;
+    --secondary-foreground: 0 0% 5%;
+
+    --muted: 170 11% 89%;
+    --muted-foreground: 0 0% 30%;
+
+    --accent: 172 83% 46%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 355 100% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 174 58% 6%;
+    --input: 174 58% 6%;
+    --ring: 174 58% 6%;
+
+    --band: 172 71% 65%;
+    --dot: 173 8% 80%;
+    --glow: 12 100% 82%;
+
+    --radius: 0.75rem;
+  }
 
 @layer base {
   * {
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+    /* Keep anchored sections clear of the floating navbar. */
+    scroll-padding-top: 6rem;
+  }
+
   body {
     @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
   }
 
   /* Respect the user's motion preference: neutralize entrance animations
@@ -108,4 +236,62 @@ All colors MUST be HSL.
       scroll-behavior: auto !important;
     }
   }
+}
+
+@layer components {
+  /* Neo-brutalist press interaction: lift on hover, sink on click. */
+  .press-effect {
+    transition: transform 0.12s, box-shadow 0.12s;
+  }
+  .press-effect:hover {
+    box-shadow: 8px 8px 0 0 hsl(var(--foreground));
+    transform: translate(-2px, -2px);
+  }
+  .press-effect:active {
+    box-shadow: 0 0 0 0 hsl(var(--foreground));
+    transform: translate(4px, 4px);
+  }
+
+  /* Graph-paper line grid used behind the hero. */
+  .bg-lines {
+    background-image: linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Subtle dot texture used behind content sections. */
+  .bg-dots {
+    background-image: radial-gradient(hsl(var(--foreground) / 0.16) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+  }
+
+  /* Heavier dot grid used behind the contact section. */
+  .bg-dotgrid {
+    background-image: radial-gradient(hsl(var(--dot)) 2px, transparent 2px);
+    background-size: 24px 24px;
+  }
+}
+
+/* Scrolling ticker (about section) and typing caret. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 36s linear infinite;
+}
+
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-caret {
+  animation: caret-blink 1s steps(2, start) infinite;
 }

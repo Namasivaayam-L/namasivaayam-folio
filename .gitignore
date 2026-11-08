@@ -25,3 +25,10 @@ dist-ssr
 *.sw?
 bun.lockb
 .env
+graphify-out/
+
+# Design-reasoning evidence (reference captures, comparison sheets, bundles)
+design-references/
+
+# tsc incremental build artifacts
+*.tsbuildinfo

@@ -56,8 +56,8 @@ export default function WorkflowDiagram() {
     >
       {stages.map((stage, index) => (
         <li key={stage.title} className="contents">
-          <div className="flex flex-col gap-3 bg-card border border-border rounded-lg p-4">
-            <div className="flex items-center gap-2 text-accent">
+          <div className="flex flex-col gap-3 rounded-lg border-2 border-background bg-card p-4 shadow-brutal-light">
+            <div className="flex items-center gap-2 text-secondary">
               {stage.icon}
               <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                 {index + 1}
@@ -68,7 +68,7 @@ export default function WorkflowDiagram() {
           </div>
           {index < stages.length - 1 && (
             <div
-              className="flex items-center justify-center text-accent/60 py-1 md:py-0 md:px-1"
+              className="flex items-center justify-center py-1 text-primary md:px-1 md:py-0"
               aria-hidden="true"
             >
               {/* Right arrow on desktop, down arrow on mobile */}

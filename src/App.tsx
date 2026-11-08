@@ -4,19 +4,11 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import LegacyRedirect from "./pages/LegacyRedirect";
 
-// Route-level code splitting: Home paints eagerly; everything else is lazy.
-const Experience = lazy(() => import("./pages/Experience"));
-const Projects = lazy(() => import("./pages/Projects"));
-const Blogs = lazy(() => import("./pages/Blogs"));
-const Certifications = lazy(() => import("./pages/Certifications"));
-const About = lazy(() => import("./pages/About"));
-const Contact = lazy(() => import("./pages/Contact"));
-const AcademicAwards = lazy(() => import("./pages/AcademicAwards"));
-const Publications = lazy(() => import("./pages/Publications"));
-const Skills = lazy(() => import("./pages/Skills"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -35,21 +27,25 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter basename="/namasivaayam-folio">
+        <Navbar />
         <Suspense fallback={<RouteFallback />}>
           <Routes>
-            <Route path="/" element={<Layout><Home /></Layout>} />
-            <Route path="/experience" element={<Layout><Experience /></Layout>} />
-            <Route path="/projects" element={<Layout><Projects /></Layout>} />
-            <Route path="/blogs" element={<Layout><Blogs /></Layout>} />
-            <Route path="/certifications" element={<Layout><Certifications /></Layout>} />
-            <Route path="/about" element={<Layout><About /></Layout>} />
-            <Route path="/contact" element={<Layout><Contact /></Layout>} />
-            <Route path="/academic-awards" element={<Layout><AcademicAwards /></Layout>} />
-            <Route path="/publications" element={<Layout><Publications /></Layout>} />
-            <Route path="/skills" element={<Layout><Skills /></Layout>} />
+            <Route path="/" element={<Home />} />
+            {/* Legacy routes redirect to the matching single-page anchor. */}
+            <Route path="/about" element={<LegacyRedirect hash="about" />} />
+            <Route path="/experience" element={<LegacyRedirect hash="experience" />} />
+            <Route path="/skills" element={<LegacyRedirect hash="skills" />} />
+            <Route path="/certifications" element={<LegacyRedirect hash="certificates" />} />
+            <Route path="/publications" element={<LegacyRedirect hash="publications" />} />
+            <Route path="/blogs" element={<LegacyRedirect hash="writing" />} />
+            <Route path="/academic-awards" element={<LegacyRedirect hash="awards" />} />
+            <Route path="/contact" element={<LegacyRedirect hash="contact" />} />
+            {/* Projects were retired from the nav; old links land on home. */}
+            <Route path="/projects" element={<LegacyRedirect hash="top" />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
+        <Footer />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

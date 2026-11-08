@@ -77,8 +77,9 @@ const readRepoFile = async (owner: string, repo: string, filePath: string) => {
     const res = await octokit.repos.getContent({ owner, repo, path: filePath })
     if (!("content" in res.data)) return null
     return Buffer.from(res.data.content as string, "base64").toString("utf8")
-  } catch (e: any) {
-    if (e.status === 404) return null
+  } catch (e) {
+    const status = (e as { status?: number } | null)?.status
+    if (status === 404) return null
     throw e
   }
 }
@@ -116,7 +117,9 @@ const writeFileIfChanged = async (filePath: string, content: string) => {
   try {
     const prev = await fs.readFile(filePath, "utf8")
     if (prev === content) return false
-  } catch {}
+  } catch {
+    // File doesn't exist yet — treat it as unchanged.
+  }
   await ensureDir(path.dirname(filePath))
   await fs.writeFile(filePath, content, "utf8")
   return true
