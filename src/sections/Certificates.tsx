@@ -76,7 +76,7 @@ export default function Certificates() {
     <section id="certificates" className="border-y-[6px] border-foreground bg-band py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader
-          index="04"
+          index="05"
           label="CREDENTIALS"
           title="Certifications"
           subtitle="Professional credentials — AWS & Google Cloud"

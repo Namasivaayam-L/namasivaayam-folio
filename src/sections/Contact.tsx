@@ -95,7 +95,7 @@ export default function Contact() {
           <Reveal className="relative flex flex-col justify-between rounded-[24px] border-[3px] border-foreground bg-band p-8 shadow-brutal-8 lg:col-span-5 md:p-12">
             <div>
               <span className="mb-6 inline-block rounded-sm bg-foreground px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-widest text-band">
-                09 / Contact
+                10 / Contact
               </span>
               <h2 className="text-balance text-[3.5rem] font-black leading-[0.95] tracking-tight text-foreground md:text-[4rem]">
                 Let's build

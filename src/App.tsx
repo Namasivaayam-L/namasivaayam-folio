@@ -41,7 +41,7 @@ const App = () => (
             <Route path="/academic-awards" element={<LegacyRedirect hash="awards" />} />
             <Route path="/contact" element={<LegacyRedirect hash="contact" />} />
             {/* Projects were retired from the nav; old links land on home. */}
-            <Route path="/projects" element={<LegacyRedirect hash="top" />} />
+            <Route path="/projects" element={<LegacyRedirect hash="projects" />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

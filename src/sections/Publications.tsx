@@ -22,7 +22,7 @@ export default function Publications() {
   return (
     <section id="publications" className="px-4 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
-        <SectionHeader index="05" label="PEER-REVIEWED" title="Publications" />
+        <SectionHeader index="06" label="PEER-REVIEWED" title="Publications" />
 
         <Reveal className="mt-10 rounded-xl border-2 border-foreground bg-card p-6 shadow-brutal transition-all duration-300 hover:-translate-y-1 hover:shadow-brutal-lg md:p-8">
           <div className="flex flex-wrap items-center gap-2">

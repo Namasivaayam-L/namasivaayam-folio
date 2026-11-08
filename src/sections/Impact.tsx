@@ -21,7 +21,7 @@ export default function Impact() {
   return (
     <section id="impact" className="border-y-[6px] border-foreground bg-foreground px-4 py-20 text-background md:py-28">
       <div className="relative mx-auto max-w-6xl">
-        <SectionHeader index="08" label="AT A GLANCE" title="Quick Profile" dotClass="text-primary" />
+        <SectionHeader index="09" label="AT A GLANCE" title="Quick Profile" dotClass="text-primary" />
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {STATS.map((stat, i) => (

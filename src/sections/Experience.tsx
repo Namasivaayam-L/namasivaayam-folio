@@ -1,9 +1,8 @@
-import { ChevronDown } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 import Reveal from "@/components/Reveal";
 import experienceData from "@/data/experience.json";
 import education from "@/data/education.json";
-import type { ExperienceEntry, Role, Workstream } from "@/types/experience";
+import type { ExperienceEntry, Role } from "@/types/experience";
 
 const entries: ExperienceEntry[] = experienceData;
 
@@ -12,77 +11,6 @@ function StackChip({ children }: { children: React.ReactNode }) {
     <li className="rounded-full border-2 border-foreground bg-card px-3 py-1 font-mono text-[11px] font-bold shadow-brutal-xs">
       {children}
     </li>
-  );
-}
-
-function WorkstreamCard({ ws }: { ws: Workstream }) {
-  return (
-    <div className="rounded-lg border-2 border-foreground bg-background p-4 md:p-5">
-      <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-        <h4 className="text-lg font-bold">{ws.name}</h4>
-        <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-muted-foreground">
-          {ws.subtitle}
-        </span>
-      </div>
-
-      {ws.metrics.length > 0 && (
-        <ul className="mt-3 flex flex-wrap gap-2">
-          {ws.metrics.map((metric) => (
-            <li
-              key={metric.label}
-              className="rounded-md border-2 border-foreground bg-primary/25 px-3 py-1.5"
-              aria-label={`${metric.value}: ${metric.label}`}
-            >
-              <span className="block text-base font-black leading-none">{metric.value}</span>
-              <span className="font-mono text-[10px] font-bold uppercase tracking-wide text-muted-foreground">
-                {metric.label}
-              </span>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      <div className="mt-4 space-y-3 text-sm leading-relaxed">
-        <p>
-          <span className="font-black">Problem. </span>
-          <span className="text-muted-foreground">{ws.problem}</span>
-        </p>
-        <p>
-          <span className="font-black">Outcome. </span>
-          <span className="text-muted-foreground">{ws.outcome}</span>
-        </p>
-      </div>
-
-      {ws.approach.length > 0 && (
-        <details className="group mt-4 border-t border-border pt-3">
-          <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-medium transition-colors hover:text-foreground">
-            <span>Engineering approach</span>
-            <ChevronDown
-              className="h-4 w-4 text-muted-foreground transition-transform group-open:rotate-180"
-              aria-hidden="true"
-            />
-          </summary>
-          <ul className="space-y-2 pt-3 text-sm text-muted-foreground">
-            {ws.approach.map((item, idx) => (
-              <li key={idx} className="flex gap-2">
-                <span className="font-black text-secondary" aria-hidden="true">
-                  •
-                </span>
-                <span className="leading-relaxed">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </details>
-      )}
-
-      {ws.stack.length > 0 && (
-        <ul className="mt-4 flex flex-wrap gap-2">
-          {ws.stack.map((tech) => (
-            <StackChip key={tech}>{tech}</StackChip>
-          ))}
-        </ul>
-      )}
-    </div>
   );
 }
 
@@ -126,17 +54,6 @@ function RoleCard({ role, company, companyUrl, companyNote }: {
             </li>
           ))}
         </ul>
-      )}
-
-      {role.workstreams && (
-        <div className="mt-6 space-y-4">
-          <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-            Selected work
-          </p>
-          {role.workstreams.map((ws) => (
-            <WorkstreamCard key={ws.id} ws={ws} />
-          ))}
-        </div>
       )}
 
       {role.stack && (

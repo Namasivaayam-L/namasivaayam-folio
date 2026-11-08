@@ -9,7 +9,7 @@ export default function Awards() {
   return (
     <section id="awards" className="border-y-2 border-foreground bg-dots px-4 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
-        <SectionHeader index="07" label="HONORS" title="Awards & Recognition" />
+        <SectionHeader index="08" label="HONORS" title="Awards & Recognition" />
 
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {awards.map((award, i) => (

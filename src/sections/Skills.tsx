@@ -32,7 +32,7 @@ export default function Skills() {
   return (
     <section id="skills" className="border-y-2 border-foreground bg-dots px-4 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
-        <SectionHeader index="03" label="CORE COMPETENCIES" title="Skills & Tools" />
+        <SectionHeader index="04" label="CORE COMPETENCIES" title="Skills & Tools" />
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {categories.map((category, i) => (

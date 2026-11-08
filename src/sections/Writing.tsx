@@ -11,7 +11,7 @@ export default function Writing() {
   return (
     <section id="writing" className="bg-surface px-4 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
-        <SectionHeader index="06" label="NOTES & ESSAYS" title="Writing" />
+        <SectionHeader index="07" label="NOTES & ESSAYS" title="Writing" />
 
         <div className="mt-10 space-y-6">
           {blogsData.map((post, i) => (
