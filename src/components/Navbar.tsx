@@ -8,7 +8,8 @@ import { Sheet, SheetClose, SheetContent, SheetDescription, SheetTitle, SheetTri
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
+  { label: "Timeline", href: "#experience" },
+  { label: "Work", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Certificates", href: "#certificates" },
   { label: "Publications", href: "#publications" },
@@ -38,7 +39,9 @@ export default function Navbar() {
           <span className="hidden text-sm font-bold tracking-tight text-foreground sm:block">{personalData.name}</span>
         </a>
 
-        <nav className="hidden items-center gap-6 md:flex" aria-label="Main">
+        {/* Full link row only fits from xl (1280px); below that the sheet
+            carries every link, so the header never overflows. */}
+        <nav className="hidden items-center gap-6 xl:flex" aria-label="Main">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
@@ -83,7 +86,7 @@ export default function Navbar() {
           <SheetTrigger asChild>
             <button
               type="button"
-              className="flex h-9 w-9 items-center justify-center rounded-lg border-2 border-foreground bg-card md:hidden"
+              className="flex h-9 w-9 items-center justify-center rounded-lg border-2 border-foreground bg-card xl:hidden"
               aria-label="Open menu"
             >
               {open ? <HiX className="h-5 w-5" aria-hidden="true" /> : <HiMenu className="h-5 w-5" aria-hidden="true" />}

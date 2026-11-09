@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { User } from "lucide-react";
 import personalData from "@/data/personal.json";
 import { RESUME_URL, RESUME_FILENAME } from "@/lib/links";
 
@@ -96,15 +95,16 @@ export default function Hero() {
             <div className="absolute left-[5%] top-[20%] h-[250px] w-[250px] rounded-full bg-glow lg:left-[15%] lg:top-[15%] lg:h-[400px] lg:w-[400px]" />
             <div className="absolute right-0 top-[30%] h-[350px] w-[220px] bg-band lg:-right-[5%] lg:top-[25%] lg:h-[550px] lg:w-[350px]" />
 
-            {/* Profile image slot — drop a real portrait in later. */}
+            {/* Profile portrait */}
             <div className="relative z-10 flex h-full items-end">
               <div className="mb-6 flex flex-col items-center gap-4 rounded-t-[140px] rounded-b-3xl border-4 border-foreground bg-card px-10 pb-7 pt-12 shadow-brutal lg:mb-10">
-                <div className="flex h-32 w-32 items-center justify-center rounded-full border-2 border-dashed border-foreground/40 lg:h-40 lg:w-40">
-                  <User className="h-14 w-14 text-foreground/30 lg:h-16 lg:w-16" strokeWidth={1.5} aria-hidden="true" />
+                <div className="flex h-32 w-32 items-center justify-center overflow-hidden rounded-full border-2 border-foreground lg:h-40 lg:w-40">
+                  <img
+                    src={`${import.meta.env.BASE_URL}images/namachu-dp-cropped.jpg`}
+                    alt={personalData.name}
+                    className="h-full w-full object-cover"
+                  />
                 </div>
-                <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-                  profile.png
-                </span>
               </div>
             </div>
           </div>

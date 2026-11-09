@@ -53,13 +53,18 @@ function fanSlot(index: number, active: number, count: number): number {
   return raw > count / 2 ? raw - count : raw;
 }
 
+/** Uniform fan scale: the deck renders 15% smaller than the reference geometry
+ *  (lengths shrink, angles are preserved, so the arc shape stays identical). */
+const FAN_SCALE = 0.85;
+
 /** Fan geometry per slot distance (px / deg / scale / z-index / opacity). */
 function fanStyle(slot: number) {
   const dir = Math.sign(slot);
   const dist = Math.abs(slot);
-  if (dist === 0) return { x: 0, rotate: 0, scale: 1, opacity: 1, zIndex: 40 };
-  if (dist === 1) return { x: 170 * dir, rotate: 9 * dir, scale: 0.95, opacity: 1, zIndex: 30 };
-  return { x: 300 * dir, rotate: 17 * dir, scale: 0.9, opacity: 0.9, zIndex: 20 };
+  if (dist === 0) return { x: 0, rotate: 0, scale: FAN_SCALE, opacity: 1, zIndex: 40 };
+  if (dist === 1)
+    return { x: 170 * FAN_SCALE * dir, rotate: 9 * dir, scale: 0.95 * FAN_SCALE, opacity: 1, zIndex: 30 };
+  return { x: 300 * FAN_SCALE * dir, rotate: 17 * dir, scale: 0.9 * FAN_SCALE, opacity: 0.9, zIndex: 20 };
 }
 
 const pad2 = (n: number) => String(n).padStart(2, "0");
@@ -332,8 +337,10 @@ export default function Projects() {
 
         {isDesktop ? (
           <div className="mt-14">
-            {/* Fanned deck: all cards absolute, bottom-anchored, transforms per slot. */}
-            <div className="relative" style={{ height: deckHeight || undefined }}>
+            {/* Fanned deck: all cards absolute, bottom-anchored, transforms per slot.
+                Height reserves the *visual* deck (layout height × FAN_SCALE) so the
+                controls sit right under the scaled-down cards. */}
+            <div className="relative" style={{ height: deckHeight ? deckHeight * FAN_SCALE : undefined }}>
               {projects.map((project, i) => {
                 const isActive = i === active;
                 const style = fanStyle(fanSlot(i, active, count));
