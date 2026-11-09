@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design system: five switchable color palettes applied as classes on <html>
-   (.palette-1 … .palette-5). Palette 1 is the exact reference design.
+/* Design system: ten switchable color palettes applied as classes on <html>
+   (.palette-1 … .palette-10). Palette 1 is the exact reference design.
    All colors are HSL so shadcn's hsl(var(--token)) mapping keeps working.
    The active palette is set pre-boot by the script in index.html. */
 
 /* Palettes are intentionally OUTSIDE @layer: Tailwind tree-shakes unused
-   class selectors written inside @layer blocks, and .palette-2 … .palette-5
+   class selectors written inside @layer blocks, and .palette-2 … .palette-10
    only ever appear as template strings in src/lib/palettes.ts — inside a
    layer they get purged from the build. Top-level CSS is never purged. */
 :root,
@@ -198,6 +198,196 @@
     --band: 172 71% 65%;
     --dot: 173 8% 80%;
     --glow: 12 100% 82%;
+
+    --radius: 0.75rem;
+  }
+
+  .palette-6 {
+    /* Tomato Punch — #E5484D (Radix tomato9) + #0090FF (Radix blue9) */
+    --background: 358 50% 96%;
+    --surface: 358 50% 96%;
+    --foreground: 358 45% 7%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 358 45% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 358 45% 7%;
+
+    --primary: 358 75% 59%; /* #E5484D */
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 206 100% 50%; /* #0090FF */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 358 20% 90%;
+    --muted-foreground: 0 0% 30%;
+
+    --accent: 358 75% 59%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 355 100% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 358 45% 7%;
+    --input: 358 45% 7%;
+    --ring: 358 45% 7%;
+
+    --band: 358 100% 72%;
+    --dot: 358 20% 82%;
+    --glow: 206 100% 74%;
+
+    --radius: 0.75rem;
+  }
+
+  .palette-7 {
+    /* Cyan Fizz — #22B8CF (Open Color cyan7) + #F06595 (Open Color pink6) */
+    --background: 188 50% 96%;
+    --surface: 188 50% 96%;
+    --foreground: 190 45% 7%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 190 45% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 190 45% 7%;
+
+    --primary: 188 72% 47%; /* #22B8CF */
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 339 82% 67%; /* #F06595 */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 188 20% 90%;
+    --muted-foreground: 0 0% 30%;
+
+    --accent: 188 72% 47%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 355 100% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 190 45% 7%;
+    --input: 190 45% 7%;
+    --ring: 190 45% 7%;
+
+    --band: 188 100% 70%;
+    --dot: 190 20% 82%;
+    --glow: 339 100% 78%;
+
+    --radius: 0.75rem;
+  }
+
+  .palette-8 {
+    /* Grass Plum — #46A758 (Radix grass9) + #AB4ABA (Radix plum9) */
+    --background: 131 40% 96%;
+    --surface: 131 40% 96%;
+    --foreground: 135 45% 7%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 135 45% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 135 45% 7%;
+
+    --primary: 131 41% 46%; /* #46A758 */
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 292 45% 51%; /* #AB4ABA */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 131 15% 90%;
+    --muted-foreground: 0 0% 30%;
+
+    --accent: 131 41% 46%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 355 100% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 135 45% 7%;
+    --input: 135 45% 7%;
+    --ring: 135 45% 7%;
+
+    --band: 131 75% 67%;
+    --dot: 131 15% 82%;
+    --glow: 292 100% 76%;
+
+    --radius: 0.75rem;
+  }
+
+  .palette-9 {
+    /* Gold Indigo — #FCC419 (Open Color yellow5) + #3B5BDB (Open Color blue8) */
+    --background: 45 60% 96%;
+    --surface: 45 60% 96%;
+    --foreground: 45 40% 7%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 45 40% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 45 40% 7%;
+
+    --primary: 45 97% 54%; /* #FCC419 */
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 228 69% 54%; /* #3B5BDB */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 45 30% 90%;
+    --muted-foreground: 0 0% 30%;
+
+    --accent: 45 97% 54%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 355 100% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 45 40% 7%;
+    --input: 45 40% 7%;
+    --ring: 45 40% 7%;
+
+    --band: 45 100% 62%;
+    --dot: 45 30% 83%;
+    --glow: 228 100% 74%;
+
+    --radius: 0.75rem;
+  }
+
+  .palette-10 {
+    /* Mango Wave — #FD7E14 (Open Color orange6) + #1098AD (Open Color teal7) */
+    --background: 27 60% 96%;
+    --surface: 27 60% 96%;
+    --foreground: 27 45% 7%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 27 45% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 27 45% 7%;
+
+    --primary: 27 98% 54%; /* #FD7E14 */
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 188 83% 37%; /* #1098AD */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 27 30% 90%;
+    --muted-foreground: 0 0% 30%;
+
+    --accent: 27 98% 54%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 355 100% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 27 45% 7%;
+    --input: 27 45% 7%;
+    --ring: 27 45% 7%;
+
+    --band: 27 100% 67%;
+    --dot: 27 30% 83%;
+    --glow: 188 100% 72%;
 
     --radius: 0.75rem;
   }

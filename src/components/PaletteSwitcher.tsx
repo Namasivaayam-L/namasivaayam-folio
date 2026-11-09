@@ -38,7 +38,7 @@ export function PaletteButton() {
           <PaletteIcon className="h-4 w-4" aria-hidden="true" />
         </button>
       </PopoverTrigger>
-      <PopoverContent align="end" className="w-56 rounded-xl border-2 border-foreground bg-card p-2 shadow-brutal">
+      <PopoverContent align="end" className="max-h-[70vh] w-56 overflow-y-auto rounded-xl border-2 border-foreground bg-card p-2 shadow-brutal">
         <p className="px-2 pb-2 pt-1 font-mono text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
           Color palette
         </p>
@@ -84,7 +84,7 @@ export function PaletteRow() {
   return (
     <div className="flex items-center gap-3">
       <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-background/60">Palette</span>
-      <div className="flex items-center gap-2" role="group" aria-label="Color palette">
+      <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Color palette">
         {PALETTES.map((palette) => (
           <button
             key={palette.id}

@@ -10,8 +10,29 @@
         "title": "Software Engineer I",
         "period": "Jul 2024 – Present",
         "location": "Chennai, TN, India",
-        "summary": "Building production GenAI systems for financial document processing — multi-agent orchestration, LLM extraction, and model evaluation.",
+        "summary": "Building production GenAI systems for financial document processing — multi-agent orchestration, LLM extraction, and model evaluation. Recently replaced a brittle monolithic LLM classifier with a modular multi-specialist decision graph, lifting reviewer-agreed accuracy from 29% to 77%.",
         "workstreams": [
+          {
+            "id": "decision-graph",
+            "name": "Decision Graph",
+            "subtitle": "Multi-Specialist Decision Graph",
+            "problem": "A brittle single long-prompt LLM classifier routed inbound correspondence — reviewer-agreed labels sat at 29%, with over 1,600 wrong classifications across comparative test periods.",
+            "outcome": "A modular multi-specialist decision graph that lifted reviewer-agreed accuracy from 29% to 77% (2.7x) and cut wrong classifications by 95%, while autonomously handling 8.7% of ~17,500 weekly inbound items.",
+            "approach": [
+              "Replaced the monolithic long-prompt classifier with a modular route graph of multi-specialist decision nodes.",
+              "Two specialist models propose answers independently, with plain deterministic code resolving disagreements.",
+              "A stronger secondary oversight model vetoes actions before execution, with citation-grounding enforcing \"no quote, no claim\" on every output.",
+              "Human-in-the-loop fallback sends low-confidence cases to review instead of guessing, while a database flag instantly reverts live traffic to the legacy classifier with no deploy."
+            ],
+            "metrics": [
+              { "value": "29% → 77%", "label": "Reviewer-agreed accuracy" },
+              { "value": "95%", "label": "Fewer wrong classifications" },
+              { "value": "17,500+", "label": "Inbound items per week" },
+              { "value": "78 / 78", "label": "Auto-closes verified accurate" },
+              { "value": "93%", "label": "Fewer safety violations" }
+            ],
+            "stack": ["LangGraph", "Python", "MCP", "FastAPI", "Kafka", "Docker", "Postgres"]
+          },
           {
             "id": "in-a-box",
             "name": "In A Box",
@@ -66,22 +87,6 @@
               { "value": "GKE", "label": "Containerized evaluation infra" }
             ],
             "stack": ["FastAPI", "Docker", "GKE", "LLM-as-judge"]
-          },
-          {
-            "id": "idea-code",
-            "name": "Idea-Code",
-            "subtitle": "Autonomous Product Development Lifecycle",
-            "problem": "Turning a requirement into working software meant weeks of manual handoffs between documentation, architecture, task planning, and coding.",
-            "outcome": "An autonomous pipeline that carries a concept all the way to GitHub pull requests, generating its own planning artifacts along the way.",
-            "approach": [
-              "Architected a LangGraph Deep-agent pipeline using Azure and GitHub MCP servers to automate the product development lifecycle from concept to GitHub PRs.",
-              "Orchestrated autonomous generation of BRDs, architectures, and ADO tasks.",
-              "Streamlined the transition from requirements to production code."
-            ],
-            "metrics": [
-              { "value": "Concept → PR", "label": "Automated end to end" }
-            ],
-            "stack": ["LangGraph", "Deep Agents", "MCP", "Azure DevOps", "GitHub"]
           }
         ],
         "stack": ["Python", "LangGraph", "MCP", "FastAPI", "Vertex AI", "GCP", "Docker", "GKE"]

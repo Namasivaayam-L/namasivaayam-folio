@@ -13,6 +13,11 @@ export const PALETTES: Palette[] = [
   { id: 3, name: "Sunset Coral", swatch: ["#FF5A3C", "#FFB800"] },
   { id: 4, name: "Violet Pop", swatch: ["#7C3AED", "#FF4FA3"] },
   { id: 5, name: "Teal Mint", swatch: ["#14D7BD", "#FF7A59"] },
+  { id: 6, name: "Tomato Punch", swatch: ["#E5484D", "#0090FF"] },
+  { id: 7, name: "Cyan Fizz", swatch: ["#22B8CF", "#F06595"] },
+  { id: 8, name: "Grass Plum", swatch: ["#46A758", "#AB4ABA"] },
+  { id: 9, name: "Gold Indigo", swatch: ["#FCC419", "#3B5BDB"] },
+  { id: 10, name: "Mango Wave", swatch: ["#FD7E14", "#1098AD"] },
 ];
 
 export const PALETTE_STORAGE_KEY = "palette";
