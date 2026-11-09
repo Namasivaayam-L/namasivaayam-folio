@@ -29,14 +29,14 @@
 
     <script>
       // Apply the saved color palette before React boots to avoid a flash.
-      // Palettes are CSS variable sets on <html> (.palette-1 … .palette-5);
+      // Palettes are CSS variable sets on <html> (.palette-1 … .palette-10);
       // .palette-1 (the default, marked up in the HTML) is the reference design.
       (function () {
         try {
           var stored = localStorage.getItem("palette");
-          if (stored === "1" || stored === "2" || stored === "3" || stored === "4" || stored === "5") {
+          if (/^[1-9]$|^10$/.test(stored || "")) {
             var root = document.documentElement;
-            for (var i = 1; i <= 5; i++) root.classList.remove("palette-" + i);
+            for (var i = 1; i <= 10; i++) root.classList.remove("palette-" + i);
             root.classList.add("palette-" + stored);
           }
         } catch (e) {
@@ -58,8 +58,8 @@
         }
       }(window.location));
     </script>
-    <script type="module" crossorigin src="/namasivaayam-folio/assets/index-DpyBBQy7.js"></script>
-    <link rel="stylesheet" crossorigin href="/namasivaayam-folio/assets/index-1EnNs3an.css">
+    <script type="module" crossorigin src="/namasivaayam-folio/assets/index-Bc08GEwN.js"></script>
+    <link rel="stylesheet" crossorigin href="/namasivaayam-folio/assets/index-CVjNx_p2.css">
   </head>
 
   <body>
