@@ -8,7 +8,6 @@ import Certificates from "@/sections/Certificates";
 import Publications from "@/sections/Publications";
 import Writing from "@/sections/Writing";
 import Awards from "@/sections/Awards";
-import Impact from "@/sections/Impact";
 import Contact from "@/sections/Contact";
 
 /** The single-page portfolio: hero → sections → contact. */
@@ -25,7 +24,6 @@ export default function Home() {
       <Publications />
       <Writing />
       <Awards />
-      <Impact />
       <Contact />
     </>
   );

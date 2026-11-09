@@ -34,7 +34,7 @@ export default function Skills() {
       <div className="mx-auto max-w-6xl">
         <SectionHeader index="04" label="CORE COMPETENCIES" title="Skills & Tools" />
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
           {categories.map((category, i) => (
             <Reveal
               key={category.name}

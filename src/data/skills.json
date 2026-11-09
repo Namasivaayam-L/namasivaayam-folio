@@ -38,11 +38,6 @@
       "name": "Cloud & Infrastructure",
       "blurb": "Where the systems run — containerized, orchestrated, observable.",
       "skills": ["GCP PCA", "AWS CPE", "Docker", "Kubernetes (GKE)", "Rancher"]
-    },
-    {
-      "name": "Frontend",
-      "blurb": "Interfaces for the tools and products around the models.",
-      "skills": ["React", "Next.js", "Redux"]
     }
   ]
 }

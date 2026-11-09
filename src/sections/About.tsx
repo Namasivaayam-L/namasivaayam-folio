@@ -1,8 +1,7 @@
-import { Brain, Code, GraduationCap, MapPin } from "lucide-react";
+import { Brain, Code, MapPin } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 import Reveal from "@/components/Reveal";
 import personalData from "@/data/personal.json";
-import education from "@/data/education.json";
 
 const BUILD_ITEMS = [
   "Document extraction pipelines that reach 90% accuracy",
@@ -12,13 +11,12 @@ const BUILD_ITEMS = [
   "HITL workflows & cloud-native deployments",
 ];
 
-const WORKFLOW = [
-  { step: "01", title: "Frame", desc: "Define the metric before the model." },
-  { step: "02", title: "Data", desc: "Profile, label, and version it." },
-  { step: "03", title: "Prototype", desc: "Small model first, iterate fast." },
-  { step: "04", title: "Evaluate", desc: "Held-out evals and error analysis." },
-  { step: "05", title: "Ship", desc: "Containerize, monitor, alert." },
-  { step: "06", title: "Iterate", desc: "Feed production signals back in." },
+/** At-a-glance stat cards (moved from the retired Quick Profile section). */
+const STATS = [
+  { value: "GenAI", label: "Primary focus", sub: "Agentic systems", filled: true },
+  { value: "B.Tech", label: "AI & Data Science", sub: "MEPCO, 2024", filled: false },
+  { value: "Python", label: "Primary language", sub: "Language & framework agnostic", filled: true },
+  { value: "8.49", label: "CGPA / 10", sub: "Graduated 2024", filled: false },
 ];
 
 function MetaChip({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) {
@@ -84,9 +82,6 @@ export default function About() {
               <ul className="mt-8 flex flex-wrap gap-3">
                 <MetaChip icon={<MapPin className="h-4 w-4" aria-hidden="true" />}>{personalData.location}</MetaChip>
                 <MetaChip icon={<Code className="h-4 w-4" aria-hidden="true" />}>ML Engineer</MetaChip>
-                <MetaChip icon={<GraduationCap className="h-4 w-4" aria-hidden="true" />}>
-                  CGPA {education.cgpa}
-                </MetaChip>
               </ul>
             </Reveal>
 
@@ -112,35 +107,28 @@ export default function About() {
             </Reveal>
           </div>
 
-          {/* How I work */}
-          <Reveal className="relative z-10 overflow-hidden rounded-xl border-2 border-foreground bg-foreground p-6 text-background md:p-8">
-            <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-md border-2 border-background bg-secondary">
-                <Brain className="h-5 w-5 text-secondary-foreground" aria-hidden="true" />
-              </span>
-              <div>
-                <h3 className="text-xl font-bold">How I work</h3>
-                <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-background/50">
-                  Engineering workflow
-                </p>
-              </div>
-            </div>
-
-            <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
-              {WORKFLOW.map((item) => (
-                <li
-                  key={item.step}
-                  className="group/step rounded-md border border-background/20 bg-background/5 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary"
+          {/* At-a-glance stat cards (formerly the Quick Profile section) */}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {STATS.map((stat, i) => (
+              <Reveal key={stat.label} delay={i * 0.07} y={20}>
+                <div
+                  className={`group flex h-full flex-col justify-center rounded-xl border-2 border-foreground p-6 shadow-brutal transition-all duration-300 hover:-translate-x-1 hover:-translate-y-2 ${
+                    stat.filled ? "bg-primary text-primary-foreground" : "bg-foreground text-background"
+                  }`}
                 >
-                  <span className="block w-fit bg-background/10 pr-3 font-mono text-[10px] font-bold text-background/50 transition-colors group-hover/step:text-primary">
-                    {item.step}
-                  </span>
-                  <p className="mt-2 font-bold text-band">{item.title}</p>
-                  <p className="mt-1 font-mono text-[11px] leading-snug text-background/60">{item.desc}</p>
-                </li>
-              ))}
-            </ol>
-          </Reveal>
+                  <p className="mb-3 text-[38px] font-black leading-none tracking-tight transition-transform duration-300 group-hover:scale-105 group-hover:origin-left">
+                    {stat.value}
+                  </p>
+                  <p className="mb-4 text-[15px] font-bold leading-tight transition-colors group-hover:text-secondary">
+                    {stat.label}
+                  </p>
+                  <p className="mt-auto font-mono text-[10px] font-bold uppercase tracking-widest opacity-70">
+                    {stat.sub}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>

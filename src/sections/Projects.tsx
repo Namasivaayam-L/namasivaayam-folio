@@ -14,9 +14,9 @@ import {
 const entries: ExperienceEntry[] = experienceData;
 
 /**
- * Case studies are the "Selected work" workstreams living in experience.json —
- * single source of truth. This section renders them as full-width project
- * cards (reference: ayushranjane.in #projects), so Experience itself stays a
+ * Work highlights are the "Selected work" workstreams living in experience.json —
+ * single source of truth. This section renders them as full-width cards
+ * (reference: ayushranjane.in #projects), so Experience itself stays a
  * lean timeline.
  */
 const projects = entries.flatMap((entry) =>
@@ -76,7 +76,7 @@ function ProjectCard({
     <Reveal>
       <article className="overflow-hidden rounded-xl border-2 border-foreground bg-background shadow-brutal-8">
         <div className="grid lg:grid-cols-[1.2fr_1fr]">
-          {/* ---------- Left: the case study ---------- */}
+          {/* ---------- Left: the work item ---------- */}
           <div className="p-6 md:p-8">
             <div className="flex items-start justify-between gap-4">
               <span
@@ -190,7 +190,7 @@ function ProjectCard({
                   <Icon className="h-7 w-7" aria-hidden="true" />
                 </span>
                 <span className="mt-1 font-mono text-[11px] font-bold uppercase tracking-widest text-foreground/60">
-                  Case study {number}
+                  Engagement {number}
                 </span>
               </div>
 
@@ -242,9 +242,9 @@ export default function Projects() {
       <div className="mx-auto max-w-6xl">
         <SectionHeader
           index="03"
-          label="CASE STUDIES"
-          title="Featured Projects"
-          subtitle="Applied ML systems, not template demos"
+          label="ON THE JOB"
+          title="Work Highlights"
+          subtitle="Built at Rocket, India — running in production"
         />
 
         <div className="mt-14 space-y-20">
