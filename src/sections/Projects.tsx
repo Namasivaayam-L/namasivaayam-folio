@@ -339,8 +339,13 @@ export default function Projects() {
           <div className="mt-14">
             {/* Fanned deck: all cards absolute, bottom-anchored, transforms per slot.
                 Height reserves the *visual* deck (layout height × FAN_SCALE) so the
-                controls sit right under the scaled-down cards. */}
-            <div className="relative" style={{ height: deckHeight ? deckHeight * FAN_SCALE : undefined }}>
+                controls sit right under the scaled-down cards. The id is the Work
+                nav link's scroll target (cards + arrows, skipping the title). */}
+            <div
+              id="projects-deck"
+              className="relative"
+              style={{ height: deckHeight ? deckHeight * FAN_SCALE : undefined }}
+            >
               {projects.map((project, i) => {
                 const isActive = i === active;
                 const style = fanStyle(fanSlot(i, active, count));

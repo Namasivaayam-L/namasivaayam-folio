@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type MouseEvent } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import personalData from "@/data/personal.json";
@@ -31,6 +31,18 @@ function Monogram() {
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  /** The Work link lands on the fanned deck (cards + arrows) instead of the
+   *  section top — title + deck + controls never fit one viewport together.
+   *  Hash stays #projects; other links keep native anchor scrolling. */
+  const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href !== "#projects") return;
+    const deck = document.getElementById("projects-deck");
+    if (!deck) return; // mobile stack has no deck → native scroll to the section
+    e.preventDefault();
+    if (location.hash !== "#projects") history.pushState(null, "", "#projects");
+    deck.scrollIntoView({ block: "start" }); // behavior "auto" defers to CSS smooth scroll
+  };
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 pb-4">
       <div className="mx-auto flex max-w-6xl items-center justify-between rounded-xl border-2 border-foreground bg-background/70 px-4 py-2.5 shadow-brutal backdrop-blur-md">
@@ -46,6 +58,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="rounded-md px-2 py-1 text-[14px] font-bold text-foreground transition-all hover:-translate-y-0.5 hover:bg-primary"
             >
               {link.label}
@@ -102,6 +115,7 @@ export default function Navbar() {
                 <SheetClose asChild key={link.href}>
                   <a
                     href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href)}
                     className="rounded-lg border-2 border-foreground bg-card px-4 py-3 text-base font-bold shadow-brutal-sm transition-transform hover:-translate-y-0.5 hover:bg-primary"
                   >
                     {link.label}

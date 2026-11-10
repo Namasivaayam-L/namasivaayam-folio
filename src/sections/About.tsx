@@ -46,10 +46,18 @@ export default function About() {
                   I am a Machine Learning Engineer specializing in{" "}
                   <span className="rounded-sm bg-primary/30 px-1 py-0.5 font-black">Generative AI</span>,{" "}
                   <span className="rounded-sm bg-secondary/30 px-1 py-0.5 font-black">Multi-Modal Systems</span>,
-                  and full-stack development. I pioneered a production Gemini-based solution for structured
-                  data extraction, lifting document accuracy from{" "}
-                  <span className="rounded-sm bg-primary/30 px-1 py-0.5 font-black">9% to 90%</span>, and led
-                  the end-to-end ML development of an{" "}
+                  and full-stack development — currently shipping production GenAI for financial
+                  document processing at Rocket. Recent work: a modular{" "}
+                  <span className="rounded-sm bg-secondary/30 px-1 py-0.5 font-black">
+                    multi-specialist decision graph
+                  </span>{" "}
+                  that lifted reviewer-agreed accuracy from{" "}
+                  <span className="rounded-sm bg-primary/30 px-1 py-0.5 font-black">29% to 77% (2.7x)</span> and
+                  cut wrong classifications by{" "}
+                  <span className="rounded-sm bg-primary/30 px-1 py-0.5 font-black">95%</span> across ~17,500
+                  weekly inbound items. I also took document extraction accuracy from{" "}
+                  <span className="rounded-sm bg-primary/30 px-1 py-0.5 font-black">9% to 90%</span> with a
+                  production Gemini pipeline, and led the end-to-end ML development of an{" "}
                   <span className="rounded-sm bg-secondary/30 px-1 py-0.5 font-black">
                     LLM validation framework
                   </span>{" "}
