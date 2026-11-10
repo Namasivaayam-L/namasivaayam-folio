@@ -31,16 +31,17 @@ function Monogram() {
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  /** The Work link lands on the fanned deck (cards + arrows) instead of the
-   *  section top — title + deck + controls never fit one viewport together.
-   *  Hash stays #projects; other links keep native anchor scrolling. */
+  /** The Work link lands on the Work Highlights title with the fitted deck +
+   *  arrows below it (title + cards + controls share one viewport). Hash stays
+   *  #projects; other links keep native anchor scrolling. */
   const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href !== "#projects") return;
-    const deck = document.getElementById("projects-deck");
-    if (!deck) return; // mobile stack has no deck → native scroll to the section
+    if (!document.getElementById("projects-deck")) return; // mobile stack → native scroll
+    const target =
+      document.getElementById("projects-title") ?? document.getElementById("projects-deck");
     e.preventDefault();
     if (location.hash !== "#projects") history.pushState(null, "", "#projects");
-    deck.scrollIntoView({ block: "start" }); // behavior "auto" defers to CSS smooth scroll
+    target.scrollIntoView({ block: "start" }); // behavior "auto" defers to CSS smooth scroll
   };
 
   return (

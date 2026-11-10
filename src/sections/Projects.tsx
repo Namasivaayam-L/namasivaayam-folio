@@ -53,18 +53,26 @@ function fanSlot(index: number, active: number, count: number): number {
   return raw > count / 2 ? raw - count : raw;
 }
 
-/** Uniform fan scale: the deck renders 15% smaller than the reference geometry
- *  (lengths shrink, angles are preserved, so the arc shape stays identical). */
-const FAN_SCALE = 0.85;
+/** Fan scale caps at the reference geometry (the deck renders 15% smaller than
+ *  the original — lengths shrink, angles are preserved) and shrinks on short
+ *  windows so title + deck + controls always fit below the fixed navbar. */
+const FAN_SCALE_MAX = 0.85;
+const FAN_SCALE_MIN = 0.6;
+
+/** Vertical rhythm (px) the fit-to-viewport landing math accounts for. */
+const LAND_TOP = 96; // index.css scroll-padding-top (6rem)
+const TITLE_GAP = 24; // header → deck (mt-6)
+const CTRL_GAP = 40; // deck → controls (mt-10)
+const CTRL_H = 44; // control buttons (h-11)
 
 /** Fan geometry per slot distance (px / deg / scale / z-index / opacity). */
-function fanStyle(slot: number) {
+function fanStyle(slot: number, scale: number) {
   const dir = Math.sign(slot);
   const dist = Math.abs(slot);
-  if (dist === 0) return { x: 0, rotate: 0, scale: FAN_SCALE, opacity: 1, zIndex: 40 };
+  if (dist === 0) return { x: 0, rotate: 0, scale, opacity: 1, zIndex: 40 };
   if (dist === 1)
-    return { x: 170 * FAN_SCALE * dir, rotate: 9 * dir, scale: 0.95 * FAN_SCALE, opacity: 1, zIndex: 30 };
-  return { x: 300 * FAN_SCALE * dir, rotate: 17 * dir, scale: 0.9 * FAN_SCALE, opacity: 0.9, zIndex: 20 };
+    return { x: 170 * scale * dir, rotate: 9 * dir, scale: 0.95 * scale, opacity: 1, zIndex: 30 };
+  return { x: 300 * scale * dir, rotate: 17 * dir, scale: 0.9 * scale, opacity: 0.9, zIndex: 20 };
 }
 
 const pad2 = (n: number) => String(n).padStart(2, "0");
@@ -284,6 +292,7 @@ export default function Projects() {
     () => typeof window !== "undefined" && window.matchMedia("(min-width: 1024px)").matches,
   );
   const [deckHeight, setDeckHeight] = useState(0);
+  const [fanScale, setFanScale] = useState(FAN_SCALE_MAX);
   const wrapRefs = useRef<Array<HTMLDivElement | null>>([]);
 
   // Track the lg breakpoint so mobile keeps the plain vertical stack.
@@ -305,6 +314,39 @@ export default function Projects() {
     wrapRefs.current.forEach((el) => el && ro.observe(el));
     return () => ro.disconnect();
   }, [isDesktop]);
+
+  // Fit-to-viewport fan: keep the reference 0.85 while the whole Work view
+  // (title + deck + controls) fits under the navbar, shrink on shorter
+  // windows so the arrows never land below the fold after the Work link.
+  useLayoutEffect(() => {
+    if (!isDesktop || !deckHeight) return;
+    let cancelled = false;
+    const fit = () => {
+      const titleH =
+        document.getElementById("projects-title")?.getBoundingClientRect().height ?? 88;
+      // −4px safety for sub-pixel rounding / late font metrics.
+      const avail = window.innerHeight - LAND_TOP - titleH - TITLE_GAP - CTRL_GAP - CTRL_H - 4;
+      const clamped = Math.min(FAN_SCALE_MAX, Math.max(FAN_SCALE_MIN, avail / deckHeight));
+      // Floor in between so the view never overshoots the fold; keep the
+      // bounds exact (float-safe) so tall windows render the reference 0.85.
+      const scale =
+        clamped >= FAN_SCALE_MAX
+          ? FAN_SCALE_MAX
+          : clamped <= FAN_SCALE_MIN
+            ? FAN_SCALE_MIN
+            : Math.floor(clamped * 100) / 100;
+      setFanScale(scale);
+    };
+    fit();
+    window.addEventListener("resize", fit);
+    document.fonts?.ready.then(() => {
+      if (!cancelled) fit(); // web fonts can change the title height
+    });
+    return () => {
+      cancelled = true;
+      window.removeEventListener("resize", fit);
+    };
+  }, [isDesktop, deckHeight]);
 
   const goTo = (next: number) => {
     setActive((next + count) % count);
@@ -328,27 +370,30 @@ export default function Projects() {
   return (
     <section id="projects" className="overflow-x-clip px-4 py-20 md:py-32">
       <div className="mx-auto max-w-6xl">
-        <SectionHeader
-          index="03"
-          label="ON THE JOB"
-          title="Work Highlights"
-          subtitle="Built at Rocket, India — running in production"
-        />
+        {/* id = the Work nav link's scroll target: lands the title right under
+            the navbar with the fitted deck + arrows below it. */}
+        <div id="projects-title">
+          <SectionHeader
+            index="03"
+            label="ON THE JOB"
+            title="Work Highlights"
+            subtitle="Built at Rocket, India — running in production"
+          />
+        </div>
 
         {isDesktop ? (
-          <div className="mt-14">
+          <div className="mt-6">
             {/* Fanned deck: all cards absolute, bottom-anchored, transforms per slot.
-                Height reserves the *visual* deck (layout height × FAN_SCALE) so the
-                controls sit right under the scaled-down cards. The id is the Work
-                nav link's scroll target (cards + arrows, skipping the title). */}
+                Height reserves the *visual* deck (layout height × fanScale) so the
+                controls sit right under the scaled-down cards. */}
             <div
               id="projects-deck"
               className="relative"
-              style={{ height: deckHeight ? deckHeight * FAN_SCALE : undefined }}
+              style={{ height: deckHeight ? deckHeight * fanScale : undefined }}
             >
               {projects.map((project, i) => {
                 const isActive = i === active;
-                const style = fanStyle(fanSlot(i, active, count));
+                const style = fanStyle(fanSlot(i, active, count), fanScale);
                 return (
                   <motion.div
                     key={project.ws.id}
@@ -406,7 +451,7 @@ export default function Projects() {
           </div>
         ) : (
           /* Mobile: plain vertical stack. */
-          <div className="mt-14 space-y-20">
+          <div className="mt-6 space-y-20">
             {projects.map((project, i) => (
               <Reveal key={project.ws.id}>{card(project, i)}</Reveal>
             ))}
