@@ -81,7 +81,7 @@
     \section{Professional Summary}
     \begin{tabularx}{\linewidth}{ @{}l r@{} }
     \begin{minipage}[t]{\linewidth}
-        Generative AI and Machine Learning Engineer specializing in Multi-modal systems. Orchestrated complex \textbf{document verification} workflows using an \textbf{autonomous agent} framework, \textbf{cutting} processing time by \textbf{67\%}. Pioneered a Gemini-based solution that boosted document extraction accuracy from \textbf{9\% to 90\%}. Recipient of "\textbf{The Rookie}" Award (2025).
+        Machine Learning Engineer specializing in \textbf{Generative AI}, \textbf{Multi-Modal Systems}, and full-stack development — currently shipping production GenAI for financial document processing at \textbf{Rocket}. Recent work: a modular \textbf{decision graph} that lifted reviewer-agreed accuracy from \textbf{29\% to 77\% (2.7x)} and cut wrong classifications by \textbf{95\%} across \textbf{$\sim$17,500} weekly inbound items. Also took document extraction accuracy from \textbf{9\% to 90\%} with a production Gemini pipeline, and led the end-to-end ML development of an \textbf{LLM validation framework} that benchmarks in-production models against top market competitors. Experienced in building \textbf{HITL, RAG, \& cloud-native deployments}.
     \end{minipage}
     \end{tabularx}
     \\[1pt]
@@ -104,6 +104,13 @@
     \color[HTML]{371e77}\textbf{\textit{Software Engineer I}} \hfill \\[3pt]
     \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=2pt]
+        \item \textbf{Decision Graph (Modular Routing):} Replaced a brittle single-prompt LLM classifier with a modular \textbf{decision graph}, lifting reviewer-agreed accuracy from \textbf{29\% to 77\% (2.7x)} and cutting wrong classifications by \textbf{95\%} across \textbf{$\sim$17,500} weekly inbound items.
+            \begin{itemize}
+                \item The question is split into smaller focused prompts; several models answer independently, plain code settles disagreements, and a stronger oversight model vetoes anything unsafe before it runs.
+                \item \textbf{HITL} fallback routes low-confidence cases to human review, while new versions ship as a \textbf{shadow deployment} running beside live traffic — a single flag cuts over, or rolls back, instantly with no deploy.
+                \item \textbf{Auto-closes with 100\% accuracy and zero false positives.}
+            \end{itemize}
+        
         \item \textbf{In A Box (Multi-Agent System):} Built and deployed a scalable multi-agent workflow to automate complex multi-document verification across \textbf{50+ checkpoints}, achieving a \textbf{67\% reduction} in manual processing effort.
             \begin{itemize}
                 \item Built a large-scale orchestration graph using \textbf{LangGraph} for Loan Modification workflows.

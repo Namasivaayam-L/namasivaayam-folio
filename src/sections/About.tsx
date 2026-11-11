@@ -49,7 +49,7 @@ export default function About() {
                   and full-stack development — currently shipping production GenAI for financial
                   document processing at Rocket. Recent work: a modular{" "}
                   <span className="rounded-sm bg-secondary/30 px-1 py-0.5 font-black">
-                    multi-specialist decision graph
+                    decision graph
                   </span>{" "}
                   that lifted reviewer-agreed accuracy from{" "}
                   <span className="rounded-sm bg-primary/30 px-1 py-0.5 font-black">29% to 77% (2.7x)</span> and
